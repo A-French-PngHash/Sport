@@ -23,6 +23,10 @@ class SportSession {
     var timeUntilEndOfPause : Int
     var restTimer : Timer?
     
+    // Hold the date in UNIX format when the sport started
+    var sportBeganAt : Double?
+    var timeUntilSportEnd : Int?
+    
     var currentSport : SportProtocol {
         get {
             return sports[currentSportIndex]
@@ -74,9 +78,10 @@ class SportSession {
         self.totalSets = 0
         totalSets = currentSport.numberOfSets
         
-        if currentSportType == "r" {
-            let sportWithRep = currentSport as! SportWithReps
+        if let sportWithRep = currentSport as? SportWithReps{
             self.totalReps = sportWithRep.numberOfReps
+        } else if let sportWithTimer = currentSport as? SportWithTimer{
+            self.timeUntilSportEnd = sportWithTimer.timeOfTheExercise
         }
         calculateTotalSessionTime()
     }

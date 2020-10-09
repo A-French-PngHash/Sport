@@ -258,13 +258,29 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="END IN :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1i-1d-MvH">
+                                        <rect key="frame" x="154" y="8" width="67" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5o-B1-11y">
+                                        <rect key="frame" x="146.5" y="37" width="82" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Q1i-1d-MvH" firstAttribute="centerX" secondItem="QZS-PG-Zl1" secondAttribute="centerX" id="4dW-yV-LVt"/>
                                     <constraint firstItem="mha-um-kYN" firstAttribute="centerY" secondItem="QZS-PG-Zl1" secondAttribute="centerY" constant="-50" id="B9s-3G-pbA"/>
+                                    <constraint firstItem="l5o-B1-11y" firstAttribute="top" secondItem="Q1i-1d-MvH" secondAttribute="bottom" constant="8" symbolic="YES" id="DWN-a3-zAM"/>
                                     <constraint firstItem="mha-um-kYN" firstAttribute="centerX" secondItem="QZS-PG-Zl1" secondAttribute="centerX" id="Kis-5a-QDA"/>
                                     <constraint firstItem="Ef9-yI-WpG" firstAttribute="centerX" secondItem="QZS-PG-Zl1" secondAttribute="centerX" id="Xdj-GP-2fC"/>
                                     <constraint firstItem="Ef9-yI-WpG" firstAttribute="top" secondItem="mha-um-kYN" secondAttribute="bottom" constant="5" id="amx-Pb-wI6"/>
+                                    <constraint firstItem="l5o-B1-11y" firstAttribute="centerX" secondItem="Q1i-1d-MvH" secondAttribute="centerX" id="q8Y-Q6-3OO"/>
+                                    <constraint firstItem="Q1i-1d-MvH" firstAttribute="top" secondItem="QZS-PG-Zl1" secondAttribute="top" constant="8" id="sC3-tO-1C3"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -295,6 +311,8 @@
                         <outlet property="InformationView" destination="Hxx-tU-NPT" id="xM4-Eb-pYj"/>
                         <outlet property="WorkoutImageView" destination="NUh-BF-5gj" id="Bg6-sI-e7h"/>
                         <outlet property="WorkoutNavigationBar" destination="5Ib-Ax-IvR" id="Evm-fe-iam"/>
+                        <outlet property="endInLabel" destination="Q1i-1d-MvH" id="HnQ-ve-lNi"/>
+                        <outlet property="endInTimerLabel" destination="l5o-B1-11y" id="A6Y-69-d8S"/>
                         <outlet property="nextSportButton" destination="SS7-CC-j8p" id="5sm-gD-tbU"/>
                         <outlet property="nextSportLabel" destination="Gte-j7-36E" id="BBI-pE-1IS"/>
                         <outlet property="previousSportButton" destination="I0i-ec-1rb" id="qg7-kl-sub"/>

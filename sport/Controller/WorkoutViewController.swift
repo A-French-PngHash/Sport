@@ -11,12 +11,14 @@ import AVFoundation
 
 class WorkoutViewController: UIViewController {
 
+    //MARK: - View And Interface Outlets
     @IBOutlet weak var timeAndStatusView: UIView!
     @IBOutlet weak var informationView: UIView!
     @IBOutlet weak var workoutImageView: UIImageView!
     @IBOutlet weak var workoutNavigationBar: UINavigationBar!
     @IBOutlet weak var restView: UIView!
     
+    //MARK: - Other Outlets
     @IBOutlet weak var sportNameLabel: UILabel!
     @IBOutlet weak var sportDetailLabel: UILabel!
     @IBOutlet weak var setsDoneLabel: UILabel!
@@ -28,14 +30,18 @@ class WorkoutViewController: UIViewController {
     @IBOutlet weak var previousSportButton: UIButton!
     @IBOutlet weak var nextSportButton: UIButton!
     @IBOutlet weak var repsLabel: UILabel!
+    @IBOutlet weak var endInLabel: UILabel!
+    @IBOutlet weak var endInTimerLabel: UILabel!
     
+    //MARK: - Variables
     var workoutName : String!
     var session : SportSession!
     var beginSessiondate : Double!
     var currentImageDisplayedIndex : Int = 0
     var player : AVAudioPlayer?
-    var timers : Array<Timer>! //Used to shutdown / start timer when app become inactive or rebecome active
+    var timers : Array<Timer>! //Used to shutdown/start all timers when app become inactive or rebecome active
     var dataUpdateTimer : Timer!
+    
     var anounceWorkoutPlayer : AVQueuePlayer!
     var anounceRestPlayer : AVQueuePlayer!
     
@@ -44,6 +50,7 @@ class WorkoutViewController: UIViewController {
     let numberOfAnounceRestAudioFileToPlay = 4
     var notificationObserver : NSObjectProtocol?
     
+    //MARK: - IBActions
     @IBAction func cancelButtonClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -54,6 +61,7 @@ class WorkoutViewController: UIViewController {
         session.executeTransitionToNextSport()
     }
     
+    //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
@@ -116,6 +124,9 @@ class WorkoutViewController: UIViewController {
             if self.session.currentState == .anouncingWorkout {
                 if self.numberOfAnounceWorkoutAudioFileToPlay == self.numberOfAudioFilesPlayed {
                     self.session.currentState = .doingWorkout
+                    if self.session.currentSportType == "t" {
+                        self.session.sportBeganAt = Date.Now()
+                    }
                 } else {
                     self.numberOfAudioFilesPlayed += 1
                 }
@@ -139,7 +150,10 @@ class WorkoutViewController: UIViewController {
         }
     }
     
-    func updateButtonStyle() {
+    /*
+     At the right and the left of the current sport name in the interface there is two buttons which enable to jump to the next or to the previous sport. These function put them into a state which make the user understand they are not available (for exemple when you are at the end or at the begining)
+     */
+    private func updateButtonStyle() {
         if session.canGoNextSport {
             nextSportButton.isEnabled = true
         } else {
@@ -152,7 +166,7 @@ class WorkoutViewController: UIViewController {
         }
     }
     
-    func anounceSport() {
+    private func anounceSport() {
         self.numberOfAudioFilesPlayed = 1
         
         do {
@@ -209,12 +223,13 @@ class WorkoutViewController: UIViewController {
             currentImageDisplayedIndex = 1
         } else if currentImageDisplayedIndex == session.currentSport.numberOfImage {
             currentImageDisplayedIndex = 1
-            session.rep()
-            updateViewData()
-            if session.reps != session.totalReps {
-                playSound(named: String(session.reps))
+            if session.currentSportType == "r" {
+                session.rep()
+                if session.reps != session.totalReps {
+                    playSound(named: String(session.reps))
+                }
             }
-            //TODO : Play song
+            updateViewData()
         } else {
             currentImageDisplayedIndex += 1
         }
@@ -233,10 +248,17 @@ class WorkoutViewController: UIViewController {
         if session.currentSportType == "r" {
             self.repsDoneLabel.isHidden = false
             self.repsLabel.isHidden = false
+            
+            self.endInLabel.isHidden = true
+            self.endInTimerLabel.isHidden = true
+            
             self.repsDoneLabel.text = "\(session.reps)/\(session.totalReps!)"
         } else {
             self.repsDoneLabel.isHidden = true
             self.repsLabel.isHidden = true
+            
+            self.endInLabel.isHidden = false
+            self.endInTimerLabel.isHidden = false
         }
         
         let specification = session.currentSport.specification

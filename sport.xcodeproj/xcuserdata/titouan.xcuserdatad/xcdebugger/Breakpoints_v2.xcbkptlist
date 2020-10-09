@@ -32,8 +32,8 @@
             timestampString = "617381115.335974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -66,8 +66,8 @@
             timestampString = "617381115.3360569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "updateTimerLabel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -83,8 +83,8 @@
             timestampString = "617381115.336098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -100,9 +100,9 @@
             timestampString = "617377765.744715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "executeTransitionToNextSport()"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "goNextSport()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -145,8 +145,8 @@
             timestampString = "617381115.336215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "tick()"
             landmarkType = "7">
          </BreakpointContent>
@@ -162,8 +162,8 @@
             timestampString = "617381115.336259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "playSound(named:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -179,8 +179,8 @@
             timestampString = "617381115.3362989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -196,8 +196,8 @@
             timestampString = "617381115.336336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -213,8 +213,8 @@
             timestampString = "617381115.336372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -230,8 +230,8 @@
             timestampString = "617381115.336422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -247,8 +247,8 @@
             timestampString = "617381115.336458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -264,8 +264,8 @@
             timestampString = "617381115.336495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -281,8 +281,8 @@
             timestampString = "617381115.33653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,8 +298,8 @@
             timestampString = "617381115.336565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,9 +314,9 @@
             filePath = "sport/Model/Session.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "beginRest()"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "executeTransitionToPreviousSport()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
