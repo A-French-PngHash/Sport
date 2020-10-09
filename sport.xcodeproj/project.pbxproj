@@ -76,7 +76,7 @@
 		5BD34445252F4B51007BC7A2 /* 32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34422252F4B50007BC7A2 /* 32.mp3 */; };
 		5BD34446252F4B51007BC7A2 /* 34.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34423252F4B51007BC7A2 /* 34.mp3 */; };
 		5BF66E3E2530CE9300240674 /* Hottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF66E3D2530CE9300240674 /* Hottie.swift */; };
-		5BF66E422530CEA200240674 /* UpperBody#1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF66E412530CEA200240674 /* UpperBody#1.swift */; };
+		5BF66E422530CEA200240674 /* UpperBody #1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF66E412530CEA200240674 /* UpperBody #1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,7 +151,7 @@
 		5BD34422252F4B50007BC7A2 /* 32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 32.mp3; sourceTree = "<group>"; };
 		5BD34423252F4B51007BC7A2 /* 34.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 34.mp3; sourceTree = "<group>"; };
 		5BF66E3D2530CE9300240674 /* Hottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hottie.swift; sourceTree = "<group>"; };
-		5BF66E412530CEA200240674 /* UpperBody#1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpperBody#1.swift"; sourceTree = "<group>"; };
+		5BF66E412530CEA200240674 /* UpperBody #1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpperBody #1.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				5BF66E3D2530CE9300240674 /* Hottie.swift */,
-				5BF66E412530CEA200240674 /* UpperBody#1.swift */,
+				5BF66E412530CEA200240674 /* UpperBody #1.swift */,
 			);
 			path = Workouts;
 			sourceTree = "<group>";
@@ -467,7 +467,7 @@
 				5B30F85724B9CA500095D2ED /* Bodyweight Pull In Lying.swift in Sources */,
 				5BD343EA252F2208007BC7A2 /* Bodyweight Squat.swift in Sources */,
 				5B30F85524B9CA2A0095D2ED /* Bodyweight Heel Touch.swift in Sources */,
-				5BF66E422530CEA200240674 /* UpperBody#1.swift in Sources */,
+				5BF66E422530CEA200240674 /* UpperBody #1.swift in Sources */,
 				5B30F85924B9CA810095D2ED /* Bodyweight Plank Side.swift in Sources */,
 				5B30F85324B9C9B00095D2ED /* Bodyweight Butt ups.swift in Sources */,
 				5B30F85124B9C7090095D2ED /* BodyweightCrunchCrossBody.swift in Sources */,

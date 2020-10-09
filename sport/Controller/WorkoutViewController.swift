@@ -27,6 +27,7 @@ class WorkoutViewController: UIViewController {
     @IBOutlet weak var workoutProgressView: UIProgressView!
     @IBOutlet weak var previousSportButton: UIButton!
     @IBOutlet weak var nextSportButton: UIButton!
+    @IBOutlet weak var repsLabel: UILabel!
     
     var workoutName : String!
     var session : SportSession!
@@ -100,9 +101,7 @@ class WorkoutViewController: UIViewController {
             self.restView.isHidden = true
             self.workoutImageView.isHidden = false
             
-            let interval = self.session.currentSport.intervalBetweenReps
-            let numberImage = self.session.currentSport.numberOfImage
-            let secondsForEachImage : Float = interval / Float(numberImage)
+            let secondsForEachImage : Float = self.session.secondsForEachImageCurrentSport()
             self.dataUpdateTimer.invalidate()
             self.dataUpdateTimer = Timer.scheduledTimer(withTimeInterval : TimeInterval(secondsForEachImage), repeats: true) { (_) in
                 self.tick()
@@ -168,11 +167,19 @@ class WorkoutViewController: UIViewController {
         let item1 = AVPlayerItem.init(url: Bundle.main.url(forResource: session.currentSport.nameOfSoundFile, withExtension: "mp3")!)
         let item2 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.currentSport.numberOfSets), withExtension: "mp3")!)
         let item3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "series", withExtension: "mp3")!)
-        let item4 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.currentSport.numberOfReps), withExtension: "mp3")!)
+        
+        var numberOfReps : AVPlayerItem?
+        if let sport = session.currentSport as? SportWithReps {
+            numberOfReps = AVPlayerItem.init(url: Bundle.main.url(forResource: String(sport.numberOfReps), withExtension: "mp3")!)
+        }
+        
         let item5 = AVPlayerItem.init(url: Bundle.main.url(forResource: "repetitions", withExtension: "mp3")!)
         let item6 = AVPlayerItem.init(url: Bundle.main.url(forResource: "GetReadyAnd", withExtension: "mp3")!)
         
-        let itemsToPlay = [item0, item1, item2, item3, item4, item5, item6]
+        var itemsToPlay : Array<AVPlayerItem> = []
+        if session.currentSportType == "r" {
+            itemsToPlay = [item0, item1, item2, item3, numberOfReps!, item5, item6]
+        }
         anounceWorkoutPlayer = AVQueuePlayer(items: itemsToPlay)
         
         anounceWorkoutPlayer.play()
@@ -220,10 +227,17 @@ class WorkoutViewController: UIViewController {
         }
     }
     
-    func updateViewData(){
+    private func updateViewData(){
         updateTimerLabel()
         self.setsDoneLabel.text = "\(session.sets)/\(session.totalSets)"
-        self.repsDoneLabel.text = "\(session.reps)/\(session.totalReps)"
+        if session.currentSportType == "r" {
+            self.repsDoneLabel.isHidden = false
+            self.repsLabel.isHidden = false
+            self.repsDoneLabel.text = "\(session.reps)/\(session.totalReps!)"
+        } else {
+            self.repsDoneLabel.isHidden = true
+            self.repsLabel.isHidden = true
+        }
         
         let specification = session.currentSport.specification
         if specification != "" {
@@ -272,7 +286,7 @@ class WorkoutViewController: UIViewController {
         }
     }
     
-    func playSound(named name: String) {
+    private func playSound(named name: String) {
         guard let url = Bundle.main.url(forResource: name, withExtension: "mp3") else { return }
         
         do {

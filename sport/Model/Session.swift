@@ -64,18 +64,21 @@ class SportSession {
         self.sports = workout.sports
         reps = 0
         sets = 1
-        totalSets = currentSport.numberOfSets
         totalSessionTime = 0
         currentState = .doingWorkout
+        totalSessionTime += Float(workout.pauseBetweenSports * workout.sports.count - 1)
+        self.pauseBetweenSport = workout.pauseBetweenSports
+        self.timeUntilEndOfPause = 0
+        
+        // We have to define this variable with a value defined without any use of a calculated property before setting it to something else
+        self.totalSets = 0
+        totalSets = currentSport.numberOfSets
         
         if currentSportType == "r" {
             let sportWithRep = currentSport as! SportWithReps
             self.totalReps = sportWithRep.numberOfReps
         }
         calculateTotalSessionTime()
-        totalSessionTime += Float(workout.pauseBetweenSports * workout.sports.count - 1)
-        self.pauseBetweenSport = workout.pauseBetweenSports
-        self.timeUntilEndOfPause = 0
     }
     
     /*
