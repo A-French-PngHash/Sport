@@ -24,8 +24,6 @@ class BodyweightSquat : SportWithReps
     
     var nameOfSoundFile: String = "BodyweightSquat"
     
-    var needTimer: Bool = false
-    
     required init(numberOfReps: Int, numberOfSets: Int) {
         self.numberOfReps = numberOfReps
         self.numberOfSets = numberOfSets

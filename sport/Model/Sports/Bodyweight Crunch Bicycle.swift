@@ -10,7 +10,6 @@ import Foundation
 
 class BodyweightCrunchBicycle : SportWithReps {
     var numberOfReps: Int
-    var needTimer = false
     var numberOfSets: Int
     
     required init(numberOfReps: Int, numberOfSets: Int) {

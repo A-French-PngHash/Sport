@@ -25,7 +25,7 @@ class SportSession {
     
     // Hold the date in UNIX format when the sport started
     var sportBeganAt : Double?
-    var timeUntilSportEnd : Int?
+    var timeOfTheExercise : Double?
     
     var currentSport : SportProtocol {
         get {
@@ -64,6 +64,25 @@ class SportSession {
         }
     }
     
+    // Calculated property for sport with timers
+    var timeUntilSportEnd : Double? {
+        get {
+            guard let _ = sportBeganAt as? SportWithTimer else {
+                return nil
+            }
+            return Double(60) - (Date().timeIntervalSince1970 - sportBeganAt!)
+        }
+    }
+    
+    var sportWithTimerCompleted : Bool? {
+        get {
+            guard let _ = timeUntilSportEnd else {
+                return nil
+            }
+            return timeUntilSportEnd! <= 0
+        }
+    }
+    
     init(workout : WorkoutProtocol) {
         self.sports = workout.sports
         reps = 0
@@ -81,7 +100,7 @@ class SportSession {
         if let sportWithRep = currentSport as? SportWithReps{
             self.totalReps = sportWithRep.numberOfReps
         } else if let sportWithTimer = currentSport as? SportWithTimer{
-            self.timeUntilSportEnd = sportWithTimer.timeOfTheExercise
+            self.timeOfTheExercise = Double(sportWithTimer.timeOfTheExercise)
         }
         calculateTotalSessionTime()
     }
@@ -125,13 +144,18 @@ class SportSession {
         //Called when we need to add one rep done
         reps += 1
         if reps == totalReps{
-            if sets == totalSets {
-                goNextSport()
-            } else {
-                
-                sets += 1
-                reps = 0
-            }
+            setCompleted()
+        }
+    }
+    
+    func setCompleted() {
+        // Sport begin at set 1
+        
+        if sets == totalSets {
+            goNextSport()
+        } else {
+            sets += 1
+            reps = 0
         }
     }
     

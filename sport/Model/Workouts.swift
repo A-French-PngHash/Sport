@@ -19,8 +19,9 @@ class Workouts{
     static let shared = Workouts()
     private init() {
         let hottie = Hottie()
-        self.allWorkouts = [hottie]
-        self.allWorkoutsNames = [hottie.name]
+        let upperBody1 = UperBodyOne()
+        self.allWorkouts = [hottie, upperBody1]
+        self.allWorkoutsNames = [hottie.name, upperBody1.name]
     }
     
     var allWorkoutsNames : Array<String>

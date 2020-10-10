@@ -16,7 +16,6 @@ class BodyweightPlankSide : SportWithReps {
     var specification: String = "Side"
     var numberOfReps: Int
     var numberOfSets: Int
-    var needTimer = true
     
     required init(numberOfReps: Int, numberOfSets: Int) {
         self.numberOfReps = numberOfReps

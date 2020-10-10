@@ -14,11 +14,7 @@ protocol SportProtocol{
     var numberOfSets : Int { get }
     var numberOfImage : Int { get }
     var nameOfSoundFile : String { get }
-    var needTimer : Bool { get } // not used for the momen
     
-
-    
-    init(numberOfReps : Int, numberOfSets : Int)
 }
 
 /*
@@ -26,8 +22,9 @@ protocol SportProtocol{
  */
 protocol SportWithTimer : SportProtocol{
     var timeOfTheExercise : Int { get }
-    // Because we don't know how long a rep is we can't calculate the time between each images so it has to be given
+    // Because we don't know how long a rep is, we can't calculate the time between each images so it has to be given
     var intervalBetweenImages : Int { get }
+    init(numberOfSets : Int)
 }
 
 /*
@@ -36,4 +33,5 @@ protocol SportWithTimer : SportProtocol{
 protocol SportWithReps : SportProtocol {
     var numberOfReps : Int { get }
     var intervalBetweenReps : Float { get }
+    init(numberOfReps : Int, numberOfSets : Int)
 }

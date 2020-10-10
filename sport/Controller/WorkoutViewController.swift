@@ -79,8 +79,7 @@ class WorkoutViewController: UIViewController {
         
         let secondsForEachImage = session.secondsForEachImageCurrentSport()
             
-        workoutImageView.isHidden = false
-        restView.isHidden = true
+        restEnded()
         
         tick()
         updateViewData()
@@ -96,7 +95,7 @@ class WorkoutViewController: UIViewController {
         }
         
         let timerTimeLabel = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.1), repeats: true) { (_) in
-            self.updateTimerLabel()
+            self.updateTimersLabels()
         }
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "RestReadyToBegin"), object: nil, queue: nil) { (_) in
@@ -106,8 +105,7 @@ class WorkoutViewController: UIViewController {
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "RestEnded"), object: nil, queue: nil) { (_) in
             self.updateButtonStyle()
-            self.restView.isHidden = true
-            self.workoutImageView.isHidden = false
+            self.restEnded()
             
             let secondsForEachImage : Float = self.session.secondsForEachImageCurrentSport()
             self.dataUpdateTimer.invalidate()
@@ -125,7 +123,7 @@ class WorkoutViewController: UIViewController {
                 if self.numberOfAnounceWorkoutAudioFileToPlay == self.numberOfAudioFilesPlayed {
                     self.session.currentState = .doingWorkout
                     if self.session.currentSportType == "t" {
-                        self.session.sportBeganAt = Date.Now()
+                        self.session.sportBeganAt = Date().timeIntervalSince1970
                     }
                 } else {
                     self.numberOfAudioFilesPlayed += 1
@@ -151,6 +149,28 @@ class WorkoutViewController: UIViewController {
     }
     
     /*
+     Called when the rest ended. Show or hide buttons depending on the sport.
+     */
+    private func restEnded() {
+        self.restView.isHidden = true
+        self.workoutImageView.isHidden = false
+        
+        if session.currentSportType == "r" {
+            self.repsDoneLabel.isHidden = false
+            self.repsLabel.isHidden = false
+            
+            self.endInLabel.isHidden = true
+            self.endInTimerLabel.isHidden = true
+        } else {
+            self.repsDoneLabel.isHidden = true
+            self.repsLabel.isHidden = true
+            
+            self.endInLabel.isHidden = false
+            self.endInTimerLabel.isHidden = false
+        }
+    }
+    
+    /*
      At the right and the left of the current sport name in the interface there is two buttons which enable to jump to the next or to the previous sport. These function put them into a state which make the user understand they are not available (for exemple when you are at the end or at the begining)
      */
     private func updateButtonStyle() {
@@ -166,6 +186,7 @@ class WorkoutViewController: UIViewController {
         }
     }
     
+    //TODO: - Setup sound Anouncment
     private func anounceSport() {
         self.numberOfAudioFilesPlayed = 1
         
@@ -243,22 +264,11 @@ class WorkoutViewController: UIViewController {
     }
     
     private func updateViewData(){
-        updateTimerLabel()
+        updateTimersLabels()
         self.setsDoneLabel.text = "\(session.sets)/\(session.totalSets)"
+        
         if session.currentSportType == "r" {
-            self.repsDoneLabel.isHidden = false
-            self.repsLabel.isHidden = false
-            
-            self.endInLabel.isHidden = true
-            self.endInTimerLabel.isHidden = true
-            
             self.repsDoneLabel.text = "\(session.reps)/\(session.totalReps!)"
-        } else {
-            self.repsDoneLabel.isHidden = true
-            self.repsLabel.isHidden = true
-            
-            self.endInLabel.isHidden = false
-            self.endInTimerLabel.isHidden = false
         }
         
         let specification = session.currentSport.specification
@@ -280,31 +290,39 @@ class WorkoutViewController: UIViewController {
         
     }
     
-    private func getMinutesAndSecondsFormatted(numberOfSeconds time : Double) -> (String, String) {
-        //Returns two string, the number of minutes and the number of seconds calculated from the number of seconds given as argument
-        var minutes = String(Int((floor((time.truncatingRemainder(dividingBy: 3600)) / 60))))
-        var seconds = String(Int(floor(time - Double(minutes)! * 60)))
-        if minutes.count == 1 {
-            minutes = "0\(minutes)"
-        }
-        if seconds.count == 1 {
-            seconds = "0\(seconds)"
-        }
-        return(minutes, seconds)
-    }
-    
-    private func updateTimerLabel() {
+    /*
+     Update all the different timer in the app :
+        - Timer until rest stop
+        - Timer of global time passed since workout began
+        - Timer for sport who works with a timer
+     */
+    private func updateTimersLabels() {
+        
+        //UPDATE : Global Timer
         let time = Date().timeIntervalSinceReferenceDate - self.beginSessiondate
-        let result = getMinutesAndSecondsFormatted(numberOfSeconds: time)
+        let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds: time)
         
         self.workoutTimeLabel.text = "\(result.0):\(result.1)"
         self.workoutProgressView.progress = Float(time) / session.totalSessionTime
         
+        
+        //UPDATE : Rest Timer
         if session.currentState == .rest {
             let time = session.timeUntilEndOfPause
-            let result = getMinutesAndSecondsFormatted(numberOfSeconds: Double(time))
+            let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds: Double(time))
             
             self.timeUntilEndOfPauseLabel.text = "\(result.0):\(result.1)"
+        }
+        
+        //UPDATE : Timer for Sport With Timer
+        if let time = session.timeUntilSportEnd {
+            let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds:time)
+            self.endInTimerLabel.text = "\(result.0):\(result.1)"
+            
+            // Detect if set is finished
+            if session.sportWithTimerCompleted! {
+                session.setCompleted()
+            }
         }
     }
     

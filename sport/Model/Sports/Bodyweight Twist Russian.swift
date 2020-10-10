@@ -14,7 +14,6 @@ class BodyweightTwist : SportWithReps {
     var intervalBetweenReps: Float = 3
     var numberOfImage: Int = 3
     var nameOfSoundFile: String = "BodyweightTwistRussian"
-    var needTimer = false
     var numberOfReps: Int
     
     var numberOfSets: Int
