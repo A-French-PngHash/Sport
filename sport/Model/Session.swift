@@ -67,10 +67,16 @@ class SportSession {
     // Calculated property for sport with timers
     var timeUntilSportEnd : Double? {
         get {
-            guard let _ = sportBeganAt as? SportWithTimer else {
+            guard let _ = currentSport as? SportWithTimer else {
                 return nil
             }
-            return Double(60) - (Date().timeIntervalSince1970 - sportBeganAt!)
+            if currentState == .doingWorkout {
+                return Double(timeOfTheExercise!) - (Date().timeIntervalSince1970 - sportBeganAt!)
+            } else if currentState == .rest {
+                return 0
+            } else {
+                return timeOfTheExercise
+            }
         }
     }
     
@@ -88,8 +94,9 @@ class SportSession {
         reps = 0
         sets = 1
         totalSessionTime = 0
-        currentState = .doingWorkout
-        totalSessionTime += Float(workout.pauseBetweenSports * workout.sports.count - 1)
+        currentState = .anouncingWorkout
+        // The +10 is for the time spent speaking
+        totalSessionTime += Float((workout.pauseBetweenSports + 10) * workout.sports.count - 1)
         self.pauseBetweenSport = workout.pauseBetweenSports
         self.timeUntilEndOfPause = 0
         
@@ -175,7 +182,6 @@ class SportSession {
             timeUntilEndOfPause = pauseBetweenSport
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "RestReadyToBegin"), object: nil)
-            
         }
     }
     

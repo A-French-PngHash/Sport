@@ -46,9 +46,13 @@ class WorkoutViewController: UIViewController {
     var anounceRestPlayer : AVQueuePlayer!
     
     var numberOfAudioFilesPlayed : Int! // Keeping a track of the number of audio file played in order to know when to switch state
-    let numberOfAnounceWorkoutAudioFileToPlay = 7
-    let numberOfAnounceRestAudioFileToPlay = 4
     var notificationObserver : NSObjectProtocol?
+    
+    /*
+     Both of these variables define the number of audio file that need to be played depending on the situation. These allow us to know when we can continue the workout.
+     */
+    var numberOfAnounceWorkoutAudioFileToPlay = 7
+    var numberOfAnounceRestAudioFileToPlay = 4
     
     //MARK: - IBActions
     @IBAction func cancelButtonClicked(_ sender: Any) {
@@ -187,6 +191,14 @@ class WorkoutViewController: UIViewController {
     }
     
     //TODO: - Setup sound Anouncment
+    /*
+     Anounche the workout with audio. Can either be :
+     SportWithTimer :
+        Now we have [name of the sport]. [X] series, [Y] secondes. Get ready and.
+     SportWithReps :
+        Now we have [name of the sport]. [X] series, [Y] repetitions. Get ready and.
+     
+     */
     private func anounceSport() {
         self.numberOfAudioFilesPlayed = 1
         
@@ -203,21 +215,31 @@ class WorkoutViewController: UIViewController {
         let item2 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.currentSport.numberOfSets), withExtension: "mp3")!)
         let item3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "series", withExtension: "mp3")!)
         
-        var numberOfReps : AVPlayerItem?
+        /*
+         Can either be the number of reps or the number of secondes
+         */
+        var numberOf : AVPlayerItem!
         if let sport = session.currentSport as? SportWithReps {
-            numberOfReps = AVPlayerItem.init(url: Bundle.main.url(forResource: String(sport.numberOfReps), withExtension: "mp3")!)
+            numberOf = AVPlayerItem.init(url: Bundle.main.url(forResource: String(sport.numberOfReps), withExtension: "mp3")!)
+        } else if let sport = session.currentSport as? SportWithTimer {
+            numberOf = AVPlayerItem.init(url: Bundle.main.url(forResource: String(sport.timeOfTheExercise), withExtension: "mp3")!)
         }
         
-        let item5 = AVPlayerItem.init(url: Bundle.main.url(forResource: "repetitions", withExtension: "mp3")!)
+        let repetitions = AVPlayerItem.init(url: Bundle.main.url(forResource: "repetitions", withExtension: "mp3")!)
+        
+        let secondes = AVPlayerItem.init(url: Bundle.main.url(forResource: "secondes", withExtension: "mp3")!)
+        
         let item6 = AVPlayerItem.init(url: Bundle.main.url(forResource: "GetReadyAnd", withExtension: "mp3")!)
         
-        var itemsToPlay : Array<AVPlayerItem> = []
+        var itemsToPlay : Array<AVPlayerItem>
         if session.currentSportType == "r" {
-            itemsToPlay = [item0, item1, item2, item3, numberOfReps!, item5, item6]
+            itemsToPlay = [item0, item1, item2, item3, numberOf, repetitions, item6]
+        } else {
+            itemsToPlay = [item0, item1, item2, item3, numberOf, secondes, item6]
         }
         anounceWorkoutPlayer = AVQueuePlayer(items: itemsToPlay)
         
-        anounceWorkoutPlayer.play()
+        anounceWorkoutPlayer.playImmediately(atRate: 1.3)
     }
     
     func anounceAndSetupRest() {
@@ -230,13 +252,23 @@ class WorkoutViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-        let tem0 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!)
-        let tem1 = AVPlayerItem.init(url: Bundle.main.url(forResource: "AwesomeNowRestFor", withExtension: "mp3")!)
-        let tem2 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(self.session.pauseBetweenSport), withExtension: "mp3")!)
-        let tem3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "secondes", withExtension: "mp3")!)
-        anounceRestPlayer = AVQueuePlayer(items: [tem0, tem1, tem2, tem3])
+        var item0 : AVPlayerItem?
+        if session.currentSportType == "r" {
+            // Saying the last rep.
+            item0 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!)
+        }
+        let item1 = AVPlayerItem.init(url: Bundle.main.url(forResource: "AwesomeNowRestFor", withExtension: "mp3")!)
+        let item2 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(self.session.pauseBetweenSport), withExtension: "mp3")!)
+        let item3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "secondes", withExtension: "mp3")!)
         
-        anounceRestPlayer.play()
+        if session.currentSportType == "r" {
+            numberOfAnounceRestAudioFileToPlay = 4
+            anounceRestPlayer = AVQueuePlayer(items: [item0!, item1, item2, item3])
+        } else {
+            numberOfAnounceRestAudioFileToPlay = 3
+            anounceRestPlayer = AVQueuePlayer(items: [item1, item2, item3])
+        }
+        anounceRestPlayer.playImmediately(atRate: 1.3)
     }
     
     func tick() {
@@ -315,14 +347,16 @@ class WorkoutViewController: UIViewController {
         }
         
         //UPDATE : Timer for Sport With Timer
-        if let time = session.timeUntilSportEnd {
+        // This variable is nil if the actual sport is not a sport with timer
+        if let time = session.timeUntilSportEnd{
             let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds:time)
             self.endInTimerLabel.text = "\(result.0):\(result.1)"
             
             // Detect if set is finished
-            if session.sportWithTimerCompleted! {
+            if session.sportWithTimerCompleted! && session.currentState != .rest{
                 session.setCompleted()
             }
+
         }
     }
     

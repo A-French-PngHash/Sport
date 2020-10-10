@@ -30,6 +30,8 @@
 		5B30F85924B9CA810095D2ED /* Bodyweight Plank Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F85824B9CA810095D2ED /* Bodyweight Plank Side.swift */; };
 		5B30F85B24B9CF710095D2ED /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F85A24B9CF710095D2ED /* Workouts.swift */; };
 		5B8862CA24BF5B2900B057D5 /* workoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8862C924BF5B2900B057D5 /* workoutState.swift */; };
+		5B99815A25321AC60056197B /* TrainingCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99815925321AC60056197B /* TrainingCalculator.swift */; };
+		5B99815E25321C7B0056197B /* Sport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B99815C25321C7B0056197B /* Sport.xcdatamodeld */; };
 		5B9A52BC24BA5293007A0622 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A52BB24BA5293007A0622 /* WorkoutViewController.swift */; };
 		5B9CA96D2531A28700101AA8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CA96C2531A28700101AA8 /* DateExtension.swift */; };
 		5B9CA9702531AAA600101AA8 /* Bodyweight Push Ups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9CA96F2531AAA600101AA8 /* Bodyweight Push Ups.swift */; };
@@ -107,6 +109,8 @@
 		5B30F85824B9CA810095D2ED /* Bodyweight Plank Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bodyweight Plank Side.swift"; sourceTree = "<group>"; };
 		5B30F85A24B9CF710095D2ED /* Workouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workouts.swift; sourceTree = "<group>"; };
 		5B8862C924BF5B2900B057D5 /* workoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutState.swift; sourceTree = "<group>"; };
+		5B99815925321AC60056197B /* TrainingCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCalculator.swift; sourceTree = "<group>"; };
+		5B99815D25321C7B0056197B /* Sport.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sport.xcdatamodel; sourceTree = "<group>"; };
 		5B9A52BB24BA5293007A0622 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		5B9CA96C2531A28700101AA8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		5B9CA96F2531AAA600101AA8 /* Bodyweight Push Ups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bodyweight Push Ups.swift"; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 				5B30F84924B8ED450095D2ED /* SportProtocol.swift */,
 				5B8862C924BF5B2900B057D5 /* workoutState.swift */,
 				5B30F85A24B9CF710095D2ED /* Workouts.swift */,
+				5B99815925321AC60056197B /* TrainingCalculator.swift */,
+				5B99815C25321C7B0056197B /* Sport.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -469,6 +475,7 @@
 				5B30F84824B8ECA00095D2ED /* Session.swift in Sources */,
 				5B9A52BC24BA5293007A0622 /* WorkoutViewController.swift in Sources */,
 				5B30F84A24B8ED450095D2ED /* SportProtocol.swift in Sources */,
+				5B99815A25321AC60056197B /* TrainingCalculator.swift in Sources */,
 				5B30F84F24B9C60C0095D2ED /* Bodyweight Crunch Bicycle.swift in Sources */,
 				5B9CA96D2531A28700101AA8 /* DateExtension.swift in Sources */,
 				5B9CA9702531AAA600101AA8 /* Bodyweight Push Ups.swift in Sources */,
@@ -476,6 +483,7 @@
 				5BD343EA252F2208007BC7A2 /* Bodyweight Squat.swift in Sources */,
 				5B30F85524B9CA2A0095D2ED /* Bodyweight Heel Touch.swift in Sources */,
 				5BF66E422530CEA200240674 /* UpperBody #1.swift in Sources */,
+				5B99815E25321C7B0056197B /* Sport.xcdatamodeld in Sources */,
 				5B30F85924B9CA810095D2ED /* Bodyweight Plank Side.swift in Sources */,
 				5B30F85324B9C9B00095D2ED /* Bodyweight Butt ups.swift in Sources */,
 				5B30F85124B9C7090095D2ED /* BodyweightCrunchCrossBody.swift in Sources */,
@@ -688,6 +696,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5B99815C25321C7B0056197B /* Sport.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5B99815D25321C7B0056197B /* Sport.xcdatamodel */,
+			);
+			currentVersion = 5B99815D25321C7B0056197B /* Sport.xcdatamodel */;
+			path = Sport.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5B30F82424B8EC2B0095D2ED /* Project object */;
 }
