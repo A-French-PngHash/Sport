@@ -25,5 +25,5 @@ class Superman : SportWithTimer {
     
     var numberOfImage: Int = 12
     
-    var nameOfSoundFile: String = ""
+    var nameOfSoundFile: String = "Superman"
 }

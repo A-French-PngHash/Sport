@@ -17,6 +17,10 @@ class WorkoutViewController: UIViewController {
     @IBOutlet weak var workoutImageView: UIImageView!
     @IBOutlet weak var workoutNavigationBar: UINavigationBar!
     @IBOutlet weak var restView: UIView!
+    /*
+     Contain the images, the timer if needed...
+     */
+    @IBOutlet weak var sportContentView: UIView!
     
     //MARK: - Other Outlets
     @IBOutlet weak var sportNameLabel: UILabel!
@@ -140,7 +144,7 @@ class WorkoutViewController: UIViewController {
                 if self.numberOfAnounceRestAudioFileToPlay == self.numberOfAudioFilesPlayed {
                     self.session.beginRest()
                     self.restView.isHidden = false
-                    self.workoutImageView.isHidden = true
+                    self.sportContentView.isHidden = true
                 } else {
                     self.numberOfAudioFilesPlayed += 1
                 }
@@ -161,7 +165,7 @@ class WorkoutViewController: UIViewController {
      */
     private func restEnded() {
         self.restView.isHidden = true
-        self.workoutImageView.isHidden = false
+        self.sportContentView.isHidden = false
         
         if session.currentSportType == "r" {
             self.repsDoneLabel.isHidden = false
