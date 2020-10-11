@@ -24,7 +24,7 @@ protocol SportWithTimer : SportProtocol{
     var timeOfTheExercise : Int { get }
     // Because we don't know how long a rep is, we can't calculate the time between each images so it has to be given
     var intervalBetweenImages : Float { get }
-    init(numberOfSets : Int)
+    init(numberOfSets : Int, timeOfTheExercise : Int)
 }
 
 /*

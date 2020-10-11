@@ -10,10 +10,11 @@ import Foundation
 class MountainClimber : SportWithTimer {
     var timeOfTheExercise: Int = 60
     
-    var intervalBetweenImages: Float = 0.2
+    var intervalBetweenImages: Float = 0.3
     
-    required init(numberOfSets: Int) {
+    required init(numberOfSets: Int, timeOfTheExercise : Int) {
         self.numberOfSets = numberOfSets
+        self.timeOfTheExercise = timeOfTheExercise
     }
     
     var name: String = "Mountain Climber"
@@ -24,6 +25,6 @@ class MountainClimber : SportWithTimer {
     
     var numberOfImage: Int = 9
     
-    var nameOfSoundFile: String
+    var nameOfSoundFile: String = "Mountain Climber"
 
 }

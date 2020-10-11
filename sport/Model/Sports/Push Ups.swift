@@ -11,21 +11,20 @@ import Foundation
 class PushUps : SportWithTimer {
     var timeOfTheExercise: Int = 10
     
-    var intervalBetweenImages: Float = 2
+    var intervalBetweenImages: Float = 0.3
     
-    var name: String = "Push Ups"
+    var name: String = "Push Up"
     
     var specification: String = ""
     
     var numberOfSets: Int
     
-    var numberOfImage: Int = 2
+    var numberOfImage: Int = 10
     
-    var nameOfSoundFile: String = "BodyweightButtUps"
+    var nameOfSoundFile: String = "Push Up"
     
-    required init(numberOfSets: Int) {
+    required init(numberOfSets: Int, timeOfTheExercise : Int) {
         self.numberOfSets = numberOfSets
+        self.timeOfTheExercise = timeOfTheExercise
     }
-    
-    
 }

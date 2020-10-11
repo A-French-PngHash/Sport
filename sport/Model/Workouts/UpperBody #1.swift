@@ -10,14 +10,14 @@ import Foundation
 
 class UperBodyOne : WorkoutProtocol {
     var sports: Array<SportProtocol> = [
-                                        Burpee(numberOfSets: 1),
-                                        PushUps(numberOfSets: 1),
-                                        BodyweightHeelTouch(numberOfReps: 20, numberOfSets: 1),
-                                        PushUps(numberOfSets: 1),
-                                        PushUps(numberOfSets: 1),
+        HipHingeHighPlank(numberOfSets: 1, timeOfTheExercise: 60),
+        PushUps(numberOfSets: 1, timeOfTheExercise: 60),
+        Plank(numberOfSets: 1, timeOfTheExercise: 60),
+        SidePlankNeedle(numberOfSets: 1, timeOfTheExercise: 60),
+        BearCrawl(numberOfSets: 1, timeOfTheExercise: 60)
                                         ]
     
-    var name: String = "Uper Body"
+    var name: String = "Upper Body #1"
     
     var pauseBetweenSports: Int = 5
     

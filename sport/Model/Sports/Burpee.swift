@@ -11,10 +11,11 @@ import Foundation
 class Burpee : SportWithTimer{
     var timeOfTheExercise: Int = 30
     
-    var intervalBetweenImages: Float = 0.2
+    var intervalBetweenImages: Float = 0.3
     
-    required init(numberOfSets: Int) {
+    required init(numberOfSets: Int, timeOfTheExercise : Int) {
         self.numberOfSets = numberOfSets
+        self.timeOfTheExercise = timeOfTheExercise
     }
     
     var name: String = "Burpee"
@@ -25,6 +26,6 @@ class Burpee : SportWithTimer{
     
     var numberOfImage: Int = 21
     
-    var nameOfSoundFile: String = "BodyweightHeelTouch"
+    var nameOfSoundFile: String = "Burpee"
 }
 

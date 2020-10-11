@@ -68,6 +68,10 @@ class WorkoutViewController: UIViewController {
     //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //workoutNavigationBar.setGradientBackground(colors: [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)])
+        //informationView.layer.cornerRadius = 20
+        
         UIApplication.shared.isIdleTimerDisabled = true
         timeAndStatusView.layer.cornerRadius = 5
         workoutNavigationBar.topItem?.title = self.workoutName
@@ -281,17 +285,21 @@ class WorkoutViewController: UIViewController {
                 if session.reps != session.totalReps {
                     playSound(named: String(session.reps))
                 }
+                updateViewData()
             }
-            updateViewData()
         } else {
             currentImageDisplayedIndex += 1
         }
         
         let specification = session.currentSport.specification
         if specification != "" {
-            self.workoutImageView.image = UIImage(named: "\(self.session.currentSport.name) (\(self.session.currentSport.specification)) \(self.currentImageDisplayedIndex)")
+            if let image = UIImage(named: "\(self.session.currentSport.name) (\(self.session.currentSport.specification)) \(self.currentImageDisplayedIndex)"){
+                self.workoutImageView.image = image.drawOutlie(imageKeof: 1.015, color: .black)
+            }
         } else {
-            self.workoutImageView.image = UIImage(named: "\(self.session.currentSport.name) \(self.currentImageDisplayedIndex)")
+            if let image = UIImage(named: "\(self.session.currentSport.name) \(self.currentImageDisplayedIndex)") {
+                self.workoutImageView.image = image.drawOutlie(imageKeof: 1.015, color: .black)
+            }
         }
     }
     
@@ -306,6 +314,8 @@ class WorkoutViewController: UIViewController {
         let specification = session.currentSport.specification
         if specification != "" {
             self.sportDetailLabel.text = "(" + session.currentSport.specification + ")"
+        } else {
+            self.sportDetailLabel.text = ""
         }
         
         if session.nextSport == nil {
@@ -318,8 +328,6 @@ class WorkoutViewController: UIViewController {
         }
         
         self.sportNameLabel.text = session.currentSport.name
-        
-        
     }
     
     /*

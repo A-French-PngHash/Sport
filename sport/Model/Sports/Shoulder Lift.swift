@@ -10,10 +10,11 @@ import Foundation
 class ShoulderLift : SportWithTimer {
     var timeOfTheExercise: Int = 60
     
-    var intervalBetweenImages: Float = 0.2
+    var intervalBetweenImages: Float = 0.4
     
-    required init(numberOfSets: Int) {
+    required init(numberOfSets: Int, timeOfTheExercise : Int) {
         self.numberOfSets = numberOfSets
+        self.timeOfTheExercise = timeOfTheExercise
     }
     
     var name: String = "Shoulder Lift"
@@ -24,6 +25,6 @@ class ShoulderLift : SportWithTimer {
     
     var numberOfImage: Int = 4
     
-    var nameOfSoundFile: String
+    var nameOfSoundFile: String = "Shoulder Lift"
 
 }

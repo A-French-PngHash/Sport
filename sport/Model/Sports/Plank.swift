@@ -12,8 +12,9 @@ class Plank : SportWithTimer {
     
     var intervalBetweenImages: Float = 1
     
-    required init(numberOfSets: Int) {
+    required init(numberOfSets: Int, timeOfTheExercise : Int) {
         self.numberOfSets = numberOfSets
+        self.timeOfTheExercise = timeOfTheExercise
     }
     
     var name: String = "Plank"
@@ -24,6 +25,6 @@ class Plank : SportWithTimer {
     
     var numberOfImage: Int = 1
     
-    var nameOfSoundFile: String
+    var nameOfSoundFile: String = "Plank"
 
 }

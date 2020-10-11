@@ -20,8 +20,9 @@ class Workouts{
     private init() {
         let hottie = Hottie()
         let upperBody1 = UperBodyOne()
-        self.allWorkouts = [hottie, upperBody1]
-        self.allWorkoutsNames = [hottie.name, upperBody1.name]
+        let upperBody2 = UpperBodyTwo()
+        self.allWorkouts = [hottie, upperBody1, upperBody2]
+        self.allWorkoutsNames = [hottie.name, upperBody1.name, upperBody2.name]
     }
     
     var allWorkoutsNames : Array<String>
