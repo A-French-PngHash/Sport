@@ -312,6 +312,7 @@ class WorkoutViewController: UIViewController {
     private func anounceNextSet() {
         self.numberOfAudioFilesPlayed = 1
         
+        
         let fantastic = AVPlayerItem.init(url: Bundle.main.url(forResource: "Fantastic", withExtension: "mp3")!)
         let nowPrepare = AVPlayerItem.init(url: Bundle.main.url(forResource: "NowPrepareForTheNextSet", withExtension: "mp3")!)
         let set = AVPlayerItem.init(url: Bundle.main.url(forResource: "Set", withExtension: "mp3")!)
@@ -321,14 +322,29 @@ class WorkoutViewController: UIViewController {
         let getReady = AVPlayerItem.init(url: Bundle.main.url(forResource: "GetReadyAnd", withExtension: "mp3")!)
         
         itemsToPlay = [fantastic, nowPrepare, set, actualSetNumber, of, totalSetNumber, getReady]
+        if session.currentSportType == "r" {
+            // Saying the last rep.
+            itemsToPlay.insert(AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!), at: 0)
+        }
         queuePlayer = AVQueuePlayer(items: itemsToPlay)
         print("passed one")
         queuePlayer.playImmediately(atRate: 1)
     }
     
+    
     private func anounceEnd() {
         self.numberOfAudioFilesPlayed = 1
-        print("end")
+        
+        let end = AVPlayerItem.init(url: Bundle.main.url(forResource: "End", withExtension: "mp3")!)
+        
+        itemsToPlay = [end]
+        if session.currentSportType == "r" {
+            // Saying the last rep.
+            itemsToPlay.insert(AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!), at: 0)
+        }
+        
+        queuePlayer = AVQueuePlayer(items: itemsToPlay)
+        queuePlayer.playImmediately(atRate: 1)
     }
     
     func tick() {

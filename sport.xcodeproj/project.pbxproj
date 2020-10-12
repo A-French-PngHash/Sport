@@ -45,6 +45,7 @@
 		5B4C393D25331AA90082F52B /* Superman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B4C393C25331AA90082F52B /* Superman.mp3 */; };
 		5B4C394425331CC20082F52B /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C394325331CC20082F52B /* PlayerView.swift */; };
 		5B4C394825331CCB0082F52B /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C394725331CCB0082F52B /* VideoPlayer.swift */; };
+		5B5D980225349B68006E4A17 /* End.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B5D980125349B68006E4A17 /* End.mp3 */; };
 		5B82427525339A370085C879 /* Fantastic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B82427125339A360085C879 /* Fantastic.mp3 */; };
 		5B82427625339A370085C879 /* Set.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B82427225339A370085C879 /* Set.mp3 */; };
 		5B82427725339A370085C879 /* NowPrepareForTheNextSet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B82427325339A370085C879 /* NowPrepareForTheNextSet.mp3 */; };
@@ -153,6 +154,7 @@
 		5B4C393C25331AA90082F52B /* Superman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Superman.mp3; sourceTree = "<group>"; };
 		5B4C394325331CC20082F52B /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		5B4C394725331CCB0082F52B /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		5B5D980125349B68006E4A17 /* End.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = End.mp3; sourceTree = "<group>"; };
 		5B82427125339A360085C879 /* Fantastic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fantastic.mp3; sourceTree = "<group>"; };
 		5B82427225339A370085C879 /* Set.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Set.mp3; sourceTree = "<group>"; };
 		5B82427325339A370085C879 /* NowPrepareForTheNextSet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NowPrepareForTheNextSet.mp3; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			children = (
 				5B82427125339A360085C879 /* Fantastic.mp3 */,
 				5B82427325339A370085C879 /* NowPrepareForTheNextSet.mp3 */,
+				5B5D980125349B68006E4A17 /* End.mp3 */,
 				5B82427425339A370085C879 /* Of.mp3 */,
 				5B82427225339A370085C879 /* Set.mp3 */,
 				5BD343F1252F471D007BC7A2 /* AwesomeNowRestFor.mp3 */,
@@ -516,6 +519,7 @@
 				5BD34426252F4B51007BC7A2 /* 15.mp3 in Resources */,
 				5BD34436252F4B51007BC7A2 /* 19.mp3 in Resources */,
 				5B4C3915253260260082F52B /* Burpee.mp3 in Resources */,
+				5B5D980225349B68006E4A17 /* End.mp3 in Resources */,
 				5BD343F3252F471D007BC7A2 /* series.mp3 in Resources */,
 				5BD34427252F4B51007BC7A2 /* 12.mp3 in Resources */,
 				5BD34431252F4B51007BC7A2 /* 10.mp3 in Resources */,
