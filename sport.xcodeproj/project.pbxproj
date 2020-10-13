@@ -43,8 +43,6 @@
 		5B4C39372532F6C60082F52B /* UpperBody #2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C39362532F6C60082F52B /* UpperBody #2.swift */; };
 		5B4C393A2532F6F60082F52B /* Superman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C39392532F6F60082F52B /* Superman.swift */; };
 		5B4C393D25331AA90082F52B /* Superman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B4C393C25331AA90082F52B /* Superman.mp3 */; };
-		5B4C394425331CC20082F52B /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C394325331CC20082F52B /* PlayerView.swift */; };
-		5B4C394825331CCB0082F52B /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C394725331CCB0082F52B /* VideoPlayer.swift */; };
 		5B5D980225349B68006E4A17 /* End.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B5D980125349B68006E4A17 /* End.mp3 */; };
 		5B5D98052535B434006E4A17 /* Arm Circle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B5D98042535B434006E4A17 /* Arm Circle.mp3 */; };
 		5B5D98082535B441006E4A17 /* ArmCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5D98072535B441006E4A17 /* ArmCircle.swift */; };
@@ -153,8 +151,6 @@
 		5B4C39362532F6C60082F52B /* UpperBody #2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpperBody #2.swift"; sourceTree = "<group>"; };
 		5B4C39392532F6F60082F52B /* Superman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Superman.swift; sourceTree = "<group>"; };
 		5B4C393C25331AA90082F52B /* Superman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Superman.mp3; sourceTree = "<group>"; };
-		5B4C394325331CC20082F52B /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		5B4C394725331CCB0082F52B /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		5B5D980125349B68006E4A17 /* End.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = End.mp3; sourceTree = "<group>"; };
 		5B5D98042535B434006E4A17 /* Arm Circle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arm Circle.mp3"; sourceTree = "<group>"; };
 		5B5D98072535B441006E4A17 /* ArmCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmCircle.swift; sourceTree = "<group>"; };
@@ -346,7 +342,6 @@
 		5B30F84224B8EC420095D2ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5B4C394225331CB00082F52B /* Video */,
 				5B30F83124B8EC2B0095D2ED /* ChooseWorkoutViewController.swift */,
 				5B9A52BB24BA5293007A0622 /* WorkoutViewController.swift */,
 				5B9CA96C2531A28700101AA8 /* DateExtension.swift */,
@@ -431,15 +426,6 @@
 				5B4C390A253260250082F52B /* Side Plank Needle.mp3 */,
 			);
 			path = SportNames;
-			sourceTree = "<group>";
-		};
-		5B4C394225331CB00082F52B /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				5B4C394325331CC20082F52B /* PlayerView.swift */,
-				5B4C394725331CCB0082F52B /* VideoPlayer.swift */,
-			);
-			path = Video;
 			sourceTree = "<group>";
 		};
 		5BB256AB24C06213009A2012 /* Lib */ = {
@@ -614,13 +600,11 @@
 				5BF66E422530CEA200240674 /* UpperBody #1.swift in Sources */,
 				5B99815E25321C7B0056197B /* Sport.xcdatamodeld in Sources */,
 				5B30F85924B9CA810095D2ED /* Bodyweight Plank Side.swift in Sources */,
-				5B4C394825331CCB0082F52B /* VideoPlayer.swift in Sources */,
 				5B30F85324B9C9B00095D2ED /* Bodyweight Butt ups.swift in Sources */,
 				5B30F85124B9C7090095D2ED /* BodyweightCrunchCrossBody.swift in Sources */,
 				5B8862CA24BF5B2900B057D5 /* workoutState.swift in Sources */,
 				5B4C39372532F6C60082F52B /* UpperBody #2.swift in Sources */,
 				5BB256AD24C0621D009A2012 /* Sound.swift in Sources */,
-				5B4C394425331CC20082F52B /* PlayerView.swift in Sources */,
 				5BDE07C62532402900CB9459 /* Reverse Fly.swift in Sources */,
 				5BDE07BA25323FD500CB9459 /* Mountain Climber.swift in Sources */,
 				5BDE07BD25323FE100CB9459 /* Hip Hinge High Plank.swift in Sources */,
