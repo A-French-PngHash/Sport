@@ -184,6 +184,8 @@ class SportSession {
         totalSets = currentSport.numberOfSets
         if let sport = currentSport as? SportWithReps {
             totalReps = sport.numberOfReps
+        } else if let sport = currentSport as? SportWithTimer {
+            timeOfTheExercise = Double(sport.timeOfTheExercise)
         }
     }
     

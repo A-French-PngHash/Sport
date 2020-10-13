@@ -16,7 +16,7 @@ class Hottie : WorkoutProtocol{
                                          BodyweightButtUps(numberOfReps: 30, numberOfSets: 1),
                                          BodyweightHeelTouch(numberOfReps: 30, numberOfSets: 1),
                                          BodyweightPullInLying(numberOfReps: 30, numberOfSets: 1),
-                                         BodyweightPlankSide(numberOfReps: 1, numberOfSets: 2),
+                                         BodyweightPlankSide(numberOfSets: 2, timeOfTheExercise: 60),
                                          BodyweightSquat(numberOfReps: 25, numberOfSets: 1)
     ]
     var name = "Workout #1"
