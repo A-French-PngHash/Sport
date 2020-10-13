@@ -10,7 +10,6 @@ import Foundation
 
 class BodyweightPullInLying : SportWithReps {
     var name: String = "Bodyweight Pull In"
-    var needTimer = false
     var intervalBetweenReps: Float = 3
     
     var specification: String = "Lying"

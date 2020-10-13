@@ -19,8 +19,11 @@ class Workouts{
     static let shared = Workouts()
     private init() {
         let hottie = Hottie()
-        self.allWorkouts = [hottie]
-        self.allWorkoutsNames = [hottie.name]
+        let upperBody1 = UperBodyOne()
+        let upperBody2 = UpperBodyTwo()
+        let test = TestMultipleSet()
+        self.allWorkouts = [hottie, upperBody1, upperBody2, test]
+        self.allWorkoutsNames = [hottie.name, upperBody1.name, upperBody2.name, test.name]
     }
     
     var allWorkoutsNames : Array<String>

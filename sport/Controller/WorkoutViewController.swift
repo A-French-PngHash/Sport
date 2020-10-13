@@ -11,12 +11,18 @@ import AVFoundation
 
 class WorkoutViewController: UIViewController {
 
+    //MARK: - View And Interface Outlets
     @IBOutlet weak var timeAndStatusView: UIView!
     @IBOutlet weak var informationView: UIView!
     @IBOutlet weak var workoutImageView: UIImageView!
     @IBOutlet weak var workoutNavigationBar: UINavigationBar!
     @IBOutlet weak var restView: UIView!
+    /*
+     Contain the images, the timer if needed...
+     */
+    @IBOutlet weak var sportContentView: UIView!
     
+    //MARK: - Other Outlets
     @IBOutlet weak var sportNameLabel: UILabel!
     @IBOutlet weak var sportDetailLabel: UILabel!
     @IBOutlet weak var setsDoneLabel: UILabel!
@@ -28,22 +34,53 @@ class WorkoutViewController: UIViewController {
     @IBOutlet weak var previousSportButton: UIButton!
     @IBOutlet weak var nextSportButton: UIButton!
     @IBOutlet weak var repsLabel: UILabel!
+    @IBOutlet weak var endInLabel: UILabel!
+    @IBOutlet weak var endInTimerLabel: UILabel!
     
+    //MARK: - Variables
     var workoutName : String!
     var session : SportSession!
     var beginSessiondate : Double!
     var currentImageDisplayedIndex : Int = 0
     var player : AVAudioPlayer?
-    var timers : Array<Timer>! //Used to shutdown / start timer when app become inactive or rebecome active
-    var dataUpdateTimer : Timer!
-    var anounceWorkoutPlayer : AVQueuePlayer!
-    var anounceRestPlayer : AVQueuePlayer!
+    var timers : Array<Timer>! //Used to shutdown/start all timers when app become inactive or rebecome active
+    var dataUpdateTimer : Timer = Timer()
+    
+    // Used to play audio
+    var queuePlayer : AVQueuePlayer!
     
     var numberOfAudioFilesPlayed : Int! // Keeping a track of the number of audio file played in order to know when to switch state
-    let numberOfAnounceWorkoutAudioFileToPlay = 7
-    let numberOfAnounceRestAudioFileToPlay = 4
     var notificationObserver : NSObjectProtocol?
     
+    /*
+     Define the number of audio file that need to be played depending on the situation. These allow us to know when we can continue the workout by clling another function when the audio has finished playing.
+     */
+    var numberOfAudioFileToPlay : Int {
+        get {
+            return itemsToPlay.count
+        }
+    }
+    
+    var itemsToPlay : Array<AVPlayerItem>!
+    
+    
+    var dataUpdateTimerIsValid : Bool {
+        get {
+            return dataUpdateTimer.isValid
+        }
+        
+        set {
+            self.dataUpdateTimer.invalidate()
+            if newValue {
+                let secondsForEachImage : Float = self.session.secondsForEachImageCurrentSport()
+                self.dataUpdateTimer = Timer.scheduledTimer(withTimeInterval : TimeInterval(secondsForEachImage), repeats: true) { (_) in
+                    self.tick()
+                }
+            }
+        }
+    }
+    
+    //MARK: - IBActions
     @IBAction func cancelButtonClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -54,8 +91,13 @@ class WorkoutViewController: UIViewController {
         session.executeTransitionToNextSport()
     }
     
+    //MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //workoutNavigationBar.setGradientBackground(colors: [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)])
+        //informationView.layer.cornerRadius = 20
+        
         UIApplication.shared.isIdleTimerDisabled = true
         timeAndStatusView.layer.cornerRadius = 5
         workoutNavigationBar.topItem?.title = self.workoutName
@@ -68,11 +110,8 @@ class WorkoutViewController: UIViewController {
                 break
             }
         }
-        
-        let secondsForEachImage = session.secondsForEachImageCurrentSport()
             
-        workoutImageView.isHidden = false
-        restView.isHidden = true
+        restEnded()
         
         tick()
         updateViewData()
@@ -82,13 +121,10 @@ class WorkoutViewController: UIViewController {
         anounceSport()
         self.updateButtonStyle()
 
-        
-        dataUpdateTimer = Timer.scheduledTimer(withTimeInterval : TimeInterval(secondsForEachImage), repeats: true) { (_) in
-            self.tick()
-        }
+        dataUpdateTimerIsValid = true
         
         let timerTimeLabel = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.1), repeats: true) { (_) in
-            self.updateTimerLabel()
+            self.updateTimersLabels()
         }
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "RestReadyToBegin"), object: nil, queue: nil) { (_) in
@@ -98,48 +134,90 @@ class WorkoutViewController: UIViewController {
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "RestEnded"), object: nil, queue: nil) { (_) in
             self.updateButtonStyle()
-            self.restView.isHidden = true
-            self.workoutImageView.isHidden = false
+            self.restEnded()
             
             let secondsForEachImage : Float = self.session.secondsForEachImageCurrentSport()
-            self.dataUpdateTimer.invalidate()
-            self.dataUpdateTimer = Timer.scheduledTimer(withTimeInterval : TimeInterval(secondsForEachImage), repeats: true) { (_) in
-                self.tick()
-            }
+            self.dataUpdateTimerIsValid = true
             
             self.tick()
             self.updateViewData()
             self.anounceSport()
         }
         
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("SetEnded"), object: nil, queue:nil)
+        { (_) in
+            print("SetEnded")
+            self.dataUpdateTimerIsValid = false
+            self.anounceNextSet()
+        }
+        
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { (_) in
-            if self.session.currentState == .anouncingWorkout {
-                if self.numberOfAnounceWorkoutAudioFileToPlay == self.numberOfAudioFilesPlayed {
+            if self.numberOfAudioFileToPlay == self.numberOfAudioFilesPlayed {
+                if self.session.currentState == .anouncingWorkout {
                     self.session.currentState = .doingWorkout
-                } else {
-                    self.numberOfAudioFilesPlayed += 1
-                }
-            } else if self.session.currentState == .rest{
-                if self.numberOfAnounceRestAudioFileToPlay == self.numberOfAudioFilesPlayed {
+                    if self.session.currentSportType == "t" {
+                        self.session.sportBeganAt = Date().timeIntervalSince1970
+                    }
+                } else if self.session.currentState == .rest {
                     self.session.beginRest()
                     self.restView.isHidden = false
-                    self.workoutImageView.isHidden = true
-                } else {
-                    self.numberOfAudioFilesPlayed += 1
+                    self.sportContentView.isHidden = true
+                } else if self.session.currentState == .anouncingSet {
+                    self.session.startNextSet()
+                    self.dataUpdateTimerIsValid = true
+                    self.updateViewData()
                 }
+            } else {
+                self.numberOfAudioFilesPlayed += 1
             }
+        }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("WorkoutEnded"), object: nil, queue: nil) {
+            (_) in
+            self.stopTimers()
+            self.anounceEnd()
         }
         
         self.timers = [dataUpdateTimer, timerTimeLabel]
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        stopTimers()
+    }
+    
+    private func stopTimers() {
         for i in timers {
             i.invalidate()
         }
+        dataUpdateTimerIsValid = false
     }
     
-    func updateButtonStyle() {
+    /*
+     Called when the rest ended. Show or hide buttons depending on the sport.
+     */
+    private func restEnded() {
+        self.restView.isHidden = true
+        self.sportContentView.isHidden = false
+        
+        if session.currentSportType == "r" {
+            self.repsDoneLabel.isHidden = false
+            self.repsLabel.isHidden = false
+            
+            self.endInLabel.isHidden = true
+            self.endInTimerLabel.isHidden = true
+        } else {
+            self.repsDoneLabel.isHidden = true
+            self.repsLabel.isHidden = true
+            
+            self.endInLabel.isHidden = false
+            self.endInTimerLabel.isHidden = false
+        }
+    }
+    
+    /*
+     At the right and the left of the current sport name in the interface there is two buttons which enable to jump to the next or to the previous sport. These function put them into a state which make the user understand they are not available (for exemple when you are at the end or at the begining)
+     */
+    private func updateButtonStyle() {
         if session.canGoNextSport {
             nextSportButton.isEnabled = true
         } else {
@@ -152,7 +230,15 @@ class WorkoutViewController: UIViewController {
         }
     }
     
-    func anounceSport() {
+    /*
+     Anounche the workout with audio. Can either be :
+     SportWithTimer :
+        Now we have [name of the sport]. [X] series, [Y] secondes. Get ready and.
+     SportWithReps :
+        Now we have [name of the sport]. [X] series, [Y] repetitions. Get ready and.
+     
+     */
+    private func anounceSport() {
         self.numberOfAudioFilesPlayed = 1
         
         do {
@@ -168,21 +254,30 @@ class WorkoutViewController: UIViewController {
         let item2 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.currentSport.numberOfSets), withExtension: "mp3")!)
         let item3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "series", withExtension: "mp3")!)
         
-        var numberOfReps : AVPlayerItem?
+        /*
+         Can either be the number of reps or the number of secondes
+         */
+        var numberOf : AVPlayerItem!
         if let sport = session.currentSport as? SportWithReps {
-            numberOfReps = AVPlayerItem.init(url: Bundle.main.url(forResource: String(sport.numberOfReps), withExtension: "mp3")!)
+            numberOf = AVPlayerItem.init(url: Bundle.main.url(forResource: String(sport.numberOfReps), withExtension: "mp3")!)
+        } else if let sport = session.currentSport as? SportWithTimer {
+            numberOf = AVPlayerItem.init(url: Bundle.main.url(forResource: String(sport.timeOfTheExercise), withExtension: "mp3")!)
         }
         
-        let item5 = AVPlayerItem.init(url: Bundle.main.url(forResource: "repetitions", withExtension: "mp3")!)
+        let repetitions = AVPlayerItem.init(url: Bundle.main.url(forResource: "repetitions", withExtension: "mp3")!)
+        
+        let secondes = AVPlayerItem.init(url: Bundle.main.url(forResource: "secondes", withExtension: "mp3")!)
+        
         let item6 = AVPlayerItem.init(url: Bundle.main.url(forResource: "GetReadyAnd", withExtension: "mp3")!)
         
-        var itemsToPlay : Array<AVPlayerItem> = []
         if session.currentSportType == "r" {
-            itemsToPlay = [item0, item1, item2, item3, numberOfReps!, item5, item6]
+            itemsToPlay = [item0, item1, item2, item3, numberOf, repetitions, item6]
+        } else {
+            itemsToPlay = [item0, item1, item2, item3, numberOf, secondes, item6]
         }
-        anounceWorkoutPlayer = AVQueuePlayer(items: itemsToPlay)
+        queuePlayer = AVQueuePlayer(items: itemsToPlay)
         
-        anounceWorkoutPlayer.play()
+        queuePlayer.playImmediately(atRate: 1.3)
     }
     
     func anounceAndSetupRest() {
@@ -195,13 +290,61 @@ class WorkoutViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-        let tem0 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!)
-        let tem1 = AVPlayerItem.init(url: Bundle.main.url(forResource: "AwesomeNowRestFor", withExtension: "mp3")!)
-        let tem2 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(self.session.pauseBetweenSport), withExtension: "mp3")!)
-        let tem3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "secondes", withExtension: "mp3")!)
-        anounceRestPlayer = AVQueuePlayer(items: [tem0, tem1, tem2, tem3])
+        var item0 : AVPlayerItem?
+        if session.currentSportType == "r" {
+            // Saying the last rep.
+            item0 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!)
+        }
+        let item1 = AVPlayerItem.init(url: Bundle.main.url(forResource: "AwesomeNowRestFor", withExtension: "mp3")!)
+        let item2 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(self.session.pauseBetweenSport), withExtension: "mp3")!)
+        let item3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "secondes", withExtension: "mp3")!)
         
-        anounceRestPlayer.play()
+        if session.currentSportType == "r" {
+            itemsToPlay = [item0!, item1, item2, item3]
+        } else {
+            itemsToPlay = [item1, item2, item3]
+        }
+        
+        queuePlayer = AVQueuePlayer(items: itemsToPlay)
+        queuePlayer.playImmediately(atRate: 1.3)
+    }
+    
+    private func anounceNextSet() {
+        self.numberOfAudioFilesPlayed = 1
+        
+        
+        let fantastic = AVPlayerItem.init(url: Bundle.main.url(forResource: "Fantastic", withExtension: "mp3")!)
+        let nowPrepare = AVPlayerItem.init(url: Bundle.main.url(forResource: "NowPrepareForTheNextSet", withExtension: "mp3")!)
+        let set = AVPlayerItem.init(url: Bundle.main.url(forResource: "Set", withExtension: "mp3")!)
+        let actualSetNumber = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.sets + 1), withExtension: "mp3")!)
+        let of = AVPlayerItem.init(url: Bundle.main.url(forResource: "Of", withExtension: "mp3")!)
+        let totalSetNumber = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.currentSport.numberOfSets), withExtension: "mp3")!)
+        let getReady = AVPlayerItem.init(url: Bundle.main.url(forResource: "GetReadyAnd", withExtension: "mp3")!)
+        
+        itemsToPlay = [fantastic, nowPrepare, set, actualSetNumber, of, totalSetNumber, getReady]
+        if session.currentSportType == "r" {
+            // Saying the last rep.
+            itemsToPlay.insert(AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!), at: 0)
+        }
+        queuePlayer = AVQueuePlayer(items: itemsToPlay)
+        print("passed one")
+        queuePlayer.playImmediately(atRate: 1)
+    }
+    
+    
+    private func anounceEnd() {
+        self.numberOfAudioFilesPlayed = 1
+        
+        let end = AVPlayerItem.init(url: Bundle.main.url(forResource: "End", withExtension: "mp3")!)
+        
+        itemsToPlay = [end]
+        if session.currentSportType == "r" {
+            // Saying the last rep.
+            itemsToPlay.insert(AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!), at: 0)
+        }
+        
+        queuePlayer = AVQueuePlayer(items: itemsToPlay)
+        queuePlayer.playImmediately(atRate: 1)
     }
     
     func tick() {
@@ -209,39 +352,42 @@ class WorkoutViewController: UIViewController {
             currentImageDisplayedIndex = 1
         } else if currentImageDisplayedIndex == session.currentSport.numberOfImage {
             currentImageDisplayedIndex = 1
-            session.rep()
-            updateViewData()
-            if session.reps != session.totalReps {
-                playSound(named: String(session.reps))
+            if session.currentSportType == "r" {
+                session.rep()
+                if session.reps != session.totalReps {
+                    playSound(named: String(session.reps))
+                }
+                updateViewData()
             }
-            //TODO : Play song
         } else {
             currentImageDisplayedIndex += 1
         }
         
         let specification = session.currentSport.specification
         if specification != "" {
-            self.workoutImageView.image = UIImage(named: "\(self.session.currentSport.name) (\(self.session.currentSport.specification)) \(self.currentImageDisplayedIndex)")
+            if let image = UIImage(named: "\(self.session.currentSport.name) (\(self.session.currentSport.specification)) \(self.currentImageDisplayedIndex)"){
+                self.workoutImageView.image = image
+            }
         } else {
-            self.workoutImageView.image = UIImage(named: "\(self.session.currentSport.name) \(self.currentImageDisplayedIndex)")
+            if let image = UIImage(named: "\(self.session.currentSport.name) \(self.currentImageDisplayedIndex)") {
+                self.workoutImageView.image = image
+            }
         }
     }
     
     private func updateViewData(){
-        updateTimerLabel()
+        updateTimersLabels()
         self.setsDoneLabel.text = "\(session.sets)/\(session.totalSets)"
+        
         if session.currentSportType == "r" {
-            self.repsDoneLabel.isHidden = false
-            self.repsLabel.isHidden = false
             self.repsDoneLabel.text = "\(session.reps)/\(session.totalReps!)"
-        } else {
-            self.repsDoneLabel.isHidden = true
-            self.repsLabel.isHidden = true
         }
         
         let specification = session.currentSport.specification
         if specification != "" {
             self.sportDetailLabel.text = "(" + session.currentSport.specification + ")"
+        } else {
+            self.sportDetailLabel.text = ""
         }
         
         if session.nextSport == nil {
@@ -254,35 +400,43 @@ class WorkoutViewController: UIViewController {
         }
         
         self.sportNameLabel.text = session.currentSport.name
-        
-        
     }
     
-    private func getMinutesAndSecondsFormatted(numberOfSeconds time : Double) -> (String, String) {
-        //Returns two string, the number of minutes and the number of seconds calculated from the number of seconds given as argument
-        var minutes = String(Int((floor((time.truncatingRemainder(dividingBy: 3600)) / 60))))
-        var seconds = String(Int(floor(time - Double(minutes)! * 60)))
-        if minutes.count == 1 {
-            minutes = "0\(minutes)"
-        }
-        if seconds.count == 1 {
-            seconds = "0\(seconds)"
-        }
-        return(minutes, seconds)
-    }
-    
-    private func updateTimerLabel() {
+    /*
+     Update all the different timer in the app :
+        - Timer until rest stop
+        - Timer of global time passed since workout began
+        - Timer for sport who works with a timer
+     */
+    private func updateTimersLabels() {
+        
+        //UPDATE : Global Timer
         let time = Date().timeIntervalSinceReferenceDate - self.beginSessiondate
-        let result = getMinutesAndSecondsFormatted(numberOfSeconds: time)
+        let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds: time)
         
         self.workoutTimeLabel.text = "\(result.0):\(result.1)"
         self.workoutProgressView.progress = Float(time) / session.totalSessionTime
         
+        
+        //UPDATE : Rest Timer
         if session.currentState == .rest {
             let time = session.timeUntilEndOfPause
-            let result = getMinutesAndSecondsFormatted(numberOfSeconds: Double(time))
+            let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds: Double(time))
             
             self.timeUntilEndOfPauseLabel.text = "\(result.0):\(result.1)"
+        }
+        
+        //UPDATE : Timer for Sport With Timer
+        // This variable is nil if the actual sport is not a sport with timer
+        if let time = session.timeUntilSportEnd{
+            let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds:time)
+            self.endInTimerLabel.text = "\(result.0):\(result.1)"
+            
+            // Detect if set is finished
+            if session.sportWithTimerCompleted! && session.currentState != .rest && session.currentState != .anouncingSet{
+                session.setCompleted()
+            }
+
         }
     }
     

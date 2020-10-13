@@ -23,6 +23,10 @@ class SportSession {
     var timeUntilEndOfPause : Int
     var restTimer : Timer?
     
+    // Hold the date in UNIX format when the sport started
+    var sportBeganAt : Double?
+    var timeOfTheExercise : Double?
+    
     var currentSport : SportProtocol {
         get {
             return sports[currentSportIndex]
@@ -60,13 +64,39 @@ class SportSession {
         }
     }
     
+    // Calculated property for sport with timers
+    var timeUntilSportEnd : Double? {
+        get {
+            guard let _ = currentSport as? SportWithTimer else {
+                return nil
+            }
+            if currentState == .doingWorkout {
+                return Double(timeOfTheExercise!) - (Date().timeIntervalSince1970 - sportBeganAt!)
+            } else if currentState == .rest {
+                return 0
+            } else {
+                return timeOfTheExercise
+            }
+        }
+    }
+    
+    var sportWithTimerCompleted : Bool? {
+        get {
+            guard let _ = timeUntilSportEnd else {
+                return nil
+            }
+            return timeUntilSportEnd! <= 0
+        }
+    }
+    
     init(workout : WorkoutProtocol) {
         self.sports = workout.sports
         reps = 0
         sets = 1
         totalSessionTime = 0
-        currentState = .doingWorkout
-        totalSessionTime += Float(workout.pauseBetweenSports * workout.sports.count - 1)
+        currentState = .anouncingWorkout
+        // The +10 is for the time spent speaking
+        totalSessionTime += Float((workout.pauseBetweenSports + 10) * workout.sports.count - 1)
         self.pauseBetweenSport = workout.pauseBetweenSports
         self.timeUntilEndOfPause = 0
         
@@ -74,9 +104,10 @@ class SportSession {
         self.totalSets = 0
         totalSets = currentSport.numberOfSets
         
-        if currentSportType == "r" {
-            let sportWithRep = currentSport as! SportWithReps
+        if let sportWithRep = currentSport as? SportWithReps{
             self.totalReps = sportWithRep.numberOfReps
+        } else if let sportWithTimer = currentSport as? SportWithTimer{
+            self.timeOfTheExercise = Double(sportWithTimer.timeOfTheExercise)
         }
         calculateTotalSessionTime()
     }
@@ -119,34 +150,51 @@ class SportSession {
     func rep() {
         //Called when we need to add one rep done
         reps += 1
-        if reps == totalReps{
-            if sets == totalSets {
-                goNextSport()
-            } else {
-                
-                sets += 1
-                reps = 0
-            }
+        if reps >= totalReps!{
+            setCompleted()
         }
     }
     
-    private func updateValuesForActualSport() {
+    func setCompleted() {
+        // Sport begin at set 1
         
+        if sets == totalSets {
+            if sports.count == currentSportIndex + 1 {
+                currentState = .anouncingEnd
+                NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "WorkoutEnded")))
+            } else {
+                goNextSport()
+            }
+        } else {
+            currentState = .anouncingSet
+            NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "SetEnded")))
+        }
+    }
+    
+    func startNextSet() {
+        sets += 1
+        reps = 0
+        currentState = .doingWorkout
+        sportBeganAt = Date().timeIntervalSince1970
+    }
+    
+    private func updateValuesForActualSport() {
         reps = 0
         sets = 1
         totalSets = currentSport.numberOfSets
         if let sport = currentSport as? SportWithReps {
             totalReps = sport.numberOfReps
+        } else if let sport = currentSport as? SportWithTimer {
+            timeOfTheExercise = Double(sport.timeOfTheExercise)
         }
     }
     
     private func goNextSport(){
-        if sports.count - 1 != currentSportIndex{
+        if sports.count != currentSportIndex{
             currentState = .rest
             timeUntilEndOfPause = pauseBetweenSport
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "RestReadyToBegin"), object: nil)
-            
         }
     }
     

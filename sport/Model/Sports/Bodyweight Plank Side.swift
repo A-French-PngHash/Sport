@@ -8,18 +8,17 @@
 
 import Foundation
 
-class BodyweightPlankSide : SportWithReps {
+class BodyweightPlankSide : SportWithTimer {
+    var intervalBetweenImages: Float = 1
     var name: String = "Bodyweight Plank"
     var nameOfSoundFile: String = "BodyweightPlankSide"
-    var intervalBetweenReps: Float = 60
     var numberOfImage: Int = 1
     var specification: String = "Side"
-    var numberOfReps: Int
+    var timeOfTheExercise: Int
     var numberOfSets: Int
-    var needTimer = true
     
-    required init(numberOfReps: Int, numberOfSets: Int) {
-        self.numberOfReps = numberOfReps
+    required init(numberOfSets: Int, timeOfTheExercise : Int) {
+        self.timeOfTheExercise = timeOfTheExercise
         self.numberOfSets = numberOfSets
     }
 }
