@@ -14,6 +14,7 @@ class UperBodyOne : WorkoutProtocol {
         PushUps(numberOfSets: 1, timeOfTheExercise: 60),
         Plank(numberOfSets: 1, timeOfTheExercise: 60),
         SidePlankNeedle(numberOfSets: 1, timeOfTheExercise: 60),
+        ArmCircle(numberOfReps: 30, numberOfSets: 3),
         BearCrawl(numberOfSets: 1, timeOfTheExercise: 60)
                                         ]
     

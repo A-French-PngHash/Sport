@@ -150,7 +150,7 @@ class SportSession {
     func rep() {
         //Called when we need to add one rep done
         reps += 1
-        if reps == totalReps{
+        if reps >= totalReps!{
             setCompleted()
         }
     }
@@ -159,25 +159,38 @@ class SportSession {
         // Sport begin at set 1
         
         if sets == totalSets {
-            goNextSport()
+            if sports.count == currentSportIndex + 1 {
+                currentState = .anouncingEnd
+                NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "WorkoutEnded")))
+            } else {
+                goNextSport()
+            }
         } else {
-            sets += 1
-            reps = 0
+            currentState = .anouncingSet
+            NotificationCenter.default.post(Notification(name: NSNotification.Name(rawValue: "SetEnded")))
         }
     }
     
+    func startNextSet() {
+        sets += 1
+        reps = 0
+        currentState = .doingWorkout
+        sportBeganAt = Date().timeIntervalSince1970
+    }
+    
     private func updateValuesForActualSport() {
-        
         reps = 0
         sets = 1
         totalSets = currentSport.numberOfSets
         if let sport = currentSport as? SportWithReps {
             totalReps = sport.numberOfReps
+        } else if let sport = currentSport as? SportWithTimer {
+            timeOfTheExercise = Double(sport.timeOfTheExercise)
         }
     }
     
     private func goNextSport(){
-        if sports.count - 1 != currentSportIndex{
+        if sports.count != currentSportIndex{
             currentState = .rest
             timeUntilEndOfPause = pauseBetweenSport
             

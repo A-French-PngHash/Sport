@@ -17,6 +17,10 @@ class WorkoutViewController: UIViewController {
     @IBOutlet weak var workoutImageView: UIImageView!
     @IBOutlet weak var workoutNavigationBar: UINavigationBar!
     @IBOutlet weak var restView: UIView!
+    /*
+     Contain the images, the timer if needed...
+     */
+    @IBOutlet weak var sportContentView: UIView!
     
     //MARK: - Other Outlets
     @IBOutlet weak var sportNameLabel: UILabel!
@@ -40,19 +44,41 @@ class WorkoutViewController: UIViewController {
     var currentImageDisplayedIndex : Int = 0
     var player : AVAudioPlayer?
     var timers : Array<Timer>! //Used to shutdown/start all timers when app become inactive or rebecome active
-    var dataUpdateTimer : Timer!
+    var dataUpdateTimer : Timer = Timer()
     
-    var anounceWorkoutPlayer : AVQueuePlayer!
-    var anounceRestPlayer : AVQueuePlayer!
+    // Used to play audio
+    var queuePlayer : AVQueuePlayer!
     
     var numberOfAudioFilesPlayed : Int! // Keeping a track of the number of audio file played in order to know when to switch state
     var notificationObserver : NSObjectProtocol?
     
     /*
-     Both of these variables define the number of audio file that need to be played depending on the situation. These allow us to know when we can continue the workout.
+     Define the number of audio file that need to be played depending on the situation. These allow us to know when we can continue the workout by clling another function when the audio has finished playing.
      */
-    var numberOfAnounceWorkoutAudioFileToPlay = 7
-    var numberOfAnounceRestAudioFileToPlay = 4
+    var numberOfAudioFileToPlay : Int {
+        get {
+            return itemsToPlay.count
+        }
+    }
+    
+    var itemsToPlay : Array<AVPlayerItem>!
+    
+    
+    var dataUpdateTimerIsValid : Bool {
+        get {
+            return dataUpdateTimer.isValid
+        }
+        
+        set {
+            self.dataUpdateTimer.invalidate()
+            if newValue {
+                let secondsForEachImage : Float = self.session.secondsForEachImageCurrentSport()
+                self.dataUpdateTimer = Timer.scheduledTimer(withTimeInterval : TimeInterval(secondsForEachImage), repeats: true) { (_) in
+                    self.tick()
+                }
+            }
+        }
+    }
     
     //MARK: - IBActions
     @IBAction func cancelButtonClicked(_ sender: Any) {
@@ -84,8 +110,6 @@ class WorkoutViewController: UIViewController {
                 break
             }
         }
-        
-        let secondsForEachImage = session.secondsForEachImageCurrentSport()
             
         restEnded()
         
@@ -97,10 +121,7 @@ class WorkoutViewController: UIViewController {
         anounceSport()
         self.updateButtonStyle()
 
-        
-        dataUpdateTimer = Timer.scheduledTimer(withTimeInterval : TimeInterval(secondsForEachImage), repeats: true) { (_) in
-            self.tick()
-        }
+        dataUpdateTimerIsValid = true
         
         let timerTimeLabel = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.1), repeats: true) { (_) in
             self.updateTimersLabels()
@@ -116,44 +137,59 @@ class WorkoutViewController: UIViewController {
             self.restEnded()
             
             let secondsForEachImage : Float = self.session.secondsForEachImageCurrentSport()
-            self.dataUpdateTimer.invalidate()
-            self.dataUpdateTimer = Timer.scheduledTimer(withTimeInterval : TimeInterval(secondsForEachImage), repeats: true) { (_) in
-                self.tick()
-            }
+            self.dataUpdateTimerIsValid = true
             
             self.tick()
             self.updateViewData()
             self.anounceSport()
         }
         
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("SetEnded"), object: nil, queue:nil)
+        { (_) in
+            print("SetEnded")
+            self.dataUpdateTimerIsValid = false
+            self.anounceNextSet()
+        }
+        
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { (_) in
-            if self.session.currentState == .anouncingWorkout {
-                if self.numberOfAnounceWorkoutAudioFileToPlay == self.numberOfAudioFilesPlayed {
+            if self.numberOfAudioFileToPlay == self.numberOfAudioFilesPlayed {
+                if self.session.currentState == .anouncingWorkout {
                     self.session.currentState = .doingWorkout
                     if self.session.currentSportType == "t" {
                         self.session.sportBeganAt = Date().timeIntervalSince1970
                     }
-                } else {
-                    self.numberOfAudioFilesPlayed += 1
-                }
-            } else if self.session.currentState == .rest{
-                if self.numberOfAnounceRestAudioFileToPlay == self.numberOfAudioFilesPlayed {
+                } else if self.session.currentState == .rest {
                     self.session.beginRest()
                     self.restView.isHidden = false
-                    self.workoutImageView.isHidden = true
-                } else {
-                    self.numberOfAudioFilesPlayed += 1
+                    self.sportContentView.isHidden = true
+                } else if self.session.currentState == .anouncingSet {
+                    self.session.startNextSet()
+                    self.dataUpdateTimerIsValid = true
+                    self.updateViewData()
                 }
+            } else {
+                self.numberOfAudioFilesPlayed += 1
             }
+        }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("WorkoutEnded"), object: nil, queue: nil) {
+            (_) in
+            self.stopTimers()
+            self.anounceEnd()
         }
         
         self.timers = [dataUpdateTimer, timerTimeLabel]
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        stopTimers()
+    }
+    
+    private func stopTimers() {
         for i in timers {
             i.invalidate()
         }
+        dataUpdateTimerIsValid = false
     }
     
     /*
@@ -161,7 +197,7 @@ class WorkoutViewController: UIViewController {
      */
     private func restEnded() {
         self.restView.isHidden = true
-        self.workoutImageView.isHidden = false
+        self.sportContentView.isHidden = false
         
         if session.currentSportType == "r" {
             self.repsDoneLabel.isHidden = false
@@ -194,7 +230,6 @@ class WorkoutViewController: UIViewController {
         }
     }
     
-    //TODO: - Setup sound Anouncment
     /*
      Anounche the workout with audio. Can either be :
      SportWithTimer :
@@ -235,15 +270,14 @@ class WorkoutViewController: UIViewController {
         
         let item6 = AVPlayerItem.init(url: Bundle.main.url(forResource: "GetReadyAnd", withExtension: "mp3")!)
         
-        var itemsToPlay : Array<AVPlayerItem>
         if session.currentSportType == "r" {
             itemsToPlay = [item0, item1, item2, item3, numberOf, repetitions, item6]
         } else {
             itemsToPlay = [item0, item1, item2, item3, numberOf, secondes, item6]
         }
-        anounceWorkoutPlayer = AVQueuePlayer(items: itemsToPlay)
+        queuePlayer = AVQueuePlayer(items: itemsToPlay)
         
-        anounceWorkoutPlayer.playImmediately(atRate: 1.3)
+        queuePlayer.playImmediately(atRate: 1.3)
     }
     
     func anounceAndSetupRest() {
@@ -266,13 +300,51 @@ class WorkoutViewController: UIViewController {
         let item3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "secondes", withExtension: "mp3")!)
         
         if session.currentSportType == "r" {
-            numberOfAnounceRestAudioFileToPlay = 4
-            anounceRestPlayer = AVQueuePlayer(items: [item0!, item1, item2, item3])
+            itemsToPlay = [item0!, item1, item2, item3]
         } else {
-            numberOfAnounceRestAudioFileToPlay = 3
-            anounceRestPlayer = AVQueuePlayer(items: [item1, item2, item3])
+            itemsToPlay = [item1, item2, item3]
         }
-        anounceRestPlayer.playImmediately(atRate: 1.3)
+        
+        queuePlayer = AVQueuePlayer(items: itemsToPlay)
+        queuePlayer.playImmediately(atRate: 1.3)
+    }
+    
+    private func anounceNextSet() {
+        self.numberOfAudioFilesPlayed = 1
+        
+        
+        let fantastic = AVPlayerItem.init(url: Bundle.main.url(forResource: "Fantastic", withExtension: "mp3")!)
+        let nowPrepare = AVPlayerItem.init(url: Bundle.main.url(forResource: "NowPrepareForTheNextSet", withExtension: "mp3")!)
+        let set = AVPlayerItem.init(url: Bundle.main.url(forResource: "Set", withExtension: "mp3")!)
+        let actualSetNumber = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.sets + 1), withExtension: "mp3")!)
+        let of = AVPlayerItem.init(url: Bundle.main.url(forResource: "Of", withExtension: "mp3")!)
+        let totalSetNumber = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.currentSport.numberOfSets), withExtension: "mp3")!)
+        let getReady = AVPlayerItem.init(url: Bundle.main.url(forResource: "GetReadyAnd", withExtension: "mp3")!)
+        
+        itemsToPlay = [fantastic, nowPrepare, set, actualSetNumber, of, totalSetNumber, getReady]
+        if session.currentSportType == "r" {
+            // Saying the last rep.
+            itemsToPlay.insert(AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!), at: 0)
+        }
+        queuePlayer = AVQueuePlayer(items: itemsToPlay)
+        print("passed one")
+        queuePlayer.playImmediately(atRate: 1)
+    }
+    
+    
+    private func anounceEnd() {
+        self.numberOfAudioFilesPlayed = 1
+        
+        let end = AVPlayerItem.init(url: Bundle.main.url(forResource: "End", withExtension: "mp3")!)
+        
+        itemsToPlay = [end]
+        if session.currentSportType == "r" {
+            // Saying the last rep.
+            itemsToPlay.insert(AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!), at: 0)
+        }
+        
+        queuePlayer = AVQueuePlayer(items: itemsToPlay)
+        queuePlayer.playImmediately(atRate: 1)
     }
     
     func tick() {
@@ -294,11 +366,11 @@ class WorkoutViewController: UIViewController {
         let specification = session.currentSport.specification
         if specification != "" {
             if let image = UIImage(named: "\(self.session.currentSport.name) (\(self.session.currentSport.specification)) \(self.currentImageDisplayedIndex)"){
-                self.workoutImageView.image = image.drawOutlie(imageKeof: 1.015, color: .black)
+                self.workoutImageView.image = image
             }
         } else {
             if let image = UIImage(named: "\(self.session.currentSport.name) \(self.currentImageDisplayedIndex)") {
-                self.workoutImageView.image = image.drawOutlie(imageKeof: 1.015, color: .black)
+                self.workoutImageView.image = image
             }
         }
     }
@@ -361,7 +433,7 @@ class WorkoutViewController: UIViewController {
             self.endInTimerLabel.text = "\(result.0):\(result.1)"
             
             // Detect if set is finished
-            if session.sportWithTimerCompleted! && session.currentState != .rest{
+            if session.sportWithTimerCompleted! && session.currentState != .rest && session.currentState != .anouncingSet{
                 session.setCompleted()
             }
 

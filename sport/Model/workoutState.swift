@@ -9,5 +9,5 @@
 import Foundation
 
 enum WorkoutState {
-    case rest, anouncingWorkout, doingWorkout///, anouncingBetweenSets
+    case rest, anouncingWorkout, doingWorkout, anouncingSet, anouncingEnd///, anouncingBetweenSets
 }
