@@ -11,11 +11,11 @@ import Foundation
 class UperBodyOne : WorkoutProtocol {
     var sports: Array<SportProtocol> = [
         HipHingeHighPlank(numberOfSets: 1, timeOfTheExercise: 60),
-        PushUps(numberOfSets: 1, timeOfTheExercise: 60),
+        PushUps(numberOfSets: 1, timeOfTheExercise: 30),
         Plank(numberOfSets: 1, timeOfTheExercise: 60),
         SidePlankNeedle(numberOfSets: 1, timeOfTheExercise: 60),
-        ArmCircle(numberOfReps: 30, numberOfSets: 3),
-        BearCrawl(numberOfSets: 1, timeOfTheExercise: 60)
+        BearCrawl(numberOfSets: 1, timeOfTheExercise: 45),
+        ArmCircle(numberOfReps: 30, numberOfSets: 3)
                                         ]
     
     var name: String = "Upper Body #1"

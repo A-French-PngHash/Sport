@@ -85,7 +85,7 @@ class SportSession {
             guard let _ = timeUntilSportEnd else {
                 return nil
             }
-            return timeUntilSportEnd! <= 0
+            return timeUntilSportEnd! < 1
         }
     }
     
