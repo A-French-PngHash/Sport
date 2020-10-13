@@ -21,4 +21,10 @@ extension Date {
         }
         return(minutes, seconds)
     }
+    
+    var day : Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: self)
+        return components.day!
+    }
 }
