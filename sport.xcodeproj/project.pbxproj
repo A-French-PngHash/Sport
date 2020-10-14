@@ -14,6 +14,7 @@
 		5B0A7A1124C0859200C669C9 /* BodyweightTwistRussian.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A7A0624C0859200C669C9 /* BodyweightTwistRussian.mp3 */; };
 		5B0A7A1224C0859200C669C9 /* BodyweightHeelTouch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A7A0724C0859200C669C9 /* BodyweightHeelTouch.mp3 */; };
 		5B0A7A1324C0859200C669C9 /* BodyweightCrunchCrossBody.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A7A0824C0859200C669C9 /* BodyweightCrunchCrossBody.mp3 */; };
+		5B2BE007253651BF00C89F81 /* fakeCoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2BE006253651BF00C89F81 /* fakeCoreDataUtils.swift */; };
 		5B30F83024B8EC2B0095D2ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F82F24B8EC2B0095D2ED /* AppDelegate.swift */; };
 		5B30F83224B8EC2B0095D2ED /* ChooseWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F83124B8EC2B0095D2ED /* ChooseWorkoutViewController.swift */; };
 		5B30F83524B8EC2B0095D2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B30F83324B8EC2B0095D2ED /* Main.storyboard */; };
@@ -134,6 +135,7 @@
 		5B0A7A0624C0859200C669C9 /* BodyweightTwistRussian.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BodyweightTwistRussian.mp3; sourceTree = "<group>"; };
 		5B0A7A0724C0859200C669C9 /* BodyweightHeelTouch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BodyweightHeelTouch.mp3; sourceTree = "<group>"; };
 		5B0A7A0824C0859200C669C9 /* BodyweightCrunchCrossBody.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BodyweightCrunchCrossBody.mp3; sourceTree = "<group>"; };
+		5B2BE006253651BF00C89F81 /* fakeCoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fakeCoreDataUtils.swift; sourceTree = "<group>"; };
 		5B30F82C24B8EC2B0095D2ED /* sport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B30F82F24B8EC2B0095D2ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B30F83124B8EC2B0095D2ED /* ChooseWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWorkoutViewController.swift; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 			children = (
 				5B97998E2535EF4F0020CABA /* sportTests.swift */,
 				5B9799902535EF4F0020CABA /* Info.plist */,
+				5B2BE006253651BF00C89F81 /* fakeCoreDataUtils.swift */,
 			);
 			path = sportTests;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2BE007253651BF00C89F81 /* fakeCoreDataUtils.swift in Sources */,
 				5B97998F2535EF4F0020CABA /* sportTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

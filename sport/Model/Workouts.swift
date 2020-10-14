@@ -25,6 +25,7 @@ class Workouts{
         self.allWorkoutsNames = [hottie.name, upperBody1.name, upperBody2.name]
     }
     
+    
     var allWorkoutsNames : Array<String>
     var allWorkouts : Array<WorkoutProtocol>
 }

@@ -26,7 +26,6 @@ class TrainingCalculator {
     static let shared = TrainingCalculator()
     private init() { }
     
-    let persistentContainer = AppDelegate.app.persistentContainer
     let armsGoal = 2
     let absGoal = 2
     let restGoal = 1
@@ -37,9 +36,9 @@ class TrainingCalculator {
      
      WARNING : X must be less than 28 else it could cause problem.
      */
-    private func getSportArrayForLastXDays(x : Int) -> (Array<WorkoutData>, Array<WorkoutData>, Int){
+    func getSportArrayForLastXDays(x : Int) -> (Array<WorkoutData>, Array<WorkoutData>, Int){
         let fiveDaysInSeconds = 3600 * 24 * x
-        let pastXDaysWorkout = WorkoutData.workoutDataSince(date: Date().addingTimeInterval(TimeInterval(-fiveDaysInSeconds)))
+        let pastXDaysWorkout = Persistence.shared.workoutDataSince(date: Date().addingTimeInterval(TimeInterval(-fiveDaysInSeconds)))
         
         var absWorkouts : Array<WorkoutData> = []
         var armsWorkouts : Array<WorkoutData> = []

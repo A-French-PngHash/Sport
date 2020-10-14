@@ -71,6 +71,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return (UIApplication.shared.delegate as! AppDelegate)
         }
     }
-
 }
 

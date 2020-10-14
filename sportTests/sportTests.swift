@@ -7,27 +7,36 @@
 //
 
 import XCTest
+import CoreData
+@testable import sport
 
 class sportTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var persistence : Persistence!
+    // Used to execute queries to add items.
+    let fakeCore = FakeCoreData.shared
+    
+    override func setUp() {
+        persistence = Persistence(container: fakeCore.mockPersistantContainer)
+        super.setUp()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func 
+    
+    override func tearDown() {
+        fakeCore.flushData()
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    //MARK: - Training calculator test
+    func test_givenNoExerciseWhenRetrievingPastFiveDaysThenRestEqualFive() {
+        // Given no exercise
+        
+        // When retrieving past five days
+        let result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 5)
+        
+        // Then rest equal 5 and other equal 0
+        XCTAssertEqual(result.2, 5)
+        XCTAssertEqual(result.1.count, 0)
+        XCTAssertEqual(result.0.count, 0)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
