@@ -71,5 +71,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return (UIApplication.shared.delegate as! AppDelegate)
         }
     }
+    
+    // Lazy is here to prevent this property to be calculated before AppDelegate is fully loaded
+    lazy var persistence : Persistence = {
+        return Persistence()
+    }()
 }
 

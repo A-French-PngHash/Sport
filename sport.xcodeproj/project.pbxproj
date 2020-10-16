@@ -53,6 +53,12 @@
 		5B82427725339A370085C879 /* NowPrepareForTheNextSet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B82427325339A370085C879 /* NowPrepareForTheNextSet.mp3 */; };
 		5B82427825339A370085C879 /* Of.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B82427425339A370085C879 /* Of.mp3 */; };
 		5B8862CA24BF5B2900B057D5 /* workoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8862C924BF5B2900B057D5 /* workoutState.swift */; };
+		5B9410D92537671F00C8ACD1 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9B6042535BD0E00D7AEC9 /* WorkoutData.swift */; };
+		5B9410DC2537672600C8ACD1 /* Sport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B99815C25321C7B0056197B /* Sport.xcdatamodeld */; };
+		5B9410DF2537674400C8ACD1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5D98132535BBBA006E4A17 /* Persistence.swift */; };
+		5B9410E22537674600C8ACD1 /* workoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9799852535D04B0020CABA /* workoutType.swift */; };
+		5B9410E52537675800C8ACD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F82F24B8EC2B0095D2ED /* AppDelegate.swift */; };
+		5B9410E82537699700C8ACD1 /* TrainingCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99815925321AC60056197B /* TrainingCalculator.swift */; };
 		5B9799862535D04B0020CABA /* workoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9799852535D04B0020CABA /* workoutType.swift */; };
 		5B97998F2535EF4F0020CABA /* sportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97998E2535EF4F0020CABA /* sportTests.swift */; };
 		5B99815A25321AC60056197B /* TrainingCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99815925321AC60056197B /* TrainingCalculator.swift */; };
@@ -710,7 +716,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B2BE007253651BF00C89F81 /* fakeCoreDataUtils.swift in Sources */,
+				5B9410E82537699700C8ACD1 /* TrainingCalculator.swift in Sources */,
 				5B97998F2535EF4F0020CABA /* sportTests.swift in Sources */,
+				5B9410DC2537672600C8ACD1 /* Sport.xcdatamodeld in Sources */,
+				5B9410D92537671F00C8ACD1 /* WorkoutData.swift in Sources */,
+				5B9410E52537675800C8ACD1 /* AppDelegate.swift in Sources */,
+				5B9410DF2537674400C8ACD1 /* Persistence.swift in Sources */,
+				5B9410E22537674600C8ACD1 /* workoutType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -412,7 +412,7 @@ class WorkoutViewController: UIViewController {
         
         //UPDATE : Global Timer
         let time = Date().timeIntervalSinceReferenceDate - self.beginSessiondate
-        let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds: time)
+        let result = Date.getMinutesAndSecondsFormatted(numberOfSeconds: time)
         
         self.workoutTimeLabel.text = "\(result.0):\(result.1)"
         self.workoutProgressView.progress = Float(time) / session.totalSessionTime
@@ -421,7 +421,7 @@ class WorkoutViewController: UIViewController {
         //UPDATE : Rest Timer
         if session.currentState == .rest {
             let time = session.timeUntilEndOfPause
-            let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds: Double(time))
+            let result = Date.getMinutesAndSecondsFormatted(numberOfSeconds: Double(time))
             
             self.timeUntilEndOfPauseLabel.text = "\(result.0):\(result.1)"
         }
@@ -429,7 +429,7 @@ class WorkoutViewController: UIViewController {
         //UPDATE : Timer for Sport With Timer
         // This variable is nil if the actual sport is not a sport with timer
         if let time = session.timeUntilSportEnd{
-            let result = Date().getMinutesAndSecondsFormatted(numberOfSeconds:time)
+            let result = Date.getMinutesAndSecondsFormatted(numberOfSeconds:time)
             self.endInTimerLabel.text = "\(result.0):\(result.1)"
             
             // Detect if set is finished

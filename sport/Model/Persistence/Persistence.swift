@@ -10,24 +10,33 @@ import Foundation
 import CoreData
 
 class Persistence {
-    static let shared = Persistence()
     
     let persistentContainer : NSPersistentContainer!
+    
+    /// A context variable taken from the persistentContainer.
     lazy var context : NSManagedObjectContext = {
         return self.persistentContainer.newBackgroundContext()
     }()
     
-    // Mainly for testing
+    /// Describe if there was already a workout today
+    var todayWorkout : Bool {
+        get {
+            return !workoutDataSince(date: Date().dateAtMidnight).isEmpty
+        }
+    }
+    
+    // Mainly for testing.
     init(container : NSPersistentContainer) {
         self.persistentContainer = container
     }
     
-    // Using the default initializer for production version
+    // Using the default initializer for production version.
     convenience init() {
-        self.init(container: AppDelegate.app.persistentContainer)
+        self.init(container: AppDelegate.persistentContainer)
     }
     
-    
+    ///Create and save a workout item into the database.
+    /// - parameter date : The date when the workout took place.
     func insertWorkoutItem(date : Date, workoutType : WorkoutType) {
         let workoutData = WorkoutData(context: context)
         workoutData.type = workoutType
@@ -35,6 +44,12 @@ class Persistence {
         save()
     }
     
+    /**
+     Fetch all the workout data from the Core Data database.
+
+     - returns :
+     An array of WorkoutData.
+     **/
     func fetchAll() -> Array<WorkoutData>{
         let request: NSFetchRequest<WorkoutData> = WorkoutData.fetchRequest()
         guard let workoutData = try? context.fetch(request) else { return [] }
@@ -54,6 +69,8 @@ class Persistence {
         return workoutData
     }
     
+    /// Remove the item corresponding to the id from the Core Data database.
+    /// - parameter id : The item id.
     func remove(id : NSManagedObjectID) {
         let obj = context.object(with: id)
         context.delete(obj)

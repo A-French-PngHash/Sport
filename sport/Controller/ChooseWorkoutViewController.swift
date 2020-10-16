@@ -12,9 +12,10 @@ class ChooseWorkoutViewController: UIViewController {
     var workoutChosed : String!
     
     override func viewDidLoad() {
-        UIApplication.shared.isIdleTimerDisabled = true
-        testCoreData()
         super.viewDidLoad()
+        
+        UIApplication.shared.isIdleTimerDisabled = true
+        //testCoreData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,7 +32,7 @@ class ChooseWorkoutViewController: UIViewController {
     //MARK: - Test Function :
     private func testCoreData() {
         //Persistence.shared.saveWorkout(date: Date().addingTimeInterval(TimeInterval(-3600 * 24 * 3)), workoutType: .arms)
-        TrainingCalculator.shared.getTodayRecommendedWorkout()
+        //TrainingCalculator.shared.getTodayRecommendedWorkout()
 
     }
 

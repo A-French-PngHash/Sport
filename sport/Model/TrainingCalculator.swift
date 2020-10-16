@@ -29,16 +29,34 @@ class TrainingCalculator {
     let armsGoal = 2
     let absGoal = 2
     let restGoal = 1
-    /*
-     Return 2 array containing each one type of workout. There is a maximum of one workout per day per array.
+    /**
+     Get the workouts under array form for the last x days.
      
-     Also return one Int which is the number of rest day.
+     - Remark : There is a maximum of one workout per day per array.
      
-     WARNING : X must be less than 28 else it could cause problem.
+     - requires : x must be less than 28 else it could cause problem.
+     
+     - parameter x : The number of day.
+     - parameter persistence : Used for unit testing to define a custom persistence class. No need to specify this argument for the production code.
      */
-    func getSportArrayForLastXDays(x : Int) -> (Array<WorkoutData>, Array<WorkoutData>, Int){
-        let fiveDaysInSeconds = 3600 * 24 * x
-        let pastXDaysWorkout = Persistence.shared.workoutDataSince(date: Date().addingTimeInterval(TimeInterval(-fiveDaysInSeconds)))
+    func getSportArrayForLastXDays(x : Int, persistence : Persistence = AppDelegate.app.persistence) -> (Array<WorkoutData>, Array<WorkoutData>, Int){
+        
+        if x >= 28 {
+            fatalError("This situation will cause problems.")
+        }
+        
+        var pastXDaysWorkout = persistence.workoutDataSince(date: Date.dateXDaysAgo(x: 5))
+        
+        // We want to filter in order to remove today's workout from the list
+        var new = [WorkoutData]()
+        for i in pastXDaysWorkout {
+            // If the day of this date is not the same as today
+            if i.date?.day != Date().day {
+                new.append(i)
+            }
+        }
+        pastXDaysWorkout = new
+        
         
         var absWorkouts : Array<WorkoutData> = []
         var armsWorkouts : Array<WorkoutData> = []
@@ -78,24 +96,29 @@ class TrainingCalculator {
             }
         }
         
-        for i in 1...x{
-            print(dateXDaysAgo(x: i).day)
-            if !daysWhenWorkout.contains(dateXDaysAgo(x: i).day) {
+        for i in 1...x - 1{
+            print(Date.dateXDaysAgo(x: i).day)
+            if !daysWhenWorkout.contains(Date.dateXDaysAgo(x: i).day) {
                 restCount += 1
             }
         }
         return (armsWorkouts, absWorkouts, restCount)
     }
     
-    func getTodayRecommendedWorkout() -> WorkoutType{
-        let result = getSportArrayForLastXDays(x: 5)
-        let armsWorkouts = result.0
-        let absWorkouts = result.1
-        let rest = result.2
+    
+    func getTodayRecommendedWorkout(armsWorkout : Int, absWorkout : Int, restWorkout : Int, persistence : Persistence = AppDelegate.app.persistence) -> WorkoutType{
+        if persistence.todayWorkout {
+            return .alreadyWorkout
+        }
         
-        if absWorkouts.count != absGoal {
-            if armsWorkouts.count != armsGoal {
-                if absWorkouts.count <= armsWorkouts.count {
+        // Preventing no rest for 5 continuous day if the suer didn't follow the programm that was given.
+        if armsWorkout + absWorkout == armsGoal + absGoal {
+            return .rest
+        }
+        
+        if absWorkout < absGoal {
+            if armsWorkout < armsGoal {
+                if absWorkout <= armsWorkout {
                     return .abs
                 } else {
                     return .arms
@@ -103,9 +126,10 @@ class TrainingCalculator {
             } else {
                 return .abs
             }
-        } else if armsWorkouts.count != armsGoal {
+        } else if armsWorkout < armsGoal {
             return .arms
         }
+        
         return .rest
     }
     
@@ -113,15 +137,6 @@ class TrainingCalculator {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: Date())
         return components.day!
-    }
-    
-    private func dateXDaysAgo(x : Int) -> Date{
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: Date())
-        let currentDate = calendar.date(from: components)!
-        
-        let dateXDaysAgo = currentDate.addingTimeInterval(TimeInterval(-3600 * 24 * x))
-        return dateXDaysAgo
     }
 }
 

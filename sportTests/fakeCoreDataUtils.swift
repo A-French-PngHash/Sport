@@ -12,7 +12,7 @@ import CoreData
 
 class FakeCoreData {
     static let shared = FakeCoreData()
-    private init() { }
+    private init() { }
     
 
     lazy var mockPersistantContainer: NSPersistentContainer = {

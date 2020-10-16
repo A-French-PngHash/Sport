@@ -10,10 +10,6 @@ import Foundation
 import CoreData
 
 class WorkoutData : NSManagedObject {
-    static var all : [WorkoutData] {
-        return Persistence.shared.fetchAll()
-    }
-    
     var type: WorkoutType? {
             get {
                 if let rawType = self.rawWorkoutType {
