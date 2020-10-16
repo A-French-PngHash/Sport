@@ -10,11 +10,11 @@ import Foundation
 
 class UpperBodyTwo : WorkoutProtocol {
     var sports: Array<SportProtocol> = [
-        Superman(numberOfSets: 1, timeOfTheExercise: 60),
+        Superman(numberOfSets: 1, timeOfTheExercise: 40),
         Burpee(numberOfSets: 1, timeOfTheExercise: 60),
         ShoulderLift(numberOfSets: 1, timeOfTheExercise: 60),
         ReverseFly(numberOfSets: 1, timeOfTheExercise: 60),
-        MountainClimber(numberOfSets: 1, timeOfTheExercise: 60)
+        MountainClimber(numberOfSets: 1, timeOfTheExercise: 40)
                                         ]
     
     var name: String = "Upper Body #2"
