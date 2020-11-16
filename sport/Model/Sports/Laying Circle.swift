@@ -9,6 +9,8 @@
 import Foundation
 
 class LayingCircle : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int
     
     var intervalBetweenReps: Float = 1.6

@@ -107,6 +107,9 @@ class TrainingCalculator {
     
     
     func getTodayRecommendedWorkout(armsWorkout : Int, absWorkout : Int, restWorkout : Int, persistence : Persistence = AppDelegate.app.persistence) -> WorkoutType{
+        print(armsWorkout)
+        print(absWorkout)
+        print(restWorkout)
         if persistence.todayWorkout {
             return .alreadyWorkout
         }

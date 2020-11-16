@@ -9,6 +9,8 @@
 import Foundation
 
 class HollowExtensionToCannonBall : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int = 20
     
     var intervalBetweenReps: Float = 3
@@ -26,6 +28,6 @@ class HollowExtensionToCannonBall : SportWithReps {
     
     var numberOfImage: Int = 2
     
-    var nameOfSoundFile: String = "Hollow Extension To Cannon Ball"
+    var nameOfSoundFile: String = "Leg Flutters"
     
 }

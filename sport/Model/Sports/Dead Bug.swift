@@ -9,6 +9,8 @@
 import Foundation
 
 class DeadBug : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int = 20
     
     var intervalBetweenReps: Float = 3.2
@@ -26,6 +28,6 @@ class DeadBug : SportWithReps {
     
     var numberOfImage: Int = 4
     
-    var nameOfSoundFile: String = "Dead Bug"
+    var nameOfSoundFile: String = "Leg Flutters"
     
 }

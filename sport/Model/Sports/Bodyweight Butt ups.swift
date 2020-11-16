@@ -9,6 +9,8 @@
 import Foundation
 
 class BodyweightButtUps : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int
     var numberOfSets: Int
     

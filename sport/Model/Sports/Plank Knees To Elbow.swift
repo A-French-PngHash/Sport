@@ -9,6 +9,8 @@
 import Foundation
 
 class PlankKneesToElbow : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int
     
     var intervalBetweenReps: Float = 2.4

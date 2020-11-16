@@ -9,6 +9,8 @@
 import Foundation
 
 class TwistRussian : SportWithReps {
+    var isRecommended: Bool = false
+    
     var specification: String = "Russian"
     var name: String = "Bodyweight Twist"
     var intervalBetweenReps: Float = 1.6

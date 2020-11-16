@@ -9,6 +9,8 @@
 import Foundation
 
 class SeatedInAndOut : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int
     
     var intervalBetweenReps: Float = 2.5

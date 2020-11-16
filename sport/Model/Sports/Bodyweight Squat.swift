@@ -8,8 +8,9 @@
 
 import Foundation
 
-class BodyweightSquat : SportWithReps
- {
+class BodyweightSquat : SportWithReps {
+    var isRecommended: Bool = false
+    
     var name: String = "Bodyweight Squat"
     
     var intervalBetweenReps: Float = 3.3

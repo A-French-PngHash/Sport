@@ -9,6 +9,8 @@
 import Foundation
 
 class BodyweightCrunchBicycle : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int
     var numberOfSets: Int
     

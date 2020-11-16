@@ -52,14 +52,16 @@
 				<dict>
 					<key>fileNames</key>
 					<array>
-						<string>~/Desktop/Development/Medias/sport/Images/Images/Dead Bug-1 (dragged).tiff</string>
-						<string>~/Desktop/Development/Medias/sport/Images/Images/Dead Bug-2 (dragged).tiff</string>
-						<string>~/Desktop/Development/Medias/sport/Images/Images/Dead Bug-3 (dragged).tiff</string>
-						<string>~/Desktop/Development/Medias/sport/Images/Images/Dead Bug-4 (dragged).tiff</string>
-						<string>~/Desktop/Development/Medias/sport/Images/Images/Hollow Extension To Cannon Ball-1 (dragged).tiff</string>
-						<string>~/Desktop/Development/Medias/sport/Images/Images/Hollow Extension To Cannon Ball-2 (dragged).tiff</string>
-						<string>~/Desktop/Development/Medias/sport/Images/Images/Side Bend-1 (dragged).tiff</string>
-						<string>~/Desktop/Development/Medias/sport/Images/Images/Side Bend-2 (dragged).tiff</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Hammer Curls 1.PNG</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Hammer Curls 2.PNG</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Rear Delt Flies 1.PNG</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Rear Delt Flies 2.PNG</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Overhead Triceps Extension 1.PNG</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Overhead Triceps Extension 2.PNG</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Pronated Curls 2.PNG</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Pronated Curls 1.PNG</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Supinated Biceps Curls 1.PNG</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Supinated Biceps Curls 2.PNG</string>
 					</array>
 				</dict>
 				<key>BundleIdentifier</key>
@@ -112,109 +114,9 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:239.000000</string>
+				<string>252.000000:239.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
-			</dict>
-			<key>isViewVisible</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>action</key>
-			<dict>
-				<key>AMAccepts</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Optional</key>
-					<false/>
-					<key>Types</key>
-					<array>
-						<string>public.directory</string>
-					</array>
-				</dict>
-				<key>AMActionVersion</key>
-				<string>1.0.2</string>
-				<key>AMApplication</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>AMParameterProperties</key>
-				<dict>
-					<key>recurse</key>
-					<dict/>
-				</dict>
-				<key>AMProvides</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Types</key>
-					<array>
-						<string>com.apple.cocoa.path</string>
-					</array>
-				</dict>
-				<key>AMRequiredResources</key>
-				<array/>
-				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Get Folder Contents.action</string>
-				<key>ActionName</key>
-				<string>Get Folder Contents</string>
-				<key>ActionParameters</key>
-				<dict>
-					<key>recurse</key>
-					<true/>
-				</dict>
-				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.GetFolderContents</string>
-				<key>CFBundleVersion</key>
-				<string>1.0.2</string>
-				<key>CanShowSelectedItemsWhenRun</key>
-				<true/>
-				<key>CanShowWhenRun</key>
-				<true/>
-				<key>Category</key>
-				<array>
-					<string>AMCategoryFilesAndFolders</string>
-				</array>
-				<key>Class Name</key>
-				<string>GetFolderContents</string>
-				<key>InputUUID</key>
-				<string>9E03E02F-D490-46BF-A813-BCD2B15D3D7B</string>
-				<key>Keywords</key>
-				<array>
-					<string>File</string>
-					<string>Folder</string>
-				</array>
-				<key>OutputUUID</key>
-				<string>8D8C5684-CD38-4326-93B7-9801C1B103F2</string>
-				<key>UUID</key>
-				<string>086BE302-F644-437A-923B-4BFE3C510FBB</string>
-				<key>UnlocalizedApplications</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>arguments</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>default value</key>
-						<false/>
-						<key>name</key>
-						<string>recurse</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>0</string>
-					</dict>
-				</dict>
-				<key>isViewVisible</key>
-				<true/>
-				<key>location</key>
-				<string>301.500000:340.000000</string>
-				<key>nibPath</key>
-				<string>/System/Library/Automator/Get Folder Contents.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -686,7 +588,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:527.000000</string>
+				<string>252.000000:426.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1165,7 +1067,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:714.000000</string>
+				<string>252.000000:613.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1353,7 +1255,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:912.000000</string>
+				<string>252.000000:811.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Crop Images.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1832,7 +1734,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:1099.000000</string>
+				<string>252.000000:998.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1842,40 +1744,33 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>204EB9CA-9712-4F8B-92FE-461C5A9565CE</key>
-		<dict>
-			<key>from</key>
-			<string>820FA2E9-2842-4F6B-804B-62D46E960F47 - 820FA2E9-2842-4F6B-804B-62D46E960F47</string>
-			<key>to</key>
-			<string>9A6615C0-ED46-4C32-892C-15AA5297DC5A - 9A6615C0-ED46-4C32-892C-15AA5297DC5A</string>
-		</dict>
-		<key>64EF5633-14A0-4B96-84C8-114487557E9D</key>
-		<dict>
-			<key>from</key>
-			<string>952A2CD6-FA5B-4619-A6D8-C60528811B24 - 952A2CD6-FA5B-4619-A6D8-C60528811B24</string>
-			<key>to</key>
-			<string>086BE302-F644-437A-923B-4BFE3C510FBB - 086BE302-F644-437A-923B-4BFE3C510FBB</string>
-		</dict>
-		<key>B1A3C6FE-38C8-4519-9E8B-720A07344CB9</key>
+		<key>1723B5CC-BF72-46E8-8FA3-947A07ED5A0F</key>
 		<dict>
 			<key>from</key>
 			<string>303FF246-14BA-426C-A01C-C6E1E0A0D670 - 303FF246-14BA-426C-A01C-C6E1E0A0D670</string>
 			<key>to</key>
 			<string>8AA5EA1B-7FEE-4C6A-8083-EDF0DEEDA3D9 - 8AA5EA1B-7FEE-4C6A-8083-EDF0DEEDA3D9</string>
 		</dict>
-		<key>C4C53EB3-1BBC-477F-97F8-73A3536567BF</key>
-		<dict>
-			<key>from</key>
-			<string>086BE302-F644-437A-923B-4BFE3C510FBB - 086BE302-F644-437A-923B-4BFE3C510FBB</string>
-			<key>to</key>
-			<string>820FA2E9-2842-4F6B-804B-62D46E960F47 - 820FA2E9-2842-4F6B-804B-62D46E960F47</string>
-		</dict>
-		<key>F366EDE0-6E04-4E87-BFF4-5F0AE050DDA3</key>
+		<key>22C94BF8-A253-4810-8B49-FD5E9D5A6AFB</key>
 		<dict>
 			<key>from</key>
 			<string>9A6615C0-ED46-4C32-892C-15AA5297DC5A - 9A6615C0-ED46-4C32-892C-15AA5297DC5A</string>
 			<key>to</key>
 			<string>303FF246-14BA-426C-A01C-C6E1E0A0D670 - 303FF246-14BA-426C-A01C-C6E1E0A0D670</string>
+		</dict>
+		<key>2E3B6F1B-49C1-4E6C-98A7-6F6EC742DF4F</key>
+		<dict>
+			<key>from</key>
+			<string>952A2CD6-FA5B-4619-A6D8-C60528811B24 - 952A2CD6-FA5B-4619-A6D8-C60528811B24</string>
+			<key>to</key>
+			<string>820FA2E9-2842-4F6B-804B-62D46E960F47 - 820FA2E9-2842-4F6B-804B-62D46E960F47</string>
+		</dict>
+		<key>36B97F3F-DC39-437D-8DC3-CE3BE1268874</key>
+		<dict>
+			<key>from</key>
+			<string>820FA2E9-2842-4F6B-804B-62D46E960F47 - 820FA2E9-2842-4F6B-804B-62D46E960F47</string>
+			<key>to</key>
+			<string>9A6615C0-ED46-4C32-892C-15AA5297DC5A - 9A6615C0-ED46-4C32-892C-15AA5297DC5A</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>

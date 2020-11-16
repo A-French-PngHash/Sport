@@ -9,6 +9,8 @@
 import Foundation
 
 class BodyweightPullInLying : SportWithReps {
+    var isRecommended: Bool = false
+    
     var name: String = "Bodyweight Pull In"
     var intervalBetweenReps: Float = 3
     

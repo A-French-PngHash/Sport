@@ -9,6 +9,8 @@
 import Foundation
 
 class LayingLegRaises : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int
     
     var intervalBetweenReps: Float = 1.9

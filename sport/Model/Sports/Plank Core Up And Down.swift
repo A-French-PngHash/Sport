@@ -9,6 +9,8 @@
 import Foundation
 
 class PlankCoreUpAndDown : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int
     
     var intervalBetweenReps: Float = 1.4

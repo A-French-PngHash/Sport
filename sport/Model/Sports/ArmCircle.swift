@@ -9,6 +9,8 @@
 import Foundation
 
 class ArmCircle : SportWithReps {
+    var isRecommended: Bool = false
+    
     var numberOfReps: Int
     
     var intervalBetweenReps: Float = 1
