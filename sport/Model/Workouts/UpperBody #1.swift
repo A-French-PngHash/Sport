@@ -22,4 +22,5 @@ class UperBodyOne : WorkoutProtocol {
     
     var pauseBetweenSports: Int = 5
     
+    var type : WorkoutType = .arms
 }

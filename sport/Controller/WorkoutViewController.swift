@@ -146,7 +146,6 @@ class WorkoutViewController: UIViewController {
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name("SetEnded"), object: nil, queue:nil)
         { (_) in
-            print("SetEnded")
             self.dataUpdateTimerIsValid = false
             self.anounceNextSet()
         }

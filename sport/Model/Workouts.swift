@@ -12,6 +12,7 @@ protocol WorkoutProtocol {
     var sports : Array<SportProtocol> { get }
     var name : String { get }
     var pauseBetweenSports : Int { get }
+    var type : WorkoutType { get }
 }
 
 class Workouts{
@@ -21,8 +22,9 @@ class Workouts{
         let hottie = Hottie()
         let upperBody1 = UperBodyOne()
         let upperBody2 = UpperBodyTwo()
-        self.allWorkouts = [hottie, upperBody1, upperBody2]
-        self.allWorkoutsNames = [hottie.name, upperBody1.name, upperBody2.name]
+        let test = Test()
+        self.allWorkouts = [hottie, upperBody1, upperBody2, test]
+        self.allWorkoutsNames = [hottie.name, upperBody1.name, upperBody2.name, test.name]
     }
     
     

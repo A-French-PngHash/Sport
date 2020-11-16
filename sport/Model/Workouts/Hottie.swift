@@ -21,5 +21,6 @@ class Hottie : WorkoutProtocol{
     ]
     var name = "Workout #1"
     var pauseBetweenSports = 15
+    var type : WorkoutType = .abs
 }
 

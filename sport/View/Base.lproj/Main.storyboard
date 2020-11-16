@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DEh-9e-Cjz">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="133" width="375" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutTableViewCell" textLabel="eXq-8K-U3J" style="IBUITableViewCellStyleDefault" id="ULw-ia-lRT">
@@ -46,6 +46,7 @@
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALa-yt-CYs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <items>
                                     <navigationItem title="Workouts" id="gQD-jT-Mhi"/>
                                 </items>
@@ -53,26 +54,46 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="qtM-6a-PYq"/>
                                 </connections>
                             </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XSZ-AE-KP7">
+                                <rect key="frame" x="162.5" y="45.5" width="50" height="47.5"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="77U-an-AZo"/>
+                                    <constraint firstAttribute="width" constant="50" id="tuC-vY-mFx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recomendation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AH-bE-NU2">
+                                <rect key="frame" x="105" y="102" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6AH-bE-NU2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0qL-dy-bgq"/>
                             <constraint firstItem="DEh-9e-Cjz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1uK-cI-CgY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DEh-9e-Cjz" secondAttribute="bottom" id="3zp-wJ-vMb"/>
+                            <constraint firstItem="XSZ-AE-KP7" firstAttribute="top" secondItem="ALa-yt-CYs" secondAttribute="bottom" id="91C-5d-kMy"/>
                             <constraint firstItem="ALa-yt-CYs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Agd-oM-gmt"/>
                             <constraint firstItem="ALa-yt-CYs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ENH-Hu-caH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DEh-9e-Cjz" secondAttribute="trailing" id="HWT-rw-7oN"/>
-                            <constraint firstItem="DEh-9e-Cjz" firstAttribute="top" secondItem="ALa-yt-CYs" secondAttribute="bottom" id="bF3-Ir-8hG"/>
+                            <constraint firstItem="DEh-9e-Cjz" firstAttribute="top" secondItem="6AH-bE-NU2" secondAttribute="bottom" constant="10" id="V1o-Ya-yya"/>
                             <constraint firstItem="ALa-yt-CYs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lGZ-ur-7Eg"/>
+                            <constraint firstItem="XSZ-AE-KP7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p0x-Vh-s0h"/>
+                            <constraint firstItem="6AH-bE-NU2" firstAttribute="top" secondItem="XSZ-AE-KP7" secondAttribute="bottom" constant="8" symbolic="YES" id="z9V-lN-dwa"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="recomendationLabel" destination="6AH-bE-NU2" id="kEt-m1-qmi"/>
+                        <outlet property="tableView" destination="DEh-9e-Cjz" id="AbR-be-YSg"/>
                         <segue destination="RhP-hF-xfa" kind="presentation" identifier="SegueToWorkoutVC" modalPresentationStyle="fullScreen" id="fd7-JH-6aK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="133"/>
+            <point key="canvasLocation" x="181.59999999999999" y="132.68365817091455"/>
         </scene>
         <!--Workout View Controller-->
         <scene sceneID="J7O-zg-zL8">
@@ -103,7 +124,8 @@
                                             <constraint firstAttribute="width" constant="20" id="cUp-YI-MPp"/>
                                             <constraint firstAttribute="height" constant="20" id="zHQ-2B-PrU"/>
                                         </constraints>
-                                        <state key="normal" image="right-arrow-disponible"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" image="chevron.right" catalog="system"/>
                                         <state key="disabled" image="right-arrow-not-disponible"/>
                                         <connections>
                                             <action selector="nextSportButtonClicked:" destination="RhP-hF-xfa" eventType="touchUpInside" id="BWU-kU-zsK"/>
@@ -115,7 +137,7 @@
                                             <constraint firstAttribute="width" constant="20" id="7ez-6G-TbC"/>
                                             <constraint firstAttribute="height" constant="20" id="RT0-uY-Hug"/>
                                         </constraints>
-                                        <state key="normal" image="left-arrow-disponible"/>
+                                        <state key="normal" image="chevron.left" catalog="system"/>
                                         <state key="disabled" image="left-arrow-not-disponible"/>
                                         <connections>
                                             <action selector="previousSportButtonClicked:" destination="RhP-hF-xfa" eventType="touchUpInside" id="38h-Yn-f7E"/>
@@ -356,15 +378,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="left-arrow-disponible" width="626" height="626"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="left-arrow-not-disponible" width="626" height="626"/>
-        <image name="right-arrow-disponible" width="626" height="626"/>
         <image name="right-arrow-not-disponible" width="626" height="626"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

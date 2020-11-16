@@ -9,11 +9,20 @@
 import UIKit
 
 class ChooseWorkoutViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var recomendationLabel: UILabel!
     var workoutChosed : String!
+    
+    var restText : String = "You've been active for the past couple days so today take a break, relax yourself, rest !"
+    var armText : String = "We recommend you to do your arm workout !"
+    var absText : String = "Abs is what we recommend you today !"
+    var alreadyWorkoutText : String = "Great ! You've already workout today "
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setGradient()
         UIApplication.shared.isIdleTimerDisabled = true
         //testCoreData()
     }
@@ -35,7 +44,16 @@ class ChooseWorkoutViewController: UIViewController {
         //TrainingCalculator.shared.getTodayRecommendedWorkout()
 
     }
-
+    
+    func setGradient() {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradient.frame = tableView.layer.frame
+        tableView.layer.insertSublayer(gradient, at: 0)
+    }
 }
 
 extension ChooseWorkoutViewController : UITableViewDataSource, UITableViewDelegate {

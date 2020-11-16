@@ -10,6 +10,8 @@ import Foundation
 
 
 class SportSession {
+    
+    var workoutType : WorkoutType
     var sports : Array<SportProtocol>
     
     private var currentSportIndex : Int = 0
@@ -17,15 +19,21 @@ class SportSession {
     var sets : Int
     var totalReps : Int?
     var totalSets : Int
+    
+    /// Hold the number of seconds the session will last.
     var totalSessionTime : Float
     var currentState : WorkoutState
     var pauseBetweenSport : Int
     var timeUntilEndOfPause : Int
     var restTimer : Timer?
     
-    // Hold the date in UNIX format when the sport started
+    /// Hold the date in UNIX format when the sport started.
     var sportBeganAt : Double?
     var timeOfTheExercise : Double?
+    
+    /// The date when the session was initialized.
+    var sessionStartedAt : Date
+    var workoutHasBeenSaved = false
     
     var currentSport : SportProtocol {
         get {
@@ -91,14 +99,17 @@ class SportSession {
     
     init(workout : WorkoutProtocol) {
         self.sports = workout.sports
+        self.sessionStartedAt = Date()
         reps = 0
         sets = 1
         totalSessionTime = 0
         currentState = .anouncingWorkout
-        // The +10 is for the time spent speaking
-        totalSessionTime += Float((workout.pauseBetweenSports + 10) * workout.sports.count - 1)
+        // The +7 is for the time spent speaking
+        totalSessionTime += Float((workout.pauseBetweenSports + 7) * workout.sports.count - 1)
         self.pauseBetweenSport = workout.pauseBetweenSports
         self.timeUntilEndOfPause = 0
+        
+        workoutType = workout.type
         
         // We have to define this variable with a value defined without any use of a calculated property before setting it to something else
         self.totalSets = 0
@@ -157,7 +168,7 @@ class SportSession {
     
     func setCompleted() {
         // Sport begin at set 1
-        
+        saveIfNeeded()
         if sets == totalSets {
             if sports.count == currentSportIndex + 1 {
                 currentState = .anouncingEnd
@@ -227,6 +238,19 @@ class SportSession {
             self.timeUntilEndOfPause -= 1
             if self.timeUntilEndOfPause <= 0 {
                 self.executeTransitionToNextSport()
+            }
+        }
+    }
+    
+    /// Check if the current workout has been saved and save it if not.
+    private func saveIfNeeded() {
+        if !workoutHasBeenSaved {
+            let secondsElapsed = Date().timeIntervalSince1970 - sessionStartedAt.timeIntervalSince1970
+            let percentage = Double(secondsElapsed) / Double(totalSessionTime)
+            if percentage >= 0.5 {
+                let persistence = AppDelegate.app.persistence
+                persistence.insertWorkoutItem(date: sessionStartedAt, workoutType: workoutType)
+                workoutHasBeenSaved = true
             }
         }
     }

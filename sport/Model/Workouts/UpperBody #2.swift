@@ -20,5 +20,6 @@ class UpperBodyTwo : WorkoutProtocol {
     var name: String = "Upper Body #2"
     
     var pauseBetweenSports: Int = 5
+    var type : WorkoutType = .arms
     
 }
