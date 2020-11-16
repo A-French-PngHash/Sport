@@ -136,7 +136,6 @@ class WorkoutViewController: UIViewController {
             self.updateButtonStyle()
             self.restEnded()
             
-            let secondsForEachImage : Float = self.session.secondsForEachImageCurrentSport()
             self.dataUpdateTimerIsValid = true
             
             self.tick()
@@ -327,7 +326,7 @@ class WorkoutViewController: UIViewController {
         }
         queuePlayer = AVQueuePlayer(items: itemsToPlay)
         print("passed one")
-        queuePlayer.playImmediately(atRate: 1)
+        queuePlayer.playImmediately(atRate: 1.3)
     }
     
     

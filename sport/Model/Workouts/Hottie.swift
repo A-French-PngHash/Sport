@@ -10,7 +10,7 @@ import Foundation
 
 
 class Hottie : WorkoutProtocol{
-    var sports : Array<SportProtocol> = [BodyweightTwist(numberOfReps: 30,                                      numberOfSets: 1),
+    var sports : Array<SportProtocol> = [TwistRussian(numberOfReps: 30,                                      numberOfSets: 1),
                                          BodyweightCrunchBicycle(numberOfReps: 30, numberOfSets: 1),
                                          BodyweightCrunchCrossBody(numberOfReps: 30, numberOfSets: 1),
                                          BodyweightButtUps(numberOfReps: 30, numberOfSets: 1),

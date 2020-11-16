@@ -98,7 +98,7 @@ class SportSession {
     }
     
     init(workout : WorkoutProtocol) {
-        self.sports = workout.sports
+        self.sports = workout.sports.shuffled()
         self.sessionStartedAt = Date()
         reps = 0
         sets = 1
@@ -121,13 +121,16 @@ class SportSession {
             self.timeOfTheExercise = Double(sportWithTimer.timeOfTheExercise)
         }
         calculateTotalSessionTime()
+        
+        print("total :")
+        print(totalSessionTime)
     }
     
     /*
      As described in SportProtocol.swift there are 2 different kind of sports.
      When this variable is equal to "t" then it is the "SportWithTimer" type else the variable is equal to "r" ("SportWithReps")
      */
-    private func sportType(sport : SportProtocol) -> String{
+    private func sportType(sport : SportProtocol) -> String {
         if let _ = sport as? SportWithReps {
             return "r"
         } else {

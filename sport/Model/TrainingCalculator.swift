@@ -32,7 +32,7 @@ class TrainingCalculator {
     /**
      Get the workouts under array form for the last x days.
      
-     - Remark : There is a maximum of one workout per day per array.
+     - Remark : In the returned arrays, there is a maximum of one workout per day per array. The function return in position 0 the number of arm workout, position 1 the number of abs and 2 the number of rest.
      
      - requires : x must be less than 28 else it could cause problem.
      
@@ -45,7 +45,7 @@ class TrainingCalculator {
             fatalError("This situation will cause problems.")
         }
         
-        var pastXDaysWorkout = persistence.workoutDataSince(date: Date.dateXDaysAgo(x: 5))
+        var pastXDaysWorkout = persistence.workoutDataSince(date: Date.dateXDaysAgo(x: 4))
         
         // We want to filter in order to remove today's workout from the list
         var new = [WorkoutData]()
@@ -111,7 +111,7 @@ class TrainingCalculator {
             return .alreadyWorkout
         }
         
-        // Preventing no rest for 5 continuous day if the suer didn't follow the programm that was given.
+        // Preventing no rest for 5 continuous day if the user didn't follow the programm that was given.
         if armsWorkout + absWorkout == armsGoal + absGoal {
             return .rest
         }

@@ -22,7 +22,7 @@
 		5B30F83A24B8EC2D0095D2ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B30F83824B8EC2D0095D2ED /* LaunchScreen.storyboard */; };
 		5B30F84824B8ECA00095D2ED /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F84724B8ECA00095D2ED /* Session.swift */; };
 		5B30F84A24B8ED450095D2ED /* SportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F84924B8ED450095D2ED /* SportProtocol.swift */; };
-		5B30F84D24B9C5630095D2ED /* Bodyweight Twist Russian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F84C24B9C5630095D2ED /* Bodyweight Twist Russian.swift */; };
+		5B30F84D24B9C5630095D2ED /* Twist Russian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F84C24B9C5630095D2ED /* Twist Russian.swift */; };
 		5B30F84F24B9C60C0095D2ED /* Bodyweight Crunch Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F84E24B9C60C0095D2ED /* Bodyweight Crunch Bicycle.swift */; };
 		5B30F85124B9C7090095D2ED /* BodyweightCrunchCrossBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F85024B9C7090095D2ED /* BodyweightCrunchCrossBody.swift */; };
 		5B30F85324B9C9B00095D2ED /* Bodyweight Butt ups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F85224B9C9B00095D2ED /* Bodyweight Butt ups.swift */; };
@@ -30,6 +30,33 @@
 		5B30F85724B9CA500095D2ED /* Bodyweight Pull In Lying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F85624B9CA500095D2ED /* Bodyweight Pull In Lying.swift */; };
 		5B30F85924B9CA810095D2ED /* Bodyweight Plank Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F85824B9CA810095D2ED /* Bodyweight Plank Side.swift */; };
 		5B30F85B24B9CF710095D2ED /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F85A24B9CF710095D2ED /* Workouts.swift */; };
+		5B3B60AB2546C88D00A2CCC9 /* Chair Sit Ups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60AA2546C88D00A2CCC9 /* Chair Sit Ups.swift */; };
+		5B3B60BD254712C000A2CCC9 /* Crucifixes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60B0254712BF00A2CCC9 /* Crucifixes.mp3 */; };
+		5B3B60BE254712C000A2CCC9 /* Chair Sit Ups.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60B1254712BF00A2CCC9 /* Chair Sit Ups.mp3 */; };
+		5B3B60BF254712C000A2CCC9 /* Laying Leg Raises.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60B2254712BF00A2CCC9 /* Laying Leg Raises.mp3 */; };
+		5B3B60C0254712C000A2CCC9 /* Laying Circle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60B3254712BF00A2CCC9 /* Laying Circle.mp3 */; };
+		5B3B60C1254712C000A2CCC9 /* Plank Core Up And Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60B4254712BF00A2CCC9 /* Plank Core Up And Down.mp3 */; };
+		5B3B60C2254712C000A2CCC9 /* Plank Knees To Elbow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60B5254712BF00A2CCC9 /* Plank Knees To Elbow.mp3 */; };
+		5B3B60C3254712C000A2CCC9 /* Side Boat Hold Crunch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60B6254712BF00A2CCC9 /* Side Boat Hold Crunch.mp3 */; };
+		5B3B60C4254712C000A2CCC9 /* Laying Knee Raises.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60B7254712BF00A2CCC9 /* Laying Knee Raises.mp3 */; };
+		5B3B60C5254712C000A2CCC9 /* Toe Touches.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60B8254712BF00A2CCC9 /* Toe Touches.mp3 */; };
+		5B3B60C7254712C000A2CCC9 /* Side Plank Raises.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60BA254712BF00A2CCC9 /* Side Plank Raises.mp3 */; };
+		5B3B60C8254712C000A2CCC9 /* V Ups.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60BB254712BF00A2CCC9 /* V Ups.mp3 */; };
+		5B3B60C9254712C000A2CCC9 /* Seated In And Out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B60BC254712C000A2CCC9 /* Seated In And Out.mp3 */; };
+		5B3B60CF25473B7C00A2CCC9 /* Crucifixes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60CE25473B7C00A2CCC9 /* Crucifixes.swift */; };
+		5B3B60D525473BED00A2CCC9 /* Laying Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60D425473BED00A2CCC9 /* Laying Circle.swift */; };
+		5B3B60D925473C3C00A2CCC9 /* Laying Knee Raises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60D825473C3C00A2CCC9 /* Laying Knee Raises.swift */; };
+		5B3B60DD25473C8500A2CCC9 /* Laying Leg Raises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60DC25473C8500A2CCC9 /* Laying Leg Raises.swift */; };
+		5B3B60E125473CC000A2CCC9 /* Plank Core Up And Down.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60E025473CC000A2CCC9 /* Plank Core Up And Down.swift */; };
+		5B3B60E52547438E00A2CCC9 /* Plank Knees To Elbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60E42547438E00A2CCC9 /* Plank Knees To Elbow.swift */; };
+		5B3B60EB2547444800A2CCC9 /* Seated In And Out.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60EA2547444800A2CCC9 /* Seated In And Out.swift */; };
+		5B3B60F52547473E00A2CCC9 /* Side Plank Raises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60F42547473E00A2CCC9 /* Side Plank Raises.swift */; };
+		5B3B60FB25474F7400A2CCC9 /* Toe Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60FA25474F7400A2CCC9 /* Toe Touches.swift */; };
+		5B3B60FF25474FA400A2CCC9 /* V Ups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B60FE25474FA400A2CCC9 /* V Ups.swift */; };
+		5B3B61032548196F00A2CCC9 /* Abs Second Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B61022548196F00A2CCC9 /* Abs Second Workout.swift */; };
+		5B3B610725481B0400A2CCC9 /* Mountain Climber Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B610625481B0400A2CCC9 /* Mountain Climber Rep.swift */; };
+		5B3B610B25481E8200A2CCC9 /* Leg Flutters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B610A25481E8200A2CCC9 /* Leg Flutters.swift */; };
+		5B3B610F25481F5600A2CCC9 /* Leg Flutters.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B3B610E25481F5600A2CCC9 /* Leg Flutters.mp3 */; };
 		5B4C390F253260260082F52B /* Reverse Fly.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B4C3908253260250082F52B /* Reverse Fly.mp3 */; };
 		5B4C3910253260260082F52B /* Hip Hinge High Plank.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B4C3909253260250082F52B /* Hip Hinge High Plank.mp3 */; };
 		5B4C3911253260260082F52B /* Side Plank Needle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B4C390A253260250082F52B /* Side Plank Needle.mp3 */; };
@@ -48,8 +75,6 @@
 		5B5D98052535B434006E4A17 /* Arm Circle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B5D98042535B434006E4A17 /* Arm Circle.mp3 */; };
 		5B5D98082535B441006E4A17 /* ArmCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5D98072535B441006E4A17 /* ArmCircle.swift */; };
 		5B5D98142535BBBA006E4A17 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5D98132535BBBA006E4A17 /* Persistence.swift */; };
-		5B68421C2539BEE7008A2758 /* 40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B68421A2539BEE7008A2758 /* 40.mp3 */; };
-		5B68421D2539BEE7008A2758 /* 45.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B68421B2539BEE7008A2758 /* 45.mp3 */; };
 		5B723F202539B6CA003C1972 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B723F1F2539B6CA003C1972 /* Test.swift */; };
 		5B82427525339A370085C879 /* Fantastic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B82427125339A360085C879 /* Fantastic.mp3 */; };
 		5B82427625339A370085C879 /* Set.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B82427225339A370085C879 /* Set.mp3 */; };
@@ -73,46 +98,49 @@
 		5BD343EA252F2208007BC7A2 /* Bodyweight Squat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD343E9252F2208007BC7A2 /* Bodyweight Squat.swift */; };
 		5BD343F3252F471D007BC7A2 /* series.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD343EC252F471D007BC7A2 /* series.mp3 */; };
 		5BD343F4252F471D007BC7A2 /* BodyweightSquat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD343ED252F471D007BC7A2 /* BodyweightSquat.mp3 */; };
-		5BD343F5252F471D007BC7A2 /* secondes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD343EE252F471D007BC7A2 /* secondes.mp3 */; };
-		5BD343F6252F471D007BC7A2 /* nowWeHave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD343EF252F471D007BC7A2 /* nowWeHave.mp3 */; };
-		5BD343F7252F471D007BC7A2 /* repetitions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD343F0252F471D007BC7A2 /* repetitions.mp3 */; };
 		5BD343F8252F471D007BC7A2 /* AwesomeNowRestFor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD343F1252F471D007BC7A2 /* AwesomeNowRestFor.mp3 */; };
 		5BD343F9252F471D007BC7A2 /* GetReadyAnd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD343F2252F471D007BC7A2 /* GetReadyAnd.mp3 */; };
-		5BD34424252F4B51007BC7A2 /* 26.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34401252F4B4F007BC7A2 /* 26.mp3 */; };
 		5BD34425252F4B51007BC7A2 /* 35.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34402252F4B4F007BC7A2 /* 35.mp3 */; };
-		5BD34426252F4B51007BC7A2 /* 15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34403252F4B4F007BC7A2 /* 15.mp3 */; };
-		5BD34427252F4B51007BC7A2 /* 12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34404252F4B4F007BC7A2 /* 12.mp3 */; };
-		5BD34428252F4B51007BC7A2 /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34405252F4B4F007BC7A2 /* 9.mp3 */; };
 		5BD34429252F4B51007BC7A2 /* 31.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34406252F4B4F007BC7A2 /* 31.mp3 */; };
-		5BD3442A252F4B51007BC7A2 /* 29.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34407252F4B4F007BC7A2 /* 29.mp3 */; };
-		5BD3442B252F4B51007BC7A2 /* 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34408252F4B4F007BC7A2 /* 11.mp3 */; };
-		5BD3442C252F4B51007BC7A2 /* 28.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34409252F4B4F007BC7A2 /* 28.mp3 */; };
-		5BD3442D252F4B51007BC7A2 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3440A252F4B4F007BC7A2 /* 6.mp3 */; };
-		5BD3442E252F4B51007BC7A2 /* 16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3440B252F4B4F007BC7A2 /* 16.mp3 */; };
-		5BD3442F252F4B51007BC7A2 /* 22.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3440C252F4B50007BC7A2 /* 22.mp3 */; };
-		5BD34430252F4B51007BC7A2 /* 30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3440D252F4B50007BC7A2 /* 30.mp3 */; };
-		5BD34431252F4B51007BC7A2 /* 10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3440E252F4B50007BC7A2 /* 10.mp3 */; };
-		5BD34432252F4B51007BC7A2 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3440F252F4B50007BC7A2 /* 4.mp3 */; };
-		5BD34433252F4B51007BC7A2 /* 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34410252F4B50007BC7A2 /* 3.mp3 */; };
-		5BD34434252F4B51007BC7A2 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34411252F4B50007BC7A2 /* 7.mp3 */; };
-		5BD34435252F4B51007BC7A2 /* 23.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34412252F4B50007BC7A2 /* 23.mp3 */; };
-		5BD34436252F4B51007BC7A2 /* 19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34413252F4B50007BC7A2 /* 19.mp3 */; };
-		5BD34437252F4B51007BC7A2 /* 20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34414252F4B50007BC7A2 /* 20.mp3 */; };
-		5BD34438252F4B51007BC7A2 /* 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34415252F4B50007BC7A2 /* 5.mp3 */; };
-		5BD34439252F4B51007BC7A2 /* 27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34416252F4B50007BC7A2 /* 27.mp3 */; };
-		5BD3443A252F4B51007BC7A2 /* 24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34417252F4B50007BC7A2 /* 24.mp3 */; };
-		5BD3443B252F4B51007BC7A2 /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34418252F4B50007BC7A2 /* 2.mp3 */; };
-		5BD3443C252F4B51007BC7A2 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34419252F4B50007BC7A2 /* 1.mp3 */; };
-		5BD3443D252F4B51007BC7A2 /* 25.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3441A252F4B50007BC7A2 /* 25.mp3 */; };
-		5BD3443E252F4B51007BC7A2 /* 18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3441B252F4B50007BC7A2 /* 18.mp3 */; };
-		5BD3443F252F4B51007BC7A2 /* 13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3441C252F4B50007BC7A2 /* 13.mp3 */; };
-		5BD34440252F4B51007BC7A2 /* 17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3441D252F4B50007BC7A2 /* 17.mp3 */; };
-		5BD34441252F4B51007BC7A2 /* 14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3441E252F4B50007BC7A2 /* 14.mp3 */; };
-		5BD34442252F4B51007BC7A2 /* 21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD3441F252F4B50007BC7A2 /* 21.mp3 */; };
 		5BD34443252F4B51007BC7A2 /* 33.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34420252F4B50007BC7A2 /* 33.mp3 */; };
-		5BD34444252F4B51007BC7A2 /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34421252F4B50007BC7A2 /* 8.mp3 */; };
 		5BD34445252F4B51007BC7A2 /* 32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34422252F4B50007BC7A2 /* 32.mp3 */; };
 		5BD34446252F4B51007BC7A2 /* 34.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD34423252F4B51007BC7A2 /* 34.mp3 */; };
+		5BDD4602253B50C100AA64A0 /* 23.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45E4253B50C000AA64A0 /* 23.mp3 */; };
+		5BDD4603253B50C100AA64A0 /* 17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45E5253B50C000AA64A0 /* 17.mp3 */; };
+		5BDD4604253B50C100AA64A0 /* 13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45E6253B50C000AA64A0 /* 13.mp3 */; };
+		5BDD4605253B50C100AA64A0 /* 22.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45E7253B50C000AA64A0 /* 22.mp3 */; };
+		5BDD4606253B50C100AA64A0 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45E8253B50C000AA64A0 /* 6.mp3 */; };
+		5BDD4607253B50C100AA64A0 /* 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45E9253B50C000AA64A0 /* 11.mp3 */; };
+		5BDD4608253B50C100AA64A0 /* 12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45EA253B50C000AA64A0 /* 12.mp3 */; };
+		5BDD4609253B50C100AA64A0 /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45EB253B50C000AA64A0 /* 2.mp3 */; };
+		5BDD460A253B50C100AA64A0 /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45EC253B50C000AA64A0 /* 8.mp3 */; };
+		5BDD460B253B50C100AA64A0 /* 26.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45ED253B50C000AA64A0 /* 26.mp3 */; };
+		5BDD460C253B50C100AA64A0 /* 28.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45EE253B50C000AA64A0 /* 28.mp3 */; };
+		5BDD460D253B50C100AA64A0 /* 15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45EF253B50C000AA64A0 /* 15.mp3 */; };
+		5BDD460E253B50C100AA64A0 /* 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F0253B50C000AA64A0 /* 5.mp3 */; };
+		5BDD460F253B50C100AA64A0 /* 19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F1253B50C000AA64A0 /* 19.mp3 */; };
+		5BDD4610253B50C100AA64A0 /* 18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F2253B50C000AA64A0 /* 18.mp3 */; };
+		5BDD4611253B50C100AA64A0 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F3253B50C000AA64A0 /* 1.mp3 */; };
+		5BDD4612253B50C100AA64A0 /* 21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F4253B50C000AA64A0 /* 21.mp3 */; };
+		5BDD4613253B50C100AA64A0 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F5253B50C000AA64A0 /* 7.mp3 */; };
+		5BDD4614253B50C100AA64A0 /* 27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F6253B50C100AA64A0 /* 27.mp3 */; };
+		5BDD4615253B50C100AA64A0 /* 30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F7253B50C100AA64A0 /* 30.mp3 */; };
+		5BDD4616253B50C100AA64A0 /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F8253B50C100AA64A0 /* 9.mp3 */; };
+		5BDD4617253B50C100AA64A0 /* 25.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45F9253B50C100AA64A0 /* 25.mp3 */; };
+		5BDD4618253B50C100AA64A0 /* 24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45FA253B50C100AA64A0 /* 24.mp3 */; };
+		5BDD4619253B50C100AA64A0 /* 29.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45FB253B50C100AA64A0 /* 29.mp3 */; };
+		5BDD461A253B50C100AA64A0 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45FC253B50C100AA64A0 /* 4.mp3 */; };
+		5BDD461B253B50C100AA64A0 /* 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45FD253B50C100AA64A0 /* 3.mp3 */; };
+		5BDD461C253B50C100AA64A0 /* 10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45FE253B50C100AA64A0 /* 10.mp3 */; };
+		5BDD461D253B50C100AA64A0 /* 16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD45FF253B50C100AA64A0 /* 16.mp3 */; };
+		5BDD461E253B50C100AA64A0 /* 20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD4600253B50C100AA64A0 /* 20.mp3 */; };
+		5BDD461F253B50C100AA64A0 /* 14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD4601253B50C100AA64A0 /* 14.mp3 */; };
+		5BDD4625253B517B00AA64A0 /* nowWeHave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD4624253B517A00AA64A0 /* nowWeHave.mp3 */; };
+		5BDD4629253B518B00AA64A0 /* secondes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD4628253B518B00AA64A0 /* secondes.mp3 */; };
+		5BDD462D253B51A000AA64A0 /* repetitions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD462C253B519F00AA64A0 /* repetitions.mp3 */; };
+		5BDD4632253B52AD00AA64A0 /* 40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD4630253B52AD00AA64A0 /* 40.mp3 */; };
+		5BDD4633253B52AD00AA64A0 /* 45.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BDD4631253B52AD00AA64A0 /* 45.mp3 */; };
+		5BDD463F253B864700AA64A0 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD463E253B864700AA64A0 /* WorkoutTableViewCell.swift */; };
 		5BDE07B625323D8700CB9459 /* Burpee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE07B525323D8700CB9459 /* Burpee.swift */; };
 		5BDE07BA25323FD500CB9459 /* Mountain Climber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE07B925323FD500CB9459 /* Mountain Climber.swift */; };
 		5BDE07BD25323FE100CB9459 /* Hip Hinge High Plank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE07BC25323FE100CB9459 /* Hip Hinge High Plank.swift */; };
@@ -121,6 +149,9 @@
 		5BDE07C62532402900CB9459 /* Reverse Fly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE07C52532402900CB9459 /* Reverse Fly.swift */; };
 		5BDE07C92532403700CB9459 /* Shoulder Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE07C82532403700CB9459 /* Shoulder Lift.swift */; };
 		5BDE07CC2532404E00CB9459 /* Side Plank Needle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE07CB2532404E00CB9459 /* Side Plank Needle.swift */; };
+		5BE2D00A2562E8F800F17B1C /* Dead Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2D0092562E8F800F17B1C /* Dead Bug.swift */; };
+		5BE2D00E2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2D00D2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift */; };
+		5BE2D0122562E97E00F17B1C /* Side Bend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2D0112562E97E00F17B1C /* Side Bend.swift */; };
 		5BF66E3E2530CE9300240674 /* Hottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF66E3D2530CE9300240674 /* Hottie.swift */; };
 		5BF66E422530CEA200240674 /* UpperBody #1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF66E412530CEA200240674 /* UpperBody #1.swift */; };
 /* End PBXBuildFile section */
@@ -153,7 +184,7 @@
 		5B30F83B24B8EC2D0095D2ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B30F84724B8ECA00095D2ED /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		5B30F84924B8ED450095D2ED /* SportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportProtocol.swift; sourceTree = "<group>"; };
-		5B30F84C24B9C5630095D2ED /* Bodyweight Twist Russian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bodyweight Twist Russian.swift"; sourceTree = "<group>"; };
+		5B30F84C24B9C5630095D2ED /* Twist Russian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Twist Russian.swift"; sourceTree = "<group>"; };
 		5B30F84E24B9C60C0095D2ED /* Bodyweight Crunch Bicycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bodyweight Crunch Bicycle.swift"; sourceTree = "<group>"; };
 		5B30F85024B9C7090095D2ED /* BodyweightCrunchCrossBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyweightCrunchCrossBody.swift; sourceTree = "<group>"; };
 		5B30F85224B9C9B00095D2ED /* Bodyweight Butt ups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bodyweight Butt ups.swift"; sourceTree = "<group>"; };
@@ -161,6 +192,33 @@
 		5B30F85624B9CA500095D2ED /* Bodyweight Pull In Lying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bodyweight Pull In Lying.swift"; sourceTree = "<group>"; };
 		5B30F85824B9CA810095D2ED /* Bodyweight Plank Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bodyweight Plank Side.swift"; sourceTree = "<group>"; };
 		5B30F85A24B9CF710095D2ED /* Workouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workouts.swift; sourceTree = "<group>"; };
+		5B3B60AA2546C88D00A2CCC9 /* Chair Sit Ups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chair Sit Ups.swift"; sourceTree = "<group>"; };
+		5B3B60B0254712BF00A2CCC9 /* Crucifixes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crucifixes.mp3; sourceTree = "<group>"; };
+		5B3B60B1254712BF00A2CCC9 /* Chair Sit Ups.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Chair Sit Ups.mp3"; sourceTree = "<group>"; };
+		5B3B60B2254712BF00A2CCC9 /* Laying Leg Raises.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Laying Leg Raises.mp3"; sourceTree = "<group>"; };
+		5B3B60B3254712BF00A2CCC9 /* Laying Circle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Laying Circle.mp3"; sourceTree = "<group>"; };
+		5B3B60B4254712BF00A2CCC9 /* Plank Core Up And Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Plank Core Up And Down.mp3"; sourceTree = "<group>"; };
+		5B3B60B5254712BF00A2CCC9 /* Plank Knees To Elbow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Plank Knees To Elbow.mp3"; sourceTree = "<group>"; };
+		5B3B60B6254712BF00A2CCC9 /* Side Boat Hold Crunch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Side Boat Hold Crunch.mp3"; sourceTree = "<group>"; };
+		5B3B60B7254712BF00A2CCC9 /* Laying Knee Raises.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Laying Knee Raises.mp3"; sourceTree = "<group>"; };
+		5B3B60B8254712BF00A2CCC9 /* Toe Touches.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Toe Touches.mp3"; sourceTree = "<group>"; };
+		5B3B60BA254712BF00A2CCC9 /* Side Plank Raises.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Side Plank Raises.mp3"; sourceTree = "<group>"; };
+		5B3B60BB254712BF00A2CCC9 /* V Ups.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "V Ups.mp3"; sourceTree = "<group>"; };
+		5B3B60BC254712C000A2CCC9 /* Seated In And Out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Seated In And Out.mp3"; sourceTree = "<group>"; };
+		5B3B60CE25473B7C00A2CCC9 /* Crucifixes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crucifixes.swift; sourceTree = "<group>"; };
+		5B3B60D425473BED00A2CCC9 /* Laying Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Laying Circle.swift"; sourceTree = "<group>"; };
+		5B3B60D825473C3C00A2CCC9 /* Laying Knee Raises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Laying Knee Raises.swift"; sourceTree = "<group>"; };
+		5B3B60DC25473C8500A2CCC9 /* Laying Leg Raises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Laying Leg Raises.swift"; sourceTree = "<group>"; };
+		5B3B60E025473CC000A2CCC9 /* Plank Core Up And Down.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plank Core Up And Down.swift"; sourceTree = "<group>"; };
+		5B3B60E42547438E00A2CCC9 /* Plank Knees To Elbow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plank Knees To Elbow.swift"; sourceTree = "<group>"; };
+		5B3B60EA2547444800A2CCC9 /* Seated In And Out.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Seated In And Out.swift"; sourceTree = "<group>"; };
+		5B3B60F42547473E00A2CCC9 /* Side Plank Raises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Side Plank Raises.swift"; sourceTree = "<group>"; };
+		5B3B60FA25474F7400A2CCC9 /* Toe Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toe Touches.swift"; sourceTree = "<group>"; };
+		5B3B60FE25474FA400A2CCC9 /* V Ups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "V Ups.swift"; sourceTree = "<group>"; };
+		5B3B61022548196F00A2CCC9 /* Abs Second Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Abs Second Workout.swift"; sourceTree = "<group>"; };
+		5B3B610625481B0400A2CCC9 /* Mountain Climber Rep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mountain Climber Rep.swift"; sourceTree = "<group>"; };
+		5B3B610A25481E8200A2CCC9 /* Leg Flutters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Leg Flutters.swift"; sourceTree = "<group>"; };
+		5B3B610E25481F5600A2CCC9 /* Leg Flutters.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Leg Flutters.mp3"; sourceTree = "<group>"; };
 		5B4C3908253260250082F52B /* Reverse Fly.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Reverse Fly.mp3"; sourceTree = "<group>"; };
 		5B4C3909253260250082F52B /* Hip Hinge High Plank.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hip Hinge High Plank.mp3"; sourceTree = "<group>"; };
 		5B4C390A253260250082F52B /* Side Plank Needle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Side Plank Needle.mp3"; sourceTree = "<group>"; };
@@ -179,8 +237,6 @@
 		5B5D98042535B434006E4A17 /* Arm Circle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arm Circle.mp3"; sourceTree = "<group>"; };
 		5B5D98072535B441006E4A17 /* ArmCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmCircle.swift; sourceTree = "<group>"; };
 		5B5D98132535BBBA006E4A17 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		5B68421A2539BEE7008A2758 /* 40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 40.mp3; sourceTree = "<group>"; };
-		5B68421B2539BEE7008A2758 /* 45.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 45.mp3; sourceTree = "<group>"; };
 		5B723F1F2539B6CA003C1972 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		5B82427125339A360085C879 /* Fantastic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fantastic.mp3; sourceTree = "<group>"; };
 		5B82427225339A370085C879 /* Set.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Set.mp3; sourceTree = "<group>"; };
@@ -200,46 +256,49 @@
 		5BD343E9252F2208007BC7A2 /* Bodyweight Squat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bodyweight Squat.swift"; sourceTree = "<group>"; };
 		5BD343EC252F471D007BC7A2 /* series.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = series.mp3; sourceTree = "<group>"; };
 		5BD343ED252F471D007BC7A2 /* BodyweightSquat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BodyweightSquat.mp3; sourceTree = "<group>"; };
-		5BD343EE252F471D007BC7A2 /* secondes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = secondes.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Other/secondes.mp3"; sourceTree = "<group>"; };
-		5BD343EF252F471D007BC7A2 /* nowWeHave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nowWeHave.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Other/nowWeHave.mp3"; sourceTree = "<group>"; };
-		5BD343F0252F471D007BC7A2 /* repetitions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = repetitions.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Other/repetitions.mp3"; sourceTree = "<group>"; };
 		5BD343F1252F471D007BC7A2 /* AwesomeNowRestFor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AwesomeNowRestFor.mp3; sourceTree = "<group>"; };
 		5BD343F2252F471D007BC7A2 /* GetReadyAnd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GetReadyAnd.mp3; sourceTree = "<group>"; };
-		5BD34401252F4B4F007BC7A2 /* 26.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 26.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/26.mp3"; sourceTree = "<group>"; };
 		5BD34402252F4B4F007BC7A2 /* 35.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 35.mp3; sourceTree = "<group>"; };
-		5BD34403252F4B4F007BC7A2 /* 15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 15.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/15.mp3"; sourceTree = "<group>"; };
-		5BD34404252F4B4F007BC7A2 /* 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 12.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/12.mp3"; sourceTree = "<group>"; };
-		5BD34405252F4B4F007BC7A2 /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 9.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/9.mp3"; sourceTree = "<group>"; };
 		5BD34406252F4B4F007BC7A2 /* 31.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 31.mp3; sourceTree = "<group>"; };
-		5BD34407252F4B4F007BC7A2 /* 29.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 29.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/29.mp3"; sourceTree = "<group>"; };
-		5BD34408252F4B4F007BC7A2 /* 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 11.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/11.mp3"; sourceTree = "<group>"; };
-		5BD34409252F4B4F007BC7A2 /* 28.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 28.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/28.mp3"; sourceTree = "<group>"; };
-		5BD3440A252F4B4F007BC7A2 /* 6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 6.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/6.mp3"; sourceTree = "<group>"; };
-		5BD3440B252F4B4F007BC7A2 /* 16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 16.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/16.mp3"; sourceTree = "<group>"; };
-		5BD3440C252F4B50007BC7A2 /* 22.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 22.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/22.mp3"; sourceTree = "<group>"; };
-		5BD3440D252F4B50007BC7A2 /* 30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 30.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/30.mp3"; sourceTree = "<group>"; };
-		5BD3440E252F4B50007BC7A2 /* 10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 10.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/10.mp3"; sourceTree = "<group>"; };
-		5BD3440F252F4B50007BC7A2 /* 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 4.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/4.mp3"; sourceTree = "<group>"; };
-		5BD34410252F4B50007BC7A2 /* 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 3.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/3.mp3"; sourceTree = "<group>"; };
-		5BD34411252F4B50007BC7A2 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 7.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/7.mp3"; sourceTree = "<group>"; };
-		5BD34412252F4B50007BC7A2 /* 23.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 23.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/23.mp3"; sourceTree = "<group>"; };
-		5BD34413252F4B50007BC7A2 /* 19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 19.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/19.mp3"; sourceTree = "<group>"; };
-		5BD34414252F4B50007BC7A2 /* 20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 20.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/20.mp3"; sourceTree = "<group>"; };
-		5BD34415252F4B50007BC7A2 /* 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 5.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/5.mp3"; sourceTree = "<group>"; };
-		5BD34416252F4B50007BC7A2 /* 27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 27.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/27.mp3"; sourceTree = "<group>"; };
-		5BD34417252F4B50007BC7A2 /* 24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 24.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/24.mp3"; sourceTree = "<group>"; };
-		5BD34418252F4B50007BC7A2 /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 2.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/2.mp3"; sourceTree = "<group>"; };
-		5BD34419252F4B50007BC7A2 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/1.mp3"; sourceTree = "<group>"; };
-		5BD3441A252F4B50007BC7A2 /* 25.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 25.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/25.mp3"; sourceTree = "<group>"; };
-		5BD3441B252F4B50007BC7A2 /* 18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 18.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/18.mp3"; sourceTree = "<group>"; };
-		5BD3441C252F4B50007BC7A2 /* 13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 13.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/13.mp3"; sourceTree = "<group>"; };
-		5BD3441D252F4B50007BC7A2 /* 17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 17.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/17.mp3"; sourceTree = "<group>"; };
-		5BD3441E252F4B50007BC7A2 /* 14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 14.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/14.mp3"; sourceTree = "<group>"; };
-		5BD3441F252F4B50007BC7A2 /* 21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 21.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/21.mp3"; sourceTree = "<group>"; };
 		5BD34420252F4B50007BC7A2 /* 33.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 33.mp3; sourceTree = "<group>"; };
-		5BD34421252F4B50007BC7A2 /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 8.mp3; path = "../../../../../../Médias/sport/sons/New Songs/Numbers/8.mp3"; sourceTree = "<group>"; };
 		5BD34422252F4B50007BC7A2 /* 32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 32.mp3; sourceTree = "<group>"; };
 		5BD34423252F4B51007BC7A2 /* 34.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 34.mp3; sourceTree = "<group>"; };
+		5BDD45E4253B50C000AA64A0 /* 23.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 23.mp3; sourceTree = "<group>"; };
+		5BDD45E5253B50C000AA64A0 /* 17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 17.mp3; sourceTree = "<group>"; };
+		5BDD45E6253B50C000AA64A0 /* 13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 13.mp3; sourceTree = "<group>"; };
+		5BDD45E7253B50C000AA64A0 /* 22.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 22.mp3; sourceTree = "<group>"; };
+		5BDD45E8253B50C000AA64A0 /* 6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6.mp3; sourceTree = "<group>"; };
+		5BDD45E9253B50C000AA64A0 /* 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11.mp3; sourceTree = "<group>"; };
+		5BDD45EA253B50C000AA64A0 /* 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12.mp3; sourceTree = "<group>"; };
+		5BDD45EB253B50C000AA64A0 /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
+		5BDD45EC253B50C000AA64A0 /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8.mp3; sourceTree = "<group>"; };
+		5BDD45ED253B50C000AA64A0 /* 26.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 26.mp3; sourceTree = "<group>"; };
+		5BDD45EE253B50C000AA64A0 /* 28.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 28.mp3; sourceTree = "<group>"; };
+		5BDD45EF253B50C000AA64A0 /* 15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 15.mp3; sourceTree = "<group>"; };
+		5BDD45F0253B50C000AA64A0 /* 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5.mp3; sourceTree = "<group>"; };
+		5BDD45F1253B50C000AA64A0 /* 19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 19.mp3; sourceTree = "<group>"; };
+		5BDD45F2253B50C000AA64A0 /* 18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 18.mp3; sourceTree = "<group>"; };
+		5BDD45F3253B50C000AA64A0 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
+		5BDD45F4253B50C000AA64A0 /* 21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 21.mp3; sourceTree = "<group>"; };
+		5BDD45F5253B50C000AA64A0 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
+		5BDD45F6253B50C100AA64A0 /* 27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 27.mp3; sourceTree = "<group>"; };
+		5BDD45F7253B50C100AA64A0 /* 30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 30.mp3; sourceTree = "<group>"; };
+		5BDD45F8253B50C100AA64A0 /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
+		5BDD45F9253B50C100AA64A0 /* 25.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 25.mp3; sourceTree = "<group>"; };
+		5BDD45FA253B50C100AA64A0 /* 24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 24.mp3; sourceTree = "<group>"; };
+		5BDD45FB253B50C100AA64A0 /* 29.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 29.mp3; sourceTree = "<group>"; };
+		5BDD45FC253B50C100AA64A0 /* 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4.mp3; sourceTree = "<group>"; };
+		5BDD45FD253B50C100AA64A0 /* 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3.mp3; sourceTree = "<group>"; };
+		5BDD45FE253B50C100AA64A0 /* 10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10.mp3; sourceTree = "<group>"; };
+		5BDD45FF253B50C100AA64A0 /* 16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 16.mp3; sourceTree = "<group>"; };
+		5BDD4600253B50C100AA64A0 /* 20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 20.mp3; sourceTree = "<group>"; };
+		5BDD4601253B50C100AA64A0 /* 14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 14.mp3; sourceTree = "<group>"; };
+		5BDD4624253B517A00AA64A0 /* nowWeHave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nowWeHave.mp3; sourceTree = "<group>"; };
+		5BDD4628253B518B00AA64A0 /* secondes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = secondes.mp3; sourceTree = "<group>"; };
+		5BDD462C253B519F00AA64A0 /* repetitions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = repetitions.mp3; sourceTree = "<group>"; };
+		5BDD4630253B52AD00AA64A0 /* 40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 40.mp3; sourceTree = "<group>"; };
+		5BDD4631253B52AD00AA64A0 /* 45.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 45.mp3; sourceTree = "<group>"; };
+		5BDD463E253B864700AA64A0 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		5BDE07B525323D8700CB9459 /* Burpee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burpee.swift; sourceTree = "<group>"; };
 		5BDE07B925323FD500CB9459 /* Mountain Climber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mountain Climber.swift"; sourceTree = "<group>"; };
 		5BDE07BC25323FE100CB9459 /* Hip Hinge High Plank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hip Hinge High Plank.swift"; sourceTree = "<group>"; };
@@ -248,6 +307,9 @@
 		5BDE07C52532402900CB9459 /* Reverse Fly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reverse Fly.swift"; sourceTree = "<group>"; };
 		5BDE07C82532403700CB9459 /* Shoulder Lift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shoulder Lift.swift"; sourceTree = "<group>"; };
 		5BDE07CB2532404E00CB9459 /* Side Plank Needle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Side Plank Needle.swift"; sourceTree = "<group>"; };
+		5BE2D0092562E8F800F17B1C /* Dead Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dead Bug.swift"; sourceTree = "<group>"; };
+		5BE2D00D2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hollow Extension To Cannon Ball.swift"; sourceTree = "<group>"; };
+		5BE2D0112562E97E00F17B1C /* Side Bend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Side Bend.swift"; sourceTree = "<group>"; };
 		5BF66E3D2530CE9300240674 /* Hottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hottie.swift; sourceTree = "<group>"; };
 		5BF66E412530CEA200240674 /* UpperBody #1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpperBody #1.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -283,43 +345,43 @@
 		5B0A79FE24C0856100C669C9 /* Numbers */ = {
 			isa = PBXGroup;
 			children = (
-				5B68421A2539BEE7008A2758 /* 40.mp3 */,
-				5B68421B2539BEE7008A2758 /* 45.mp3 */,
-				5BD34419252F4B50007BC7A2 /* 1.mp3 */,
-				5BD34418252F4B50007BC7A2 /* 2.mp3 */,
-				5BD34410252F4B50007BC7A2 /* 3.mp3 */,
-				5BD3440F252F4B50007BC7A2 /* 4.mp3 */,
-				5BD34415252F4B50007BC7A2 /* 5.mp3 */,
-				5BD3440A252F4B4F007BC7A2 /* 6.mp3 */,
-				5BD34411252F4B50007BC7A2 /* 7.mp3 */,
-				5BD34421252F4B50007BC7A2 /* 8.mp3 */,
-				5BD34405252F4B4F007BC7A2 /* 9.mp3 */,
-				5BD3440E252F4B50007BC7A2 /* 10.mp3 */,
-				5BD34408252F4B4F007BC7A2 /* 11.mp3 */,
-				5BD34404252F4B4F007BC7A2 /* 12.mp3 */,
-				5BD3441C252F4B50007BC7A2 /* 13.mp3 */,
-				5BD3441E252F4B50007BC7A2 /* 14.mp3 */,
-				5BD34403252F4B4F007BC7A2 /* 15.mp3 */,
-				5BD3440B252F4B4F007BC7A2 /* 16.mp3 */,
-				5BD3441D252F4B50007BC7A2 /* 17.mp3 */,
-				5BD3441B252F4B50007BC7A2 /* 18.mp3 */,
-				5BD34413252F4B50007BC7A2 /* 19.mp3 */,
-				5BD34414252F4B50007BC7A2 /* 20.mp3 */,
-				5BD3441F252F4B50007BC7A2 /* 21.mp3 */,
-				5BD3440C252F4B50007BC7A2 /* 22.mp3 */,
-				5BD34412252F4B50007BC7A2 /* 23.mp3 */,
-				5BD34417252F4B50007BC7A2 /* 24.mp3 */,
-				5BD3441A252F4B50007BC7A2 /* 25.mp3 */,
-				5BD34401252F4B4F007BC7A2 /* 26.mp3 */,
-				5BD34416252F4B50007BC7A2 /* 27.mp3 */,
-				5BD34409252F4B4F007BC7A2 /* 28.mp3 */,
-				5BD34407252F4B4F007BC7A2 /* 29.mp3 */,
-				5BD3440D252F4B50007BC7A2 /* 30.mp3 */,
+				5BDD45F3253B50C000AA64A0 /* 1.mp3 */,
+				5BDD45FD253B50C100AA64A0 /* 3.mp3 */,
+				5BDD45FC253B50C100AA64A0 /* 4.mp3 */,
+				5BDD45EB253B50C000AA64A0 /* 2.mp3 */,
+				5BDD45F0253B50C000AA64A0 /* 5.mp3 */,
+				5BDD45F5253B50C000AA64A0 /* 7.mp3 */,
+				5BDD45EC253B50C000AA64A0 /* 8.mp3 */,
+				5BDD45F8253B50C100AA64A0 /* 9.mp3 */,
+				5BDD45FE253B50C100AA64A0 /* 10.mp3 */,
+				5BDD45E8253B50C000AA64A0 /* 6.mp3 */,
+				5BDD45E9253B50C000AA64A0 /* 11.mp3 */,
+				5BDD45EA253B50C000AA64A0 /* 12.mp3 */,
+				5BDD4601253B50C100AA64A0 /* 14.mp3 */,
+				5BDD45E6253B50C000AA64A0 /* 13.mp3 */,
+				5BDD45EF253B50C000AA64A0 /* 15.mp3 */,
+				5BDD45FF253B50C100AA64A0 /* 16.mp3 */,
+				5BDD45F2253B50C000AA64A0 /* 18.mp3 */,
+				5BDD4600253B50C100AA64A0 /* 20.mp3 */,
+				5BDD45F1253B50C000AA64A0 /* 19.mp3 */,
+				5BDD45F4253B50C000AA64A0 /* 21.mp3 */,
+				5BDD45E5253B50C000AA64A0 /* 17.mp3 */,
+				5BDD45E7253B50C000AA64A0 /* 22.mp3 */,
+				5BDD45FA253B50C100AA64A0 /* 24.mp3 */,
+				5BDD45F9253B50C100AA64A0 /* 25.mp3 */,
+				5BDD45F6253B50C100AA64A0 /* 27.mp3 */,
+				5BDD45FB253B50C100AA64A0 /* 29.mp3 */,
+				5BDD45E4253B50C000AA64A0 /* 23.mp3 */,
+				5BDD45ED253B50C000AA64A0 /* 26.mp3 */,
+				5BDD45EE253B50C000AA64A0 /* 28.mp3 */,
+				5BDD45F7253B50C100AA64A0 /* 30.mp3 */,
 				5BD34406252F4B4F007BC7A2 /* 31.mp3 */,
 				5BD34422252F4B50007BC7A2 /* 32.mp3 */,
 				5BD34420252F4B50007BC7A2 /* 33.mp3 */,
 				5BD34423252F4B51007BC7A2 /* 34.mp3 */,
 				5BD34402252F4B4F007BC7A2 /* 35.mp3 */,
+				5BDD4630253B52AD00AA64A0 /* 40.mp3 */,
+				5BDD4631253B52AD00AA64A0 /* 45.mp3 */,
 				5B4C391B253261560082F52B /* 60.mp3 */,
 			);
 			path = Numbers;
@@ -328,6 +390,9 @@
 		5B0A79FF24C0857F00C669C9 /* Announcment */ = {
 			isa = PBXGroup;
 			children = (
+				5BDD4628253B518B00AA64A0 /* secondes.mp3 */,
+				5BDD462C253B519F00AA64A0 /* repetitions.mp3 */,
+				5BDD4624253B517A00AA64A0 /* nowWeHave.mp3 */,
 				5B82427125339A360085C879 /* Fantastic.mp3 */,
 				5B82427325339A370085C879 /* NowPrepareForTheNextSet.mp3 */,
 				5B5D980125349B68006E4A17 /* End.mp3 */,
@@ -335,9 +400,6 @@
 				5B82427225339A370085C879 /* Set.mp3 */,
 				5BD343F1252F471D007BC7A2 /* AwesomeNowRestFor.mp3 */,
 				5BD343F2252F471D007BC7A2 /* GetReadyAnd.mp3 */,
-				5BD343EF252F471D007BC7A2 /* nowWeHave.mp3 */,
-				5BD343F0252F471D007BC7A2 /* repetitions.mp3 */,
-				5BD343EE252F471D007BC7A2 /* secondes.mp3 */,
 				5BD343EC252F471D007BC7A2 /* series.mp3 */,
 			);
 			path = Announcment;
@@ -388,6 +450,7 @@
 				5B9A52BB24BA5293007A0622 /* WorkoutViewController.swift */,
 				5B9CA96C2531A28700101AA8 /* DateExtension.swift */,
 				5B4C392825326A810082F52B /* NavigationBarGradient.swift */,
+				5BDD463E253B864700AA64A0 /* WorkoutTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -422,11 +485,12 @@
 		5B30F84B24B9C4A80095D2ED /* Sports */ = {
 			isa = PBXGroup;
 			children = (
-				5B30F84C24B9C5630095D2ED /* Bodyweight Twist Russian.swift */,
+				5B30F84C24B9C5630095D2ED /* Twist Russian.swift */,
 				5B30F84E24B9C60C0095D2ED /* Bodyweight Crunch Bicycle.swift */,
 				5B30F85024B9C7090095D2ED /* BodyweightCrunchCrossBody.swift */,
 				5B30F85224B9C9B00095D2ED /* Bodyweight Butt ups.swift */,
 				5B30F85424B9CA2A0095D2ED /* Bodyweight Heel Touch.swift */,
+				5B3B610A25481E8200A2CCC9 /* Leg Flutters.swift */,
 				5B30F85624B9CA500095D2ED /* Bodyweight Pull In Lying.swift */,
 				5B30F85824B9CA810095D2ED /* Bodyweight Plank Side.swift */,
 				5BD343E9252F2208007BC7A2 /* Bodyweight Squat.swift */,
@@ -441,6 +505,21 @@
 				5BDE07CB2532404E00CB9459 /* Side Plank Needle.swift */,
 				5B4C39392532F6F60082F52B /* Superman.swift */,
 				5B5D98072535B441006E4A17 /* ArmCircle.swift */,
+				5B3B60AA2546C88D00A2CCC9 /* Chair Sit Ups.swift */,
+				5B3B60CE25473B7C00A2CCC9 /* Crucifixes.swift */,
+				5B3B60D425473BED00A2CCC9 /* Laying Circle.swift */,
+				5B3B60D825473C3C00A2CCC9 /* Laying Knee Raises.swift */,
+				5B3B60DC25473C8500A2CCC9 /* Laying Leg Raises.swift */,
+				5B3B60E025473CC000A2CCC9 /* Plank Core Up And Down.swift */,
+				5B3B60E42547438E00A2CCC9 /* Plank Knees To Elbow.swift */,
+				5B3B60EA2547444800A2CCC9 /* Seated In And Out.swift */,
+				5B3B60F42547473E00A2CCC9 /* Side Plank Raises.swift */,
+				5B3B60FA25474F7400A2CCC9 /* Toe Touches.swift */,
+				5B3B60FE25474FA400A2CCC9 /* V Ups.swift */,
+				5B3B610625481B0400A2CCC9 /* Mountain Climber Rep.swift */,
+				5BE2D0092562E8F800F17B1C /* Dead Bug.swift */,
+				5BE2D00D2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift */,
+				5BE2D0112562E97E00F17B1C /* Side Bend.swift */,
 			);
 			path = Sports;
 			sourceTree = "<group>";
@@ -448,6 +527,19 @@
 		5B4C3907253260110082F52B /* SportNames */ = {
 			isa = PBXGroup;
 			children = (
+				5B3B60B1254712BF00A2CCC9 /* Chair Sit Ups.mp3 */,
+				5B3B60B0254712BF00A2CCC9 /* Crucifixes.mp3 */,
+				5B3B60B3254712BF00A2CCC9 /* Laying Circle.mp3 */,
+				5B3B610E25481F5600A2CCC9 /* Leg Flutters.mp3 */,
+				5B3B60B7254712BF00A2CCC9 /* Laying Knee Raises.mp3 */,
+				5B3B60B2254712BF00A2CCC9 /* Laying Leg Raises.mp3 */,
+				5B3B60B4254712BF00A2CCC9 /* Plank Core Up And Down.mp3 */,
+				5B3B60B5254712BF00A2CCC9 /* Plank Knees To Elbow.mp3 */,
+				5B3B60BC254712C000A2CCC9 /* Seated In And Out.mp3 */,
+				5B3B60B6254712BF00A2CCC9 /* Side Boat Hold Crunch.mp3 */,
+				5B3B60BA254712BF00A2CCC9 /* Side Plank Raises.mp3 */,
+				5B3B60B8254712BF00A2CCC9 /* Toe Touches.mp3 */,
+				5B3B60BB254712BF00A2CCC9 /* V Ups.mp3 */,
 				5B5D98042535B434006E4A17 /* Arm Circle.mp3 */,
 				5B4C393C25331AA90082F52B /* Superman.mp3 */,
 				5B4C390E253260260082F52B /* Burpee.mp3 */,
@@ -498,6 +590,7 @@
 				5BF66E412530CEA200240674 /* UpperBody #1.swift */,
 				5B4C39362532F6C60082F52B /* UpperBody #2.swift */,
 				5B723F1F2539B6CA003C1972 /* Test.swift */,
+				5B3B61022548196F00A2CCC9 /* Abs Second Workout.swift */,
 			);
 			path = Workouts;
 			sourceTree = "<group>";
@@ -583,77 +676,90 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BD34435252F4B51007BC7A2 /* 23.mp3 in Resources */,
-				5BD34426252F4B51007BC7A2 /* 15.mp3 in Resources */,
-				5BD34436252F4B51007BC7A2 /* 19.mp3 in Resources */,
+				5B3B60C8254712C000A2CCC9 /* V Ups.mp3 in Resources */,
+				5B3B60BF254712C000A2CCC9 /* Laying Leg Raises.mp3 in Resources */,
+				5BDD4608253B50C100AA64A0 /* 12.mp3 in Resources */,
 				5B5D98052535B434006E4A17 /* Arm Circle.mp3 in Resources */,
+				5BDD461C253B50C100AA64A0 /* 10.mp3 in Resources */,
 				5B4C3915253260260082F52B /* Burpee.mp3 in Resources */,
 				5B5D980225349B68006E4A17 /* End.mp3 in Resources */,
 				5BD343F3252F471D007BC7A2 /* series.mp3 in Resources */,
-				5BD34427252F4B51007BC7A2 /* 12.mp3 in Resources */,
-				5BD34431252F4B51007BC7A2 /* 10.mp3 in Resources */,
+				5BDD4610253B50C100AA64A0 /* 18.mp3 in Resources */,
+				5B3B60C3254712C000A2CCC9 /* Side Boat Hold Crunch.mp3 in Resources */,
+				5B3B60C7254712C000A2CCC9 /* Side Plank Raises.mp3 in Resources */,
 				5B0A7A1024C0859200C669C9 /* BodyweightButtUps.mp3 in Resources */,
 				5B4C3914253260260082F52B /* Mountain Climber.mp3 in Resources */,
 				5BD343F4252F471D007BC7A2 /* BodyweightSquat.mp3 in Resources */,
+				5B3B60BE254712C000A2CCC9 /* Chair Sit Ups.mp3 in Resources */,
 				5B4C3910253260260082F52B /* Hip Hinge High Plank.mp3 in Resources */,
 				5B0A7A1124C0859200C669C9 /* BodyweightTwistRussian.mp3 in Resources */,
-				5BD3442F252F4B51007BC7A2 /* 22.mp3 in Resources */,
 				5B82427825339A370085C879 /* Of.mp3 in Resources */,
 				5BD34443252F4B51007BC7A2 /* 33.mp3 in Resources */,
-				5BD3443E252F4B51007BC7A2 /* 18.mp3 in Resources */,
-				5BD34424252F4B51007BC7A2 /* 26.mp3 in Resources */,
-				5BD3443F252F4B51007BC7A2 /* 13.mp3 in Resources */,
-				5BD3442B252F4B51007BC7A2 /* 11.mp3 in Resources */,
-				5BD3443A252F4B51007BC7A2 /* 24.mp3 in Resources */,
+				5BDD460E253B50C100AA64A0 /* 5.mp3 in Resources */,
+				5BDD4613253B50C100AA64A0 /* 7.mp3 in Resources */,
+				5BDD462D253B51A000AA64A0 /* repetitions.mp3 in Resources */,
+				5BDD4603253B50C100AA64A0 /* 17.mp3 in Resources */,
+				5BDD461F253B50C100AA64A0 /* 14.mp3 in Resources */,
 				5BD343F9252F471D007BC7A2 /* GetReadyAnd.mp3 in Resources */,
 				5B4C3911253260260082F52B /* Side Plank Needle.mp3 in Resources */,
-				5B68421D2539BEE7008A2758 /* 45.mp3 in Resources */,
+				5BDD4614253B50C100AA64A0 /* 27.mp3 in Resources */,
+				5BDD4606253B50C100AA64A0 /* 6.mp3 in Resources */,
+				5BDD461E253B50C100AA64A0 /* 20.mp3 in Resources */,
+				5BDD4633253B52AD00AA64A0 /* 45.mp3 in Resources */,
 				5B0A7A0F24C0859200C669C9 /* BodyweightPullInLying.mp3 in Resources */,
-				5BD34437252F4B51007BC7A2 /* 20.mp3 in Resources */,
 				5B0A7A0C24C0859200C669C9 /* BodyweightPlankSide.mp3 in Resources */,
-				5BD3443B252F4B51007BC7A2 /* 2.mp3 in Resources */,
-				5BD34441252F4B51007BC7A2 /* 14.mp3 in Resources */,
-				5BD34439252F4B51007BC7A2 /* 27.mp3 in Resources */,
-				5B68421C2539BEE7008A2758 /* 40.mp3 in Resources */,
+				5BDD460C253B50C100AA64A0 /* 28.mp3 in Resources */,
+				5B3B60C4254712C000A2CCC9 /* Laying Knee Raises.mp3 in Resources */,
+				5BDD4609253B50C100AA64A0 /* 2.mp3 in Resources */,
 				5B4C3913253260260082F52B /* Shoulder Lift.mp3 in Resources */,
-				5BD34428252F4B51007BC7A2 /* 9.mp3 in Resources */,
 				5B4C391C253261560082F52B /* 60.mp3 in Resources */,
-				5BD3442C252F4B51007BC7A2 /* 28.mp3 in Resources */,
+				5BDD4632253B52AD00AA64A0 /* 40.mp3 in Resources */,
+				5BDD461D253B50C100AA64A0 /* 16.mp3 in Resources */,
+				5B3B610F25481F5600A2CCC9 /* Leg Flutters.mp3 in Resources */,
 				5B30F83A24B8EC2D0095D2ED /* LaunchScreen.storyboard in Resources */,
-				5BD3443C252F4B51007BC7A2 /* 1.mp3 in Resources */,
-				5BD3442A252F4B51007BC7A2 /* 29.mp3 in Resources */,
+				5BDD4615253B50C100AA64A0 /* 30.mp3 in Resources */,
+				5BDD4611253B50C100AA64A0 /* 1.mp3 in Resources */,
+				5BDD4616253B50C100AA64A0 /* 9.mp3 in Resources */,
+				5BDD460B253B50C100AA64A0 /* 26.mp3 in Resources */,
+				5BDD461B253B50C100AA64A0 /* 3.mp3 in Resources */,
 				5B30F83724B8EC2D0095D2ED /* Assets.xcassets in Resources */,
-				5BD343F6252F471D007BC7A2 /* nowWeHave.mp3 in Resources */,
+				5BDD4607253B50C100AA64A0 /* 11.mp3 in Resources */,
+				5B3B60BD254712C000A2CCC9 /* Crucifixes.mp3 in Resources */,
+				5BDD4617253B50C100AA64A0 /* 25.mp3 in Resources */,
+				5BDD460D253B50C100AA64A0 /* 15.mp3 in Resources */,
+				5B3B60C5254712C000A2CCC9 /* Toe Touches.mp3 in Resources */,
+				5BDD460F253B50C100AA64A0 /* 19.mp3 in Resources */,
+				5BDD461A253B50C100AA64A0 /* 4.mp3 in Resources */,
+				5BDD4629253B518B00AA64A0 /* secondes.mp3 in Resources */,
 				5BD34446252F4B51007BC7A2 /* 34.mp3 in Resources */,
 				5B0A7A0D24C0859200C669C9 /* BodyweightCrunchBicycle.mp3 in Resources */,
 				5B4C393D25331AA90082F52B /* Superman.mp3 in Resources */,
 				5B0A7A1224C0859200C669C9 /* BodyweightHeelTouch.mp3 in Resources */,
+				5BDD4619253B50C100AA64A0 /* 29.mp3 in Resources */,
 				5B82427525339A370085C879 /* Fantastic.mp3 in Resources */,
 				5B82427725339A370085C879 /* NowPrepareForTheNextSet.mp3 in Resources */,
-				5BD3442D252F4B51007BC7A2 /* 6.mp3 in Resources */,
-				5BD3442E252F4B51007BC7A2 /* 16.mp3 in Resources */,
+				5BDD4625253B517B00AA64A0 /* nowWeHave.mp3 in Resources */,
+				5BDD4618253B50C100AA64A0 /* 24.mp3 in Resources */,
+				5BDD460A253B50C100AA64A0 /* 8.mp3 in Resources */,
+				5B3B60C1254712C000A2CCC9 /* Plank Core Up And Down.mp3 in Resources */,
 				5BD34425252F4B51007BC7A2 /* 35.mp3 in Resources */,
 				5B4C3912253260260082F52B /* Push Up.mp3 in Resources */,
+				5B3B60C2254712C000A2CCC9 /* Plank Knees To Elbow.mp3 in Resources */,
 				5B0A7A1324C0859200C669C9 /* BodyweightCrunchCrossBody.mp3 in Resources */,
+				5B3B60C0254712C000A2CCC9 /* Laying Circle.mp3 in Resources */,
+				5BDD4612253B50C100AA64A0 /* 21.mp3 in Resources */,
 				5B82427625339A370085C879 /* Set.mp3 in Resources */,
-				5BD3443D252F4B51007BC7A2 /* 25.mp3 in Resources */,
-				5BD34438252F4B51007BC7A2 /* 5.mp3 in Resources */,
 				5BD343F8252F471D007BC7A2 /* AwesomeNowRestFor.mp3 in Resources */,
 				5B4C39202532640A0082F52B /* Bear Crawl.mp3 in Resources */,
-				5BD34442252F4B51007BC7A2 /* 21.mp3 in Resources */,
+				5BDD4604253B50C100AA64A0 /* 13.mp3 in Resources */,
 				5BD34429252F4B51007BC7A2 /* 31.mp3 in Resources */,
-				5BD34430252F4B51007BC7A2 /* 30.mp3 in Resources */,
-				5BD34433252F4B51007BC7A2 /* 3.mp3 in Resources */,
-				5BD34434252F4B51007BC7A2 /* 7.mp3 in Resources */,
 				5BD34445252F4B51007BC7A2 /* 32.mp3 in Resources */,
-				5BD343F7252F471D007BC7A2 /* repetitions.mp3 in Resources */,
-				5BD34444252F4B51007BC7A2 /* 8.mp3 in Resources */,
-				5BD34440252F4B51007BC7A2 /* 17.mp3 in Resources */,
+				5BDD4605253B50C100AA64A0 /* 22.mp3 in Resources */,
 				5B4C390F253260260082F52B /* Reverse Fly.mp3 in Resources */,
-				5BD343F5252F471D007BC7A2 /* secondes.mp3 in Resources */,
+				5BDD4602253B50C100AA64A0 /* 23.mp3 in Resources */,
 				5B4C3919253260D20082F52B /* Plank.mp3 in Resources */,
 				5B30F83524B8EC2B0095D2ED /* Main.storyboard in Resources */,
-				5BD34432252F4B51007BC7A2 /* 4.mp3 in Resources */,
+				5B3B60C9254712C000A2CCC9 /* Seated In And Out.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,13 +777,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3B61032548196F00A2CCC9 /* Abs Second Workout.swift in Sources */,
 				5BF66E3E2530CE9300240674 /* Hottie.swift in Sources */,
 				5B30F84824B8ECA00095D2ED /* Session.swift in Sources */,
 				5B9A52BC24BA5293007A0622 /* WorkoutViewController.swift in Sources */,
 				5B30F84A24B8ED450095D2ED /* SportProtocol.swift in Sources */,
+				5BE2D00E2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift in Sources */,
 				5B99815A25321AC60056197B /* TrainingCalculator.swift in Sources */,
+				5B3B610B25481E8200A2CCC9 /* Leg Flutters.swift in Sources */,
 				5BC9B6052535BD0E00D7AEC9 /* WorkoutData.swift in Sources */,
+				5B3B60D525473BED00A2CCC9 /* Laying Circle.swift in Sources */,
 				5B4C392925326A810082F52B /* NavigationBarGradient.swift in Sources */,
+				5B3B60CF25473B7C00A2CCC9 /* Crucifixes.swift in Sources */,
 				5BDE07C92532403700CB9459 /* Shoulder Lift.swift in Sources */,
 				5B30F84F24B9C60C0095D2ED /* Bodyweight Crunch Bicycle.swift in Sources */,
 				5B9CA96D2531A28700101AA8 /* DateExtension.swift in Sources */,
@@ -686,28 +797,41 @@
 				5B30F85724B9CA500095D2ED /* Bodyweight Pull In Lying.swift in Sources */,
 				5BD343EA252F2208007BC7A2 /* Bodyweight Squat.swift in Sources */,
 				5BDE07C32532400600CB9459 /* Plank.swift in Sources */,
+				5B3B60DD25473C8500A2CCC9 /* Laying Leg Raises.swift in Sources */,
+				5B3B60EB2547444800A2CCC9 /* Seated In And Out.swift in Sources */,
 				5B30F85524B9CA2A0095D2ED /* Bodyweight Heel Touch.swift in Sources */,
 				5BF66E422530CEA200240674 /* UpperBody #1.swift in Sources */,
+				5B3B60E52547438E00A2CCC9 /* Plank Knees To Elbow.swift in Sources */,
 				5B99815E25321C7B0056197B /* Sport.xcdatamodeld in Sources */,
 				5B30F85924B9CA810095D2ED /* Bodyweight Plank Side.swift in Sources */,
 				5B30F85324B9C9B00095D2ED /* Bodyweight Butt ups.swift in Sources */,
+				5BE2D0122562E97E00F17B1C /* Side Bend.swift in Sources */,
 				5B30F85124B9C7090095D2ED /* BodyweightCrunchCrossBody.swift in Sources */,
+				5B3B60D925473C3C00A2CCC9 /* Laying Knee Raises.swift in Sources */,
 				5B8862CA24BF5B2900B057D5 /* workoutState.swift in Sources */,
 				5B4C39372532F6C60082F52B /* UpperBody #2.swift in Sources */,
 				5B723F202539B6CA003C1972 /* Test.swift in Sources */,
 				5BDE07C62532402900CB9459 /* Reverse Fly.swift in Sources */,
+				5BDD463F253B864700AA64A0 /* WorkoutTableViewCell.swift in Sources */,
 				5BDE07BA25323FD500CB9459 /* Mountain Climber.swift in Sources */,
+				5B3B60AB2546C88D00A2CCC9 /* Chair Sit Ups.swift in Sources */,
 				5B5D98142535BBBA006E4A17 /* Persistence.swift in Sources */,
 				5BDE07BD25323FE100CB9459 /* Hip Hinge High Plank.swift in Sources */,
 				5B4C393A2532F6F60082F52B /* Superman.swift in Sources */,
 				5B30F83224B8EC2B0095D2ED /* ChooseWorkoutViewController.swift in Sources */,
-				5B30F84D24B9C5630095D2ED /* Bodyweight Twist Russian.swift in Sources */,
+				5B30F84D24B9C5630095D2ED /* Twist Russian.swift in Sources */,
 				5BDE07C025323FF500CB9459 /* Bear Crawl.swift in Sources */,
+				5B3B60E125473CC000A2CCC9 /* Plank Core Up And Down.swift in Sources */,
+				5B3B60F52547473E00A2CCC9 /* Side Plank Raises.swift in Sources */,
+				5B3B610725481B0400A2CCC9 /* Mountain Climber Rep.swift in Sources */,
+				5B3B60FF25474FA400A2CCC9 /* V Ups.swift in Sources */,
 				5B30F83024B8EC2B0095D2ED /* AppDelegate.swift in Sources */,
 				5B30F85B24B9CF710095D2ED /* Workouts.swift in Sources */,
 				5B5D98082535B441006E4A17 /* ArmCircle.swift in Sources */,
 				5BDE07CC2532404E00CB9459 /* Side Plank Needle.swift in Sources */,
+				5BE2D00A2562E8F800F17B1C /* Dead Bug.swift in Sources */,
 				5BDE07B625323D8700CB9459 /* Burpee.swift in Sources */,
+				5B3B60FB25474F7400A2CCC9 /* Toe Touches.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>492</string>
+	<string>509</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -52,16 +52,14 @@
 				<dict>
 					<key>fileNames</key>
 					<array>
-						<string>~/Desktop/Sport/Gifs/Bear Crawl</string>
-						<string>~/Desktop/Sport/Gifs/Burpee</string>
-						<string>~/Desktop/Sport/Gifs/Hip Hinge High Plank</string>
-						<string>~/Desktop/Sport/Gifs/Push Up</string>
-						<string>~/Desktop/Sport/Gifs/Mountain Climber</string>
-						<string>~/Desktop/Sport/Gifs/Plank</string>
-						<string>~/Desktop/Sport/Gifs/Reverse Fly</string>
-						<string>~/Desktop/Sport/Gifs/Shoulders Lift</string>
-						<string>~/Desktop/Sport/Gifs/Side Plank Needle</string>
-						<string>~/Desktop/Sport/Gifs/Superman</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Images/Dead Bug-1 (dragged).tiff</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Images/Dead Bug-2 (dragged).tiff</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Images/Dead Bug-3 (dragged).tiff</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Images/Dead Bug-4 (dragged).tiff</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Images/Hollow Extension To Cannon Ball-1 (dragged).tiff</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Images/Hollow Extension To Cannon Ball-2 (dragged).tiff</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Images/Side Bend-1 (dragged).tiff</string>
+						<string>~/Desktop/Development/Medias/sport/Images/Images/Side Bend-2 (dragged).tiff</string>
 					</array>
 				</dict>
 				<key>BundleIdentifier</key>
@@ -111,12 +109,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>326.250000:239.000000</string>
+				<string>301.500000:239.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -213,12 +209,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>326.250000:338.000000</string>
+				<string>301.500000:340.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Folder Contents.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -689,12 +683,10 @@
 						<string>9</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>326.250000:525.000000</string>
+				<string>301.500000:527.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1170,12 +1162,10 @@
 						<string>9</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>326.250000:712.000000</string>
+				<string>301.500000:714.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1239,11 +1229,11 @@
 					<key>targetHeight</key>
 					<integer>1000</integer>
 					<key>targetHeightPercentage</key>
-					<string>100</string>
+					<string>50</string>
 					<key>targetWidth</key>
 					<integer>1300</integer>
 					<key>targetWidthPercentagle</key>
-					<string>100</string>
+					<string>50</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.CropImages</string>
@@ -1360,12 +1350,10 @@
 						<string>5</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>326.250000:1094.000000</string>
+				<string>301.500000:912.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Crop Images.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1436,8 +1424,6 @@
 					<key>singleItemOption</key>
 					<dict/>
 					<key>startingNumber</key>
-					<dict/>
-					<key>temporary items path</key>
 					<dict/>
 					<key>textInput</key>
 					<dict/>
@@ -1843,12 +1829,10 @@
 						<string>9</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>326.250000:1281.000000</string>
+				<string>301.500000:1099.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1858,35 +1842,35 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>4DFF7571-7B14-468E-B716-295C127FCBB5</key>
-		<dict>
-			<key>from</key>
-			<string>303FF246-14BA-426C-A01C-C6E1E0A0D670 - 303FF246-14BA-426C-A01C-C6E1E0A0D670</string>
-			<key>to</key>
-			<string>8AA5EA1B-7FEE-4C6A-8083-EDF0DEEDA3D9 - 8AA5EA1B-7FEE-4C6A-8083-EDF0DEEDA3D9</string>
-		</dict>
-		<key>555F242B-036E-4713-9033-B4C759FC111A</key>
-		<dict>
-			<key>from</key>
-			<string>952A2CD6-FA5B-4619-A6D8-C60528811B24 - 952A2CD6-FA5B-4619-A6D8-C60528811B24</string>
-			<key>to</key>
-			<string>086BE302-F644-437A-923B-4BFE3C510FBB - 086BE302-F644-437A-923B-4BFE3C510FBB</string>
-		</dict>
-		<key>877D605E-C5C3-4838-B4A0-D581E30B1FC1</key>
+		<key>204EB9CA-9712-4F8B-92FE-461C5A9565CE</key>
 		<dict>
 			<key>from</key>
 			<string>820FA2E9-2842-4F6B-804B-62D46E960F47 - 820FA2E9-2842-4F6B-804B-62D46E960F47</string>
 			<key>to</key>
 			<string>9A6615C0-ED46-4C32-892C-15AA5297DC5A - 9A6615C0-ED46-4C32-892C-15AA5297DC5A</string>
 		</dict>
-		<key>8FA5E23B-5592-41E9-AC74-4A8F83B2972A</key>
+		<key>64EF5633-14A0-4B96-84C8-114487557E9D</key>
+		<dict>
+			<key>from</key>
+			<string>952A2CD6-FA5B-4619-A6D8-C60528811B24 - 952A2CD6-FA5B-4619-A6D8-C60528811B24</string>
+			<key>to</key>
+			<string>086BE302-F644-437A-923B-4BFE3C510FBB - 086BE302-F644-437A-923B-4BFE3C510FBB</string>
+		</dict>
+		<key>B1A3C6FE-38C8-4519-9E8B-720A07344CB9</key>
+		<dict>
+			<key>from</key>
+			<string>303FF246-14BA-426C-A01C-C6E1E0A0D670 - 303FF246-14BA-426C-A01C-C6E1E0A0D670</string>
+			<key>to</key>
+			<string>8AA5EA1B-7FEE-4C6A-8083-EDF0DEEDA3D9 - 8AA5EA1B-7FEE-4C6A-8083-EDF0DEEDA3D9</string>
+		</dict>
+		<key>C4C53EB3-1BBC-477F-97F8-73A3536567BF</key>
 		<dict>
 			<key>from</key>
 			<string>086BE302-F644-437A-923B-4BFE3C510FBB - 086BE302-F644-437A-923B-4BFE3C510FBB</string>
 			<key>to</key>
 			<string>820FA2E9-2842-4F6B-804B-62D46E960F47 - 820FA2E9-2842-4F6B-804B-62D46E960F47</string>
 		</dict>
-		<key>9CFF9DC8-4D37-4324-9E6B-F5262EDF2720</key>
+		<key>F366EDE0-6E04-4E87-BFF4-5F0AE050DDA3</key>
 		<dict>
 			<key>from</key>
 			<string>9A6615C0-ED46-4C32-892C-15AA5297DC5A - 9A6615C0-ED46-4C32-892C-15AA5297DC5A</string>

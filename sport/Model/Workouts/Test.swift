@@ -10,8 +10,9 @@ import Foundation
 
 class Test : WorkoutProtocol {
     var sports: Array<SportProtocol> = [
+        ChairSitUps(numberOfReps: 10, numberOfSets: 2),
         Superman(numberOfSets: 2, timeOfTheExercise: 10),
-        Burpee(numberOfSets: 1, timeOfTheExercise: 20),
+        Burpee(numberOfSets: 1, timeOfTheExercise: 20)
                                         ]
     
     var name: String = "Test"
