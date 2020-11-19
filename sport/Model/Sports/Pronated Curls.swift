@@ -1,26 +1,26 @@
 //
-//  Side Bend.swift
+//  Pronated Curls.swift
 //  sport
 //
-//  Created by Titouan Blossier on 16/11/2020.
+//  Created by Titouan Blossier on 17/11/2020.
 //  Copyright © 2020 Titouan Blossier. All rights reserved.
 //
 
 import Foundation
 
-class SideBend : SportWithReps {
+class PronatedCurls : SportWithReps {
+    var numberOfReps: Int
+    
+    var intervalBetweenReps: Float = 2
+    
     var isRecommended: Bool = true
     
-    var numberOfReps: Int = 20
-    
-    var intervalBetweenReps: Float = 3
-    
     required init(numberOfReps: Int, numberOfSets: Int) {
-        self.numberOfReps = numberOfReps
         self.numberOfSets = numberOfSets
+        self.numberOfReps = numberOfReps
     }
     
-    var name: String = "Side Bend"
+    var name: String = "Pronated Curls"
     
     var specification: String = ""
     
@@ -28,6 +28,6 @@ class SideBend : SportWithReps {
     
     var numberOfImage: Int = 2
     
-    var nameOfSoundFile: String = "Side Bend"
+    var nameOfSoundFile: String = "Pronated Curls"
     
 }

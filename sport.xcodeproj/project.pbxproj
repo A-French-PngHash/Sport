@@ -81,6 +81,19 @@
 		5B82427725339A370085C879 /* NowPrepareForTheNextSet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B82427325339A370085C879 /* NowPrepareForTheNextSet.mp3 */; };
 		5B82427825339A370085C879 /* Of.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B82427425339A370085C879 /* Of.mp3 */; };
 		5B8862CA24BF5B2900B057D5 /* workoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8862C924BF5B2900B057D5 /* workoutState.swift */; };
+		5B8DBB8E2564466400D68C27 /* Hammer Curls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBB862564466300D68C27 /* Hammer Curls.mp3 */; };
+		5B8DBB8F2564466400D68C27 /* Dead Bug.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBB872564466400D68C27 /* Dead Bug.mp3 */; };
+		5B8DBB902564466400D68C27 /* Hollow Extension To Cannon Ball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBB882564466400D68C27 /* Hollow Extension To Cannon Ball.mp3 */; };
+		5B8DBB912564466400D68C27 /* Pronated Curls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBB892564466400D68C27 /* Pronated Curls.mp3 */; };
+		5B8DBB922564466400D68C27 /* Supinated Biceps Curl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBB8A2564466400D68C27 /* Supinated Biceps Curl.mp3 */; };
+		5B8DBB932564466400D68C27 /* Overhead Triceps Extension.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBB8B2564466400D68C27 /* Overhead Triceps Extension.mp3 */; };
+		5B8DBB942564466400D68C27 /* Rear Delt Flies.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBB8C2564466400D68C27 /* Rear Delt Flies.mp3 */; };
+		5B8DBB952564466400D68C27 /* Side Bend.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B8DBB8D2564466400D68C27 /* Side Bend.mp3 */; };
+		5B8DBB992564467B00D68C27 /* OverheadTricepsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBB982564467B00D68C27 /* OverheadTricepsExtension.swift */; };
+		5B8DBB9D256447C500D68C27 /* Hammer Curls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBB9C256447C500D68C27 /* Hammer Curls.swift */; };
+		5B8DBBA1256447EF00D68C27 /* Pronated Curls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBBA0256447EF00D68C27 /* Pronated Curls.swift */; };
+		5B8DBBA52564482A00D68C27 /* Rear Delt Flies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBBA42564482A00D68C27 /* Rear Delt Flies.swift */; };
+		5B8DBBA92564485200D68C27 /* Upper Body New Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DBBA82564485200D68C27 /* Upper Body New Workout.swift */; };
 		5B9410D92537671F00C8ACD1 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9B6042535BD0E00D7AEC9 /* WorkoutData.swift */; };
 		5B9410DC2537672600C8ACD1 /* Sport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B99815C25321C7B0056197B /* Sport.xcdatamodeld */; };
 		5B9410DF2537674400C8ACD1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5D98132535BBBA006E4A17 /* Persistence.swift */; };
@@ -243,6 +256,19 @@
 		5B82427325339A370085C879 /* NowPrepareForTheNextSet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NowPrepareForTheNextSet.mp3; sourceTree = "<group>"; };
 		5B82427425339A370085C879 /* Of.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Of.mp3; sourceTree = "<group>"; };
 		5B8862C924BF5B2900B057D5 /* workoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutState.swift; sourceTree = "<group>"; };
+		5B8DBB862564466300D68C27 /* Hammer Curls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hammer Curls.mp3"; sourceTree = "<group>"; };
+		5B8DBB872564466400D68C27 /* Dead Bug.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dead Bug.mp3"; sourceTree = "<group>"; };
+		5B8DBB882564466400D68C27 /* Hollow Extension To Cannon Ball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hollow Extension To Cannon Ball.mp3"; sourceTree = "<group>"; };
+		5B8DBB892564466400D68C27 /* Pronated Curls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Pronated Curls.mp3"; sourceTree = "<group>"; };
+		5B8DBB8A2564466400D68C27 /* Supinated Biceps Curl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Supinated Biceps Curl.mp3"; sourceTree = "<group>"; };
+		5B8DBB8B2564466400D68C27 /* Overhead Triceps Extension.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Overhead Triceps Extension.mp3"; sourceTree = "<group>"; };
+		5B8DBB8C2564466400D68C27 /* Rear Delt Flies.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rear Delt Flies.mp3"; sourceTree = "<group>"; };
+		5B8DBB8D2564466400D68C27 /* Side Bend.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Side Bend.mp3"; sourceTree = "<group>"; };
+		5B8DBB982564467B00D68C27 /* OverheadTricepsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverheadTricepsExtension.swift; sourceTree = "<group>"; };
+		5B8DBB9C256447C500D68C27 /* Hammer Curls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hammer Curls.swift"; sourceTree = "<group>"; };
+		5B8DBBA0256447EF00D68C27 /* Pronated Curls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pronated Curls.swift"; sourceTree = "<group>"; };
+		5B8DBBA42564482A00D68C27 /* Rear Delt Flies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rear Delt Flies.swift"; sourceTree = "<group>"; };
+		5B8DBBA82564485200D68C27 /* Upper Body New Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Upper Body New Workout.swift"; sourceTree = "<group>"; };
 		5B9799852535D04B0020CABA /* workoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutType.swift; sourceTree = "<group>"; };
 		5B97998C2535EF4F0020CABA /* sportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B97998E2535EF4F0020CABA /* sportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sportTests.swift; sourceTree = "<group>"; };
@@ -520,6 +546,10 @@
 				5BE2D0092562E8F800F17B1C /* Dead Bug.swift */,
 				5BE2D00D2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift */,
 				5BE2D0112562E97E00F17B1C /* Side Bend.swift */,
+				5B8DBB982564467B00D68C27 /* OverheadTricepsExtension.swift */,
+				5B8DBB9C256447C500D68C27 /* Hammer Curls.swift */,
+				5B8DBBA0256447EF00D68C27 /* Pronated Curls.swift */,
+				5B8DBBA42564482A00D68C27 /* Rear Delt Flies.swift */,
 			);
 			path = Sports;
 			sourceTree = "<group>";
@@ -559,6 +589,14 @@
 				5B0A7A0624C0859200C669C9 /* BodyweightTwistRussian.mp3 */,
 				5BD343ED252F471D007BC7A2 /* BodyweightSquat.mp3 */,
 				5B4C390A253260250082F52B /* Side Plank Needle.mp3 */,
+				5B8DBB872564466400D68C27 /* Dead Bug.mp3 */,
+				5B8DBB862564466300D68C27 /* Hammer Curls.mp3 */,
+				5B8DBB882564466400D68C27 /* Hollow Extension To Cannon Ball.mp3 */,
+				5B8DBB8B2564466400D68C27 /* Overhead Triceps Extension.mp3 */,
+				5B8DBB892564466400D68C27 /* Pronated Curls.mp3 */,
+				5B8DBB8C2564466400D68C27 /* Rear Delt Flies.mp3 */,
+				5B8DBB8D2564466400D68C27 /* Side Bend.mp3 */,
+				5B8DBB8A2564466400D68C27 /* Supinated Biceps Curl.mp3 */,
 			);
 			path = SportNames;
 			sourceTree = "<group>";
@@ -591,6 +629,7 @@
 				5B4C39362532F6C60082F52B /* UpperBody #2.swift */,
 				5B723F1F2539B6CA003C1972 /* Test.swift */,
 				5B3B61022548196F00A2CCC9 /* Abs Second Workout.swift */,
+				5B8DBBA82564485200D68C27 /* Upper Body New Workout.swift */,
 			);
 			path = Workouts;
 			sourceTree = "<group>";
@@ -679,6 +718,7 @@
 				5B3B60C8254712C000A2CCC9 /* V Ups.mp3 in Resources */,
 				5B3B60BF254712C000A2CCC9 /* Laying Leg Raises.mp3 in Resources */,
 				5BDD4608253B50C100AA64A0 /* 12.mp3 in Resources */,
+				5B8DBB932564466400D68C27 /* Overhead Triceps Extension.mp3 in Resources */,
 				5B5D98052535B434006E4A17 /* Arm Circle.mp3 in Resources */,
 				5BDD461C253B50C100AA64A0 /* 10.mp3 in Resources */,
 				5B4C3915253260260082F52B /* Burpee.mp3 in Resources */,
@@ -692,6 +732,7 @@
 				5BD343F4252F471D007BC7A2 /* BodyweightSquat.mp3 in Resources */,
 				5B3B60BE254712C000A2CCC9 /* Chair Sit Ups.mp3 in Resources */,
 				5B4C3910253260260082F52B /* Hip Hinge High Plank.mp3 in Resources */,
+				5B8DBB902564466400D68C27 /* Hollow Extension To Cannon Ball.mp3 in Resources */,
 				5B0A7A1124C0859200C669C9 /* BodyweightTwistRussian.mp3 in Resources */,
 				5B82427825339A370085C879 /* Of.mp3 in Resources */,
 				5BD34443252F4B51007BC7A2 /* 33.mp3 in Resources */,
@@ -708,10 +749,12 @@
 				5BDD4633253B52AD00AA64A0 /* 45.mp3 in Resources */,
 				5B0A7A0F24C0859200C669C9 /* BodyweightPullInLying.mp3 in Resources */,
 				5B0A7A0C24C0859200C669C9 /* BodyweightPlankSide.mp3 in Resources */,
+				5B8DBB8F2564466400D68C27 /* Dead Bug.mp3 in Resources */,
 				5BDD460C253B50C100AA64A0 /* 28.mp3 in Resources */,
 				5B3B60C4254712C000A2CCC9 /* Laying Knee Raises.mp3 in Resources */,
 				5BDD4609253B50C100AA64A0 /* 2.mp3 in Resources */,
 				5B4C3913253260260082F52B /* Shoulder Lift.mp3 in Resources */,
+				5B8DBB942564466400D68C27 /* Rear Delt Flies.mp3 in Resources */,
 				5B4C391C253261560082F52B /* 60.mp3 in Resources */,
 				5BDD4632253B52AD00AA64A0 /* 40.mp3 in Resources */,
 				5BDD461D253B50C100AA64A0 /* 16.mp3 in Resources */,
@@ -722,6 +765,7 @@
 				5BDD4616253B50C100AA64A0 /* 9.mp3 in Resources */,
 				5BDD460B253B50C100AA64A0 /* 26.mp3 in Resources */,
 				5BDD461B253B50C100AA64A0 /* 3.mp3 in Resources */,
+				5B8DBB8E2564466400D68C27 /* Hammer Curls.mp3 in Resources */,
 				5B30F83724B8EC2D0095D2ED /* Assets.xcassets in Resources */,
 				5BDD4607253B50C100AA64A0 /* 11.mp3 in Resources */,
 				5B3B60BD254712C000A2CCC9 /* Crucifixes.mp3 in Resources */,
@@ -748,7 +792,10 @@
 				5B0A7A1324C0859200C669C9 /* BodyweightCrunchCrossBody.mp3 in Resources */,
 				5B3B60C0254712C000A2CCC9 /* Laying Circle.mp3 in Resources */,
 				5BDD4612253B50C100AA64A0 /* 21.mp3 in Resources */,
+				5B8DBB922564466400D68C27 /* Supinated Biceps Curl.mp3 in Resources */,
 				5B82427625339A370085C879 /* Set.mp3 in Resources */,
+				5B8DBB952564466400D68C27 /* Side Bend.mp3 in Resources */,
+				5B8DBB912564466400D68C27 /* Pronated Curls.mp3 in Resources */,
 				5BD343F8252F471D007BC7A2 /* AwesomeNowRestFor.mp3 in Resources */,
 				5B4C39202532640A0082F52B /* Bear Crawl.mp3 in Resources */,
 				5BDD4604253B50C100AA64A0 /* 13.mp3 in Resources */,
@@ -778,8 +825,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3B61032548196F00A2CCC9 /* Abs Second Workout.swift in Sources */,
+				5B8DBBA1256447EF00D68C27 /* Pronated Curls.swift in Sources */,
 				5BF66E3E2530CE9300240674 /* Hottie.swift in Sources */,
 				5B30F84824B8ECA00095D2ED /* Session.swift in Sources */,
+				5B8DBB9D256447C500D68C27 /* Hammer Curls.swift in Sources */,
 				5B9A52BC24BA5293007A0622 /* WorkoutViewController.swift in Sources */,
 				5B30F84A24B8ED450095D2ED /* SportProtocol.swift in Sources */,
 				5BE2D00E2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift in Sources */,
@@ -793,12 +842,14 @@
 				5B30F84F24B9C60C0095D2ED /* Bodyweight Crunch Bicycle.swift in Sources */,
 				5B9CA96D2531A28700101AA8 /* DateExtension.swift in Sources */,
 				5B9CA9702531AAA600101AA8 /* Push Ups.swift in Sources */,
+				5B8DBBA52564482A00D68C27 /* Rear Delt Flies.swift in Sources */,
 				5B9799862535D04B0020CABA /* workoutType.swift in Sources */,
 				5B30F85724B9CA500095D2ED /* Bodyweight Pull In Lying.swift in Sources */,
 				5BD343EA252F2208007BC7A2 /* Bodyweight Squat.swift in Sources */,
 				5BDE07C32532400600CB9459 /* Plank.swift in Sources */,
 				5B3B60DD25473C8500A2CCC9 /* Laying Leg Raises.swift in Sources */,
 				5B3B60EB2547444800A2CCC9 /* Seated In And Out.swift in Sources */,
+				5B8DBB992564467B00D68C27 /* OverheadTricepsExtension.swift in Sources */,
 				5B30F85524B9CA2A0095D2ED /* Bodyweight Heel Touch.swift in Sources */,
 				5BF66E422530CEA200240674 /* UpperBody #1.swift in Sources */,
 				5B3B60E52547438E00A2CCC9 /* Plank Knees To Elbow.swift in Sources */,
@@ -823,6 +874,7 @@
 				5BDE07C025323FF500CB9459 /* Bear Crawl.swift in Sources */,
 				5B3B60E125473CC000A2CCC9 /* Plank Core Up And Down.swift in Sources */,
 				5B3B60F52547473E00A2CCC9 /* Side Plank Raises.swift in Sources */,
+				5B8DBBA92564485200D68C27 /* Upper Body New Workout.swift in Sources */,
 				5B3B610725481B0400A2CCC9 /* Mountain Climber Rep.swift in Sources */,
 				5B3B60FF25474FA400A2CCC9 /* V Ups.swift in Sources */,
 				5B30F83024B8EC2B0095D2ED /* AppDelegate.swift in Sources */,

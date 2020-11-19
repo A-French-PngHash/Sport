@@ -28,6 +28,6 @@ class HollowExtensionToCannonBall : SportWithReps {
     
     var numberOfImage: Int = 2
     
-    var nameOfSoundFile: String = "Leg Flutters"
+    var nameOfSoundFile: String = "Hollow Extension To Cannon Ball"
     
 }

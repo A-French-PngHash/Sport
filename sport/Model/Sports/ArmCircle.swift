@@ -13,7 +13,7 @@ class ArmCircle : SportWithReps {
     
     var numberOfReps: Int
     
-    var intervalBetweenReps: Float = 1
+    var intervalBetweenReps: Float = 0.8
     
     required init(numberOfReps: Int, numberOfSets: Int) {
         self.numberOfReps = numberOfReps

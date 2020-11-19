@@ -72,6 +72,13 @@ class SportSession {
         }
     }
     
+    var currentSportIsRecommended : Bool {
+        if let sport = currentSport as? SportWithReps {
+            return sport.isRecommended
+        }
+        return false
+    }
+    
     // Calculated property for sport with timers
     var timeUntilSportEnd : Double? {
         get {
@@ -126,10 +133,8 @@ class SportSession {
         print(totalSessionTime)
     }
     
-    /*
-     As described in SportProtocol.swift there are 2 different kind of sports.
-     When this variable is equal to "t" then it is the "SportWithTimer" type else the variable is equal to "r" ("SportWithReps")
-     */
+    /// As described in SportProtocol.swift there are 2 different kind of sports.
+    /// When this variable is equal to "t" then it is the "SportWithTimer" type else the variable is equal to "r" ("SportWithReps")/
     private func sportType(sport : SportProtocol) -> String {
         if let _ = sport as? SportWithReps {
             return "r"
@@ -212,8 +217,15 @@ class SportSession {
         }
     }
     
+    /// Does everything to change immediatly the interface to the next sport
+    ///
+    /// Note that if the current sport had a recommended number of rep with no frequency imposed this will trigger a normal going to next sport which will trigger a rest.
     func executeTransitionToNextSport() {
         guard sports.count - 1 != currentSportIndex else {
+            return
+        }
+        if currentSportIsRecommended && currentState != .rest{
+            goNextSport()
             return
         }
         
@@ -246,10 +258,13 @@ class SportSession {
     }
     
     /// Check if the current workout has been saved and save it if not.
+    ///
+    /// Note that the user need to do at least half of the predicted time of the workout for it to save.
     private func saveIfNeeded() {
         if !workoutHasBeenSaved {
             let secondsElapsed = Date().timeIntervalSince1970 - sessionStartedAt.timeIntervalSince1970
             let percentage = Double(secondsElapsed) / Double(totalSessionTime)
+            // When the user did half of the workout we can consider he did it.
             if percentage >= 0.5 {
                 let persistence = AppDelegate.app.persistence
                 persistence.insertWorkoutItem(date: sessionStartedAt, workoutType: workoutType)

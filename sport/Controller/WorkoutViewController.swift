@@ -36,6 +36,7 @@ class WorkoutViewController: UIViewController {
     @IBOutlet weak var repsLabel: UILabel!
     @IBOutlet weak var endInLabel: UILabel!
     @IBOutlet weak var endInTimerLabel: UILabel!
+    @IBOutlet weak var recommendedRepsLabel: UILabel!
     
     //MARK: - Variables
     var workoutName : String!
@@ -196,6 +197,8 @@ class WorkoutViewController: UIViewController {
     private func restEnded() {
         self.restView.isHidden = true
         self.sportContentView.isHidden = false
+        self.recommendedRepsLabel.isHidden = true
+
         
         if session.currentSportType == "r" {
             self.repsDoneLabel.isHidden = false
@@ -203,6 +206,10 @@ class WorkoutViewController: UIViewController {
             
             self.endInLabel.isHidden = true
             self.endInTimerLabel.isHidden = true
+            
+            if session.currentSportIsRecommended {
+                self.recommendedRepsLabel.isHidden = false
+            }
         } else {
             self.repsDoneLabel.isHidden = true
             self.repsLabel.isHidden = true
@@ -291,13 +298,15 @@ class WorkoutViewController: UIViewController {
         var item0 : AVPlayerItem?
         if session.currentSportType == "r" {
             // Saying the last rep.
-            item0 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!)
+            if !session.currentSportIsRecommended {
+                item0 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!)
+            }
         }
         let item1 = AVPlayerItem.init(url: Bundle.main.url(forResource: "AwesomeNowRestFor", withExtension: "mp3")!)
         let item2 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(self.session.pauseBetweenSport), withExtension: "mp3")!)
         let item3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "secondes", withExtension: "mp3")!)
         
-        if session.currentSportType == "r" {
+        if session.currentSportType == "r"  && !session.currentSportIsRecommended{
             itemsToPlay = [item0!, item1, item2, item3]
         } else {
             itemsToPlay = [item1, item2, item3]
@@ -320,7 +329,7 @@ class WorkoutViewController: UIViewController {
         let getReady = AVPlayerItem.init(url: Bundle.main.url(forResource: "GetReadyAnd", withExtension: "mp3")!)
         
         itemsToPlay = [fantastic, nowPrepare, set, actualSetNumber, of, totalSetNumber, getReady]
-        if session.currentSportType == "r" {
+        if session.currentSportType == "r"{
             // Saying the last rep.
             itemsToPlay.insert(AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.reps), withExtension: "mp3")!), at: 0)
         }
@@ -351,11 +360,13 @@ class WorkoutViewController: UIViewController {
         } else if currentImageDisplayedIndex == session.currentSport.numberOfImage {
             currentImageDisplayedIndex = 1
             if session.currentSportType == "r" {
-                session.rep()
-                if session.reps != session.totalReps {
-                    playSound(named: String(session.reps))
+                if !session.currentSportIsRecommended {
+                    session.rep()
+                    if session.reps != session.totalReps {
+                        playSound(named: String(session.reps))
+                    }
+                    updateViewData()
                 }
-                updateViewData()
             }
         } else {
             currentImageDisplayedIndex += 1
@@ -378,7 +389,12 @@ class WorkoutViewController: UIViewController {
         self.setsDoneLabel.text = "\(session.sets)/\(session.totalSets)"
         
         if session.currentSportType == "r" {
-            self.repsDoneLabel.text = "\(session.reps)/\(session.totalReps!)"
+            if session.currentSportIsRecommended {
+                self.repsDoneLabel.text = String(session.totalReps!)
+            } else {
+                
+                self.repsDoneLabel.text = "\(session.reps)/\(session.totalReps!)"
+            }
         }
         
         let specification = session.currentSport.specification

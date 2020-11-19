@@ -11,7 +11,6 @@ import Foundation
 class AbsSecondWorkout : WorkoutProtocol {
     var sports: Array<SportProtocol> = [
         ChairSitUps(numberOfReps: 10, numberOfSets: 2),
-        PlankCoreUpAndDown(numberOfReps: 20, numberOfSets: 1),
         VUps(numberOfReps: 20, numberOfSets: 1),
         ToeTouches(numberOfReps: 20, numberOfSets: 1),
         Crucifixes(numberOfReps: 20, numberOfSets: 1),

@@ -28,6 +28,6 @@ class DeadBug : SportWithReps {
     
     var numberOfImage: Int = 4
     
-    var nameOfSoundFile: String = "Leg Flutters"
+    var nameOfSoundFile: String = "Dead Bug"
     
 }
