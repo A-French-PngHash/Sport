@@ -1,33 +1,34 @@
 //
-//  Side Bend.swift
+//  Lunges.swift
 //  sport
 //
-//  Created by Titouan Blossier on 16/11/2020.
+//  Created by Titouan Blossier on 25/11/2020.
 //  Copyright © 2020 Titouan Blossier. All rights reserved.
 //
 
 import Foundation
 
-class SideBend : SportWithReps {
-    var isRecommended: Bool = true
+class Lunges : SportWithReps {
+    var numberOfReps: Int
     
-    var numberOfReps: Int = 15
+    var intervalBetweenReps: Float = 2
     
-    var intervalBetweenReps: Float = 3
+    var isRecommended: Bool = false
     
     required init(numberOfReps: Int, numberOfSets: Int) {
         self.numberOfReps = numberOfReps
         self.numberOfSets = numberOfSets
     }
     
-    var name: String = "Side Bend"
+    var name: String = "Lunges"
     
     var specification: String = ""
     
     var numberOfSets: Int
     
-    var numberOfImage: Int = 2
+    var numberOfImage: Int = 4
     
-    var nameOfSoundFile: String = "Side Bend"
+    var nameOfSoundFile: String = "Lunges"
+    
     
 }

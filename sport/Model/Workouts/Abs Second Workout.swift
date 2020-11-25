@@ -22,7 +22,8 @@ class AbsSecondWorkout : WorkoutProtocol {
         DeadBug(numberOfReps: 20, numberOfSets: 1),
         HollowExtensionToCannonBall(numberOfReps: 20, numberOfSets: 1),
         SideBend(numberOfReps: 20, numberOfSets: 2),
-        BodyweightSquat(numberOfReps: 20, numberOfSets: 2)
+        BodyweightSquat(numberOfReps: 20, numberOfSets: 2),
+        Lunges(numberOfReps: 20, numberOfSets: 2)
     ]
     
     

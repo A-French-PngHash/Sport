@@ -106,6 +106,8 @@
 		5B97998F2535EF4F0020CABA /* sportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97998E2535EF4F0020CABA /* sportTests.swift */; };
 		5B988394256EBEA500A8FBC2 /* Zottman Curls.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B988393256EBEA500A8FBC2 /* Zottman Curls.mp3 */; };
 		5B988398256EBEBA00A8FBC2 /* Zottman Curls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B988397256EBEBA00A8FBC2 /* Zottman Curls.swift */; };
+		5B98839E256EC44C00A8FBC2 /* Lunges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B98839D256EC44C00A8FBC2 /* Lunges.swift */; };
+		5B9883A2256EC4C400A8FBC2 /* Lunges.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B9883A1256EC4C400A8FBC2 /* Lunges.mp3 */; };
 		5B99815A25321AC60056197B /* TrainingCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99815925321AC60056197B /* TrainingCalculator.swift */; };
 		5B99815E25321C7B0056197B /* Sport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B99815C25321C7B0056197B /* Sport.xcdatamodeld */; };
 		5B9A52BC24BA5293007A0622 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A52BB24BA5293007A0622 /* WorkoutViewController.swift */; };
@@ -280,6 +282,8 @@
 		5B9799902535EF4F0020CABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B988393256EBEA500A8FBC2 /* Zottman Curls.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Zottman Curls.mp3"; sourceTree = "<group>"; };
 		5B988397256EBEBA00A8FBC2 /* Zottman Curls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Zottman Curls.swift"; sourceTree = "<group>"; };
+		5B98839D256EC44C00A8FBC2 /* Lunges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lunges.swift; sourceTree = "<group>"; };
+		5B9883A1256EC4C400A8FBC2 /* Lunges.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Lunges.mp3; sourceTree = "<group>"; };
 		5B99815925321AC60056197B /* TrainingCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCalculator.swift; sourceTree = "<group>"; };
 		5B99815D25321C7B0056197B /* Sport.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sport.xcdatamodel; sourceTree = "<group>"; };
 		5B9A52BB24BA5293007A0622 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
@@ -558,6 +562,7 @@
 				5B8DBBA42564482A00D68C27 /* Rear Delt Flies.swift */,
 				5B5D489F2566F32000DB1D46 /* Supinated Biceps Curl.swift */,
 				5B988397256EBEBA00A8FBC2 /* Zottman Curls.swift */,
+				5B98839D256EC44C00A8FBC2 /* Lunges.swift */,
 			);
 			path = Sports;
 			sourceTree = "<group>";
@@ -606,6 +611,7 @@
 				5B8DBB8C2564466400D68C27 /* Rear Delt Flies.mp3 */,
 				5B8DBB8D2564466400D68C27 /* Side Bend.mp3 */,
 				5B8DBB8A2564466400D68C27 /* Supinated Biceps Curls.mp3 */,
+				5B9883A1256EC4C400A8FBC2 /* Lunges.mp3 */,
 			);
 			path = SportNames;
 			sourceTree = "<group>";
@@ -789,6 +795,7 @@
 				5BDD4617253B50C100AA64A0 /* 25.mp3 in Resources */,
 				5BDD460D253B50C100AA64A0 /* 15.mp3 in Resources */,
 				5B3B60C5254712C000A2CCC9 /* Toe Touches.mp3 in Resources */,
+				5B9883A2256EC4C400A8FBC2 /* Lunges.mp3 in Resources */,
 				5B30F83724B8EC2D0095D2ED /* Assets.xcassets in Resources */,
 				5BDD4607253B50C100AA64A0 /* 11.mp3 in Resources */,
 				5BDD4617253B50C100AA64A0 /* 25.mp3 in Resources */,
@@ -872,6 +879,7 @@
 				5BDE07C32532400600CB9459 /* Plank.swift in Sources */,
 				5B5D48A02566F32100DB1D46 /* Supinated Biceps Curl.swift in Sources */,
 				5B3B60DD25473C8500A2CCC9 /* Laying Leg Raises.swift in Sources */,
+				5B98839E256EC44C00A8FBC2 /* Lunges.swift in Sources */,
 				5B3B60EB2547444800A2CCC9 /* Seated In And Out.swift in Sources */,
 				5B988398256EBEBA00A8FBC2 /* Zottman Curls.swift in Sources */,
 				5B8DBB992564467B00D68C27 /* OverheadTricepsExtension.swift in Sources */,
