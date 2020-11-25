@@ -17,7 +17,9 @@ class UpperBodyNewWorkout : WorkoutProtocol {
         OverheadTricepsExtension(numberOfReps: 20, numberOfSets: 2),
         HammerCurls(numberOfReps: 20, numberOfSets: 2),
         PronatedCurls(numberOfReps: 20, numberOfSets: 2),
-        RearDeltFlies(numberOfReps: 20, numberOfSets: 2)
+        RearDeltFlies(numberOfReps: 20, numberOfSets: 2),
+        SupinatedBicepsCurls(numberOfReps: 20, numberOfSets: 2),
+        ZottmanCurls(numberOfReps: 20, numberOfSets: 2)
     ]
      
     
