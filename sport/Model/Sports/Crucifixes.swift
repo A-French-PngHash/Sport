@@ -13,7 +13,7 @@ class Crucifixes : SportWithReps {
     
     var numberOfReps: Int
     
-    var intervalBetweenReps: Float = 2
+    var intervalBetweenReps: Float = 1.8
     
     var name: String = "Crucifixes"
     

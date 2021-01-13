@@ -22,11 +22,11 @@ class Workouts{
         let hottie = Hottie()
         let upperBody1 = UperBodyOne()
         let upperBody2 = UpperBodyTwo()
-        let test = Test()
+        let lowerBody = LowerBodyWorkout()
         let secondAbsWorkout = AbsSecondWorkout()
         let newUpperBody = UpperBodyNewWorkout()
-        self.allWorkouts = [hottie, upperBody1, upperBody2, test, secondAbsWorkout, newUpperBody]
-        self.allWorkoutsNames = [hottie.name, upperBody1.name, upperBody2.name, test.name, secondAbsWorkout.name, newUpperBody.name]
+        self.allWorkouts = [hottie, upperBody1, upperBody2, secondAbsWorkout, newUpperBody, lowerBody]
+        self.allWorkoutsNames = [hottie.name, upperBody1.name, upperBody2.name, secondAbsWorkout.name, newUpperBody.name, lowerBody.name]
     }
     
     

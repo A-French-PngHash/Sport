@@ -14,16 +14,13 @@ class AbsSecondWorkout : WorkoutProtocol {
         VUps(numberOfReps: 20, numberOfSets: 1),
         ToeTouches(numberOfReps: 20, numberOfSets: 1),
         Crucifixes(numberOfReps: 20, numberOfSets: 1),
-        TwistRussian(numberOfReps: 10, numberOfSets: 1),
+        TwistRussian(numberOfReps: 15, numberOfSets: 2),
         BodyweightHeelTouch(numberOfReps: 20, numberOfSets: 1),
         PlankKneesToElbow(numberOfReps: 10, numberOfSets: 1),
         MountainClimberRep(numberOfReps: 20, numberOfSets: 1),
         LayingCircle(numberOfReps: 10, numberOfSets: 2),
         DeadBug(numberOfReps: 20, numberOfSets: 1),
-        HollowExtensionToCannonBall(numberOfReps: 20, numberOfSets: 1),
-        SideBend(numberOfReps: 20, numberOfSets: 2),
-        BodyweightSquat(numberOfReps: 20, numberOfSets: 2),
-        Lunges(numberOfReps: 20, numberOfSets: 2)
+        SideBend(numberOfReps: 20, numberOfSets: 2)
     ]
     
     

@@ -12,6 +12,8 @@ class ChooseWorkoutViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recommandationLabel: UILabel!
+    /// Pressed when the user want to register a run today
+    @IBOutlet weak var ranButton: UIButton!
     var workoutChosed : String!
     var recommandation : WorkoutType!
     
@@ -24,8 +26,21 @@ class ChooseWorkoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true
-        let result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 5)
-        recommandation = TrainingCalculator.shared.getTodayRecommendedWorkout(armsWorkout: result.0.count, absWorkout: result.1.count, restWorkout: result.2)
+
+        /*
+         What it does basically is that if there was a run workout in the past 3 days rather than submitting only 2 days to the training calculator, it will submit the past 3 day data. The training calculator can then calculate as if it was 2 days, without taking into account the run. This really make the run an optionnal workout.
+         */
+
+        var result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 3)
+        print("run : \(result.2)")
+        if result.2.count == 0 {
+            // No run workout.
+            result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 2)
+            recommandation = TrainingCalculator.shared.getTodayRecommendedWorkout(armsWorkout: result.0.count, absWorkout: result.1.count, restWorkout: result.3)
+        } else {
+            // Run workout.
+            recommandation = TrainingCalculator.shared.getTodayRecommendedWorkout(armsWorkout: result.0.count, absWorkout: result.1.count, restWorkout: result.3)
+        }
         if recommandation == .abs {
             recommandationLabel.text = absText
         } else if recommandation == .arms {
@@ -36,7 +51,22 @@ class ChooseWorkoutViewController: UIViewController {
             recommandationLabel.text = alreadyWorkoutText
         }
     }
-    
+
+    @IBAction func ranButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Register a run Session", message: "Are you sure you want to register a run session. This action cannot be undone and will affect your recomendations.", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Yes", style: .default) { (_) in
+            AppDelegate.app.persistence.insertWorkoutItem(date: Date(), workoutType: .run)
+            self.recommandationLabel.text = self.alreadyWorkoutText
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }
+
+        alert.addAction(yes)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "SegueToWorkoutVC" else {
             return

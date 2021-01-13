@@ -18,7 +18,7 @@ class MountainClimberRep : SportWithReps {
     
     var numberOfReps: Int
     
-    var intervalBetweenReps: Float = 1.65
+    var intervalBetweenReps: Float = 1.5
     
     
     var intervalBetweenImages: Float = 0.3

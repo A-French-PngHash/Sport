@@ -26,8 +26,10 @@ class TrainingCalculator {
     static let shared = TrainingCalculator()
     private init() { }
     
-    let armsGoal = 2
-    let absGoal = 2
+    let armsGoal = 1
+    let absGoal = 1
+    /// Running is not mandatory.
+    let possibleRun = 1
     let restGoal = 1
     /**
      Get the workouts under array form for the last x days.
@@ -39,13 +41,13 @@ class TrainingCalculator {
      - parameter x : The number of day.
      - parameter persistence : Used for unit testing to define a custom persistence class. No need to specify this argument for the production code.
      */
-    func getSportArrayForLastXDays(x : Int, persistence : Persistence = AppDelegate.app.persistence) -> (Array<WorkoutData>, Array<WorkoutData>, Int){
+    func getSportArrayForLastXDays(x : Int, persistence : Persistence = AppDelegate.app.persistence) -> (Array<WorkoutData>, Array<WorkoutData>, Array<WorkoutData>, Int){
         
         if x >= 28 {
             fatalError("This situation will cause problems.")
         }
         
-        var pastXDaysWorkout = persistence.workoutDataSince(date: Date.dateXDaysAgo(x: 4))
+        var pastXDaysWorkout = persistence.workoutDataSince(date: Date.dateXDaysAgo(x: x))
         
         // We want to filter in order to remove today's workout from the list
         var new = [WorkoutData]()
@@ -60,11 +62,13 @@ class TrainingCalculator {
         
         var absWorkouts : Array<WorkoutData> = []
         var armsWorkouts : Array<WorkoutData> = []
+        var runWorkouts : Array<WorkoutData> = []
         var restCount : Int = 0
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        
+
+        // This part check for multiple workout of the same type on the same day to prevent counting them twice.
         for i in pastXDaysWorkout {
             if i.type == .abs {
                 var canBeInserted = true
@@ -86,6 +90,16 @@ class TrainingCalculator {
                 if canBeInserted {
                     armsWorkouts.append(i)
                 }
+            } else if i.type == .run {
+                var canBeInserted = true
+                for arm in runWorkouts {
+                    if i.date?.day == arm.date?.day {
+                        canBeInserted = false
+                    }
+                }
+                if canBeInserted {
+                    runWorkouts.append(i)
+                }
             }
         }
         
@@ -102,14 +116,14 @@ class TrainingCalculator {
                 restCount += 1
             }
         }
-        return (armsWorkouts, absWorkouts, restCount)
+        return (armsWorkouts, absWorkouts, runWorkouts, restCount)
     }
     
-    
-    func getTodayRecommendedWorkout(armsWorkout : Int, absWorkout : Int, restWorkout : Int, persistence : Persistence = AppDelegate.app.persistence) -> WorkoutType{
-        print(armsWorkout)
-        print(absWorkout)
-        print(restWorkout)
+
+    /// Return recommended workout.
+    ///
+    /// If the run workout is not specified it means that there was no run in the past x days.
+    func getTodayRecommendedWorkout(armsWorkout : Int, absWorkout : Int, restWorkout : Int, persistence : Persistence = AppDelegate.app.persistence) -> WorkoutType {
         if persistence.todayWorkout {
             return .alreadyWorkout
         }

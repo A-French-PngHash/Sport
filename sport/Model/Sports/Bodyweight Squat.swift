@@ -13,7 +13,7 @@ class BodyweightSquat : SportWithReps {
     
     var name: String = "Bodyweight Squat"
     
-    var intervalBetweenReps: Float = 3.3
+    var intervalBetweenReps: Float = 2.85
     
     var specification: String = ""
     

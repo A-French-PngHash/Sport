@@ -13,7 +13,7 @@ class DeadBug : SportWithReps {
     
     var numberOfReps: Int = 20
     
-    var intervalBetweenReps: Float = 3.2
+    var intervalBetweenReps: Float = 2.9
     
     required init(numberOfReps: Int, numberOfSets: Int) {
         self.numberOfReps = numberOfReps

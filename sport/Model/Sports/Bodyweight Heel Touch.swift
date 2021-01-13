@@ -21,7 +21,7 @@ class BodyweightHeelTouch : SportWithReps {
     
     var name: String = "Bodyweight Heel Touch"
     var numberOfImage: Int = 4
-    var intervalBetweenReps: Float = 3.3
+    var intervalBetweenReps: Float = 3.05
     var nameOfSoundFile: String = "BodyweightHeelTouch"
     var specification: String = ""
     

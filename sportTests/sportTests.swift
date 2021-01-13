@@ -25,7 +25,7 @@ class sportTests: XCTestCase {
         fakeCore.flushData()
         super.tearDown()
     }
-    
+
     //MARK: - Training calculator test - Retrieveing past five days
     
     func testGivenNoExerciseWhenRetrievingPastFiveDaysThenRestEqualFour() {
@@ -35,7 +35,7 @@ class sportTests: XCTestCase {
         let result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 5, persistence: persistence)
         
         // Then rest equal 4 and other equal 0.
-        XCTAssertEqual(result.2, 4) // Rest
+        XCTAssertEqual(result.3, 4) // Rest
         XCTAssertEqual(result.1.count, 0) // Abs
         XCTAssertEqual(result.0.count, 0) // Arms
     }
@@ -50,7 +50,7 @@ class sportTests: XCTestCase {
         let result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 5, persistence: persistence)
         
         // Then arm equal 3 and rest equal 1
-        XCTAssertEqual(result.2, 1) // Rest
+        XCTAssertEqual(result.3, 1) // Rest
         XCTAssertEqual(result.1.count, 0) // Abs
         XCTAssertEqual(result.0.count, 3) // Arms
     }
@@ -66,7 +66,7 @@ class sportTests: XCTestCase {
         let result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 5, persistence: persistence)
         
         // Then arm equal 3, abs 1 and rest 0
-        XCTAssertEqual(result.2, 0) // Rest
+        XCTAssertEqual(result.3, 0) // Rest
         XCTAssertEqual(result.1.count, 1) // Abs
         XCTAssertEqual(result.0.count, 3) // Arms
     }
@@ -79,7 +79,7 @@ class sportTests: XCTestCase {
         let result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 5, persistence: persistence)
 
         // Then rest equal 4 and other 0
-        XCTAssertEqual(result.2, 4) // Rest
+        XCTAssertEqual(result.3, 4) // Rest
         XCTAssertEqual(result.1.count, 0) // Abs
         XCTAssertEqual(result.0.count, 0) // Arms
     }
@@ -96,7 +96,7 @@ class sportTests: XCTestCase {
         let result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 5, persistence: persistence)
         
         // Then arm equal 3, abs 1 and rest 0.
-        XCTAssertEqual(result.2, 0) // Rest
+        XCTAssertEqual(result.3, 0) // Rest
         XCTAssertEqual(result.1.count, 1) // Abs
         XCTAssertEqual(result.0.count, 3) // Arms
     }
@@ -109,25 +109,27 @@ class sportTests: XCTestCase {
         let result = TrainingCalculator.shared.getSportArrayForLastXDays(x: 5, persistence: persistence)
         
         // Then arm rest equal 4 and other 0.
-        XCTAssertEqual(result.2, 4) // Rest
+        XCTAssertEqual(result.3, 4) // Rest
         XCTAssertEqual(result.1.count, 0) // Abs
         XCTAssertEqual(result.0.count, 0) // Arms
     }
     
     //MARK: - Training Calculator Test - Recommended Workout
+
+
     func testGivenNoWorkoutWhenGettingRecommendedThenIsNotRest() {
         // Given no workout.
-        let rest = 4
+        let rest = 2
         let arm = 0
         let abs = 0
-        
+
         // When getting recommended workout.
         let recomended = TrainingCalculator.shared.getTodayRecommendedWorkout(armsWorkout: arm, absWorkout: abs, restWorkout: rest, persistence: persistence)
-        
+
         // Then is not rest
         XCTAssertNotEqual(recomended, .rest)
     }
-    
+
     func testGivenWorkoutTodayWhenGettingRecommendedThenIsAlreadyWorkout() {
         // Given workout today.
         fakeCore.insertWorkoutItem(date: Date(), type: .abs)
@@ -135,26 +137,56 @@ class sportTests: XCTestCase {
         let rest = 0
         let arm = 0
         let abs = 0
-        
+
         // When getting recommended workout.
         let recomended = TrainingCalculator.shared.getTodayRecommendedWorkout(armsWorkout: arm, absWorkout: abs, restWorkout: rest, persistence: persistence)
-        
+
         // Then is already workout.
         XCTAssertEqual(recomended, .alreadyWorkout)
     }
-    
-    func testGivenTwoArmsAndAbsWhenGettingRecommendedThenIsRest() {
-        // Given two arms and two abs
+
+    func testGivenOneArmsAndAbsWhenGettingRecommendedThenIsRest() {
+        // Given one arms and one abs
         let rest = 0
-        let arm = 2
-        let abs = 2
-        
+        let arm = 1
+        let abs = 1
+
         // When getting recommended workout.
         let recomended = TrainingCalculator.shared.getTodayRecommendedWorkout(armsWorkout: arm, absWorkout: abs, restWorkout: rest, persistence: persistence)
-        
+
         // Then is rest.
         XCTAssertEqual(recomended, .rest)
     }
+
+    func testGivenOneArmWhenGettingRecommendedThenIsAbs() {
+        // Given one arm.
+        let rest = 1
+        let arm = 1
+        let abs = 0
+
+        // When getting recommended workout.
+        let recomended = TrainingCalculator.shared.getTodayRecommendedWorkout(armsWorkout: arm, absWorkout: abs, restWorkout: rest, persistence: persistence)
+
+        // Then is abs.
+        XCTAssertEqual(recomended, .abs)
+    }
+
+    func testGivenOneAbsWhenGettingRecommendedThenIsArm() {
+        // Given one arm.
+        let rest = 1
+        let arm = 0
+        let abs = 1
+
+        // When getting recommended workout.
+        let recomended = TrainingCalculator.shared.getTodayRecommendedWorkout(armsWorkout: arm, absWorkout: abs, restWorkout: rest, persistence: persistence)
+
+        // Then is abs.
+        XCTAssertEqual(recomended, .arms)
+    }
+
+    /*
+
+
     
     func testGivenTwoArmsOneAbsAndOneRestWhenGettingRecommendedThenIsAbs() {
         // Given two arms and one abs and one rest
@@ -182,18 +214,7 @@ class sportTests: XCTestCase {
         XCTAssertEqual(recomended, .arms)
     }
     
-    func testGivenOneArmsAndAbsWhenGettingRecommendedThenIsNotRest() {
-        // Given two arms and two abs
-        let rest = 2
-        let arm = 1
-        let abs = 1
-        
-        // When getting recommended workout.
-        let recomended = TrainingCalculator.shared.getTodayRecommendedWorkout(armsWorkout: arm, absWorkout: abs, restWorkout: rest, persistence: persistence)
-        
-        // Then is rest.
-        XCTAssertNotEqual(recomended, .rest)
-    }
+
     
     func testGivenOneArmsAndThreeRestWhenGettingRecommendedThenIsAbs() {
         // Given two arms and one abs and one rest
@@ -233,4 +254,5 @@ class sportTests: XCTestCase {
         // Then is rest.
         XCTAssertEqual(recomended, .rest)
     }
+ */
 }
