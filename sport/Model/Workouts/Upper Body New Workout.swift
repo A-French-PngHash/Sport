@@ -25,7 +25,7 @@ class UpperBodyNewWorkout : WorkoutProtocol {
     
     var name: String = "Upper Body Second Workout"
     
-    var pauseBetweenSports: Int = 8
+    var pauseBetweenSports: Int = 17
     
     var type: WorkoutType = .arms
     

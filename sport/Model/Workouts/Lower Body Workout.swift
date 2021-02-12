@@ -19,7 +19,10 @@ class LowerBodyWorkout : WorkoutProtocol {
         KneelingSquat(numberOfSets: 1, timeOfTheExercise: 60),
         PulsingSquat(numberOfSets: 1, timeOfTheExercise: 60),
         SideLyingAbduction(numberOfSets: 2, timeOfTheExercise: 45),
-        SquatHoldAbduction(numberOfSets: 1, timeOfTheExercise: 60)
+        SquatHoldAbduction(numberOfSets: 1, timeOfTheExercise: 35),
+        CurtsyLunge(numberOfReps: 10, numberOfSets: 1),
+        LateralLunge(numberOfReps: 15, numberOfSets: 2),
+        BridgeWalkout(numberOfReps: 15, numberOfSets: 1)
     ]
 
     var name: String = "Lower Body"

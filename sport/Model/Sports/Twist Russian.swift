@@ -13,7 +13,7 @@ class TwistRussian : SportWithReps {
     
     var specification: String = "Russian"
     var name: String = "Bodyweight Twist"
-    var intervalBetweenReps: Float = 1.6
+    var intervalBetweenReps: Float = 1.75
     var numberOfImage: Int = 3
     var nameOfSoundFile: String = "BodyweightTwistRussian"
     var numberOfReps: Int

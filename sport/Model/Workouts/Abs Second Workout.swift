@@ -18,6 +18,8 @@ class AbsSecondWorkout : WorkoutProtocol {
         BodyweightHeelTouch(numberOfReps: 20, numberOfSets: 1),
         PlankKneesToElbow(numberOfReps: 10, numberOfSets: 1),
         MountainClimberRep(numberOfReps: 20, numberOfSets: 1),
+        LayingLegRaises(numberOfReps: 20, numberOfSets: 1),
+        LayingKneeRaises(numberOfReps: 20, numberOfSets: 1),
         LayingCircle(numberOfReps: 10, numberOfSets: 2),
         DeadBug(numberOfReps: 20, numberOfSets: 1),
         SideBend(numberOfReps: 20, numberOfSets: 2)

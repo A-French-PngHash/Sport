@@ -83,7 +83,14 @@ class WorkoutViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func cancelButtonClicked(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Quit workout", message: "Are you sure you want to quit this workout ? It might not be saved in the database.", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Yes", style: .destructive) { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(yes)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
     }
     @IBAction func previousSportButtonClicked(_ sender: Any) {
         session.executeTransitionToPreviousSport()

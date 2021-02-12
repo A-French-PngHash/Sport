@@ -13,7 +13,7 @@ class VUps : SportWithReps {
     
     var numberOfReps: Int
     
-    var intervalBetweenReps: Float = 2.4
+    var intervalBetweenReps: Float = 2.3
     
     var name: String = "V Ups"
     

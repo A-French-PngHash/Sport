@@ -9,7 +9,7 @@
 import Foundation
 
 class LayingKneeRaises : SportWithReps {
-    var isRecommended: Bool = false
+    var isRecommended: Bool = true
     
     var numberOfReps: Int
     

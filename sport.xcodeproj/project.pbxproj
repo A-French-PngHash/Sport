@@ -129,6 +129,12 @@
 		5BA4AF9925AE19ED007B50C6 /* Kneeling Squat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4AF9125AE19ED007B50C6 /* Kneeling Squat.mp3 */; };
 		5BA4AF9A25AE19ED007B50C6 /* Single Leg Bridge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4AF9225AE19ED007B50C6 /* Single Leg Bridge.mp3 */; };
 		5BA4AF9B25AE19ED007B50C6 /* Gluteus Kickback.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4AF9325AE19ED007B50C6 /* Gluteus Kickback.mp3 */; };
+		5BA8950925BB251F00D72CEC /* Bridge Walkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8950825BB251F00D72CEC /* Bridge Walkout.swift */; };
+		5BA8950D25BB25B800D72CEC /* Lateral Lunge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8950C25BB25B800D72CEC /* Lateral Lunge.swift */; };
+		5BA8951125BB25FF00D72CEC /* Curtsy Lunge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8951025BB25FF00D72CEC /* Curtsy Lunge.swift */; };
+		5BA8951F25BB2D2100D72CEC /* Bridge Walkout.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8951C25BB2D2100D72CEC /* Bridge Walkout.mp3 */; };
+		5BA8952025BB2D2100D72CEC /* Curtsy Lunge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8951D25BB2D2100D72CEC /* Curtsy Lunge.mp3 */; };
+		5BA8952125BB2D2100D72CEC /* Lateral Lunge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8951E25BB2D2100D72CEC /* Lateral Lunge.mp3 */; };
 		5BC9B6052535BD0E00D7AEC9 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC9B6042535BD0E00D7AEC9 /* WorkoutData.swift */; };
 		5BD343EA252F2208007BC7A2 /* Bodyweight Squat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD343E9252F2208007BC7A2 /* Bodyweight Squat.swift */; };
 		5BD343F3252F471D007BC7A2 /* series.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD343EC252F471D007BC7A2 /* series.mp3 */; };
@@ -321,6 +327,12 @@
 		5BA4AF9125AE19ED007B50C6 /* Kneeling Squat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kneeling Squat.mp3"; sourceTree = "<group>"; };
 		5BA4AF9225AE19ED007B50C6 /* Single Leg Bridge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Single Leg Bridge.mp3"; sourceTree = "<group>"; };
 		5BA4AF9325AE19ED007B50C6 /* Gluteus Kickback.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Gluteus Kickback.mp3"; sourceTree = "<group>"; };
+		5BA8950825BB251F00D72CEC /* Bridge Walkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bridge Walkout.swift"; sourceTree = "<group>"; };
+		5BA8950C25BB25B800D72CEC /* Lateral Lunge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lateral Lunge.swift"; sourceTree = "<group>"; };
+		5BA8951025BB25FF00D72CEC /* Curtsy Lunge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Curtsy Lunge.swift"; sourceTree = "<group>"; };
+		5BA8951C25BB2D2100D72CEC /* Bridge Walkout.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bridge Walkout.mp3"; sourceTree = "<group>"; };
+		5BA8951D25BB2D2100D72CEC /* Curtsy Lunge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Curtsy Lunge.mp3"; sourceTree = "<group>"; };
+		5BA8951E25BB2D2100D72CEC /* Lateral Lunge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lateral Lunge.mp3"; sourceTree = "<group>"; };
 		5BC9B6042535BD0E00D7AEC9 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
 		5BD343E9252F2208007BC7A2 /* Bodyweight Squat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bodyweight Squat.swift"; sourceTree = "<group>"; };
 		5BD343EC252F471D007BC7A2 /* series.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = series.mp3; sourceTree = "<group>"; };
@@ -603,6 +615,9 @@
 				5BA4AF7A25AE1366007B50C6 /* Side Lying Abduction.swift */,
 				5BA4AF7E25AE1399007B50C6 /* Single Leg Bridge.swift */,
 				5BA4AF8225AE1417007B50C6 /* Squat Hold Abduction.swift */,
+				5BA8950825BB251F00D72CEC /* Bridge Walkout.swift */,
+				5BA8950C25BB25B800D72CEC /* Lateral Lunge.swift */,
+				5BA8951025BB25FF00D72CEC /* Curtsy Lunge.swift */,
 			);
 			path = Sports;
 			sourceTree = "<group>";
@@ -610,6 +625,9 @@
 		5B4C3907253260110082F52B /* SportNames */ = {
 			isa = PBXGroup;
 			children = (
+				5BA8951C25BB2D2100D72CEC /* Bridge Walkout.mp3 */,
+				5BA8951D25BB2D2100D72CEC /* Curtsy Lunge.mp3 */,
+				5BA8951E25BB2D2100D72CEC /* Lateral Lunge.mp3 */,
 				5BA4AF8E25AE19EC007B50C6 /* Bridge.mp3 */,
 				5BA4AF8F25AE19ED007B50C6 /* Crab Walk.mp3 */,
 				5BA4AF9325AE19ED007B50C6 /* Gluteus Kickback.mp3 */,
@@ -741,6 +759,7 @@
 		5B30F82424B8EC2B0095D2ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = NO;
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Titouan Blossier";
@@ -833,6 +852,7 @@
 				5BDD460B253B50C100AA64A0 /* 26.mp3 in Resources */,
 				5BDD461B253B50C100AA64A0 /* 3.mp3 in Resources */,
 				5B8DBB8E2564466400D68C27 /* Hammer Curls.mp3 in Resources */,
+				5BA8952125BB2D2100D72CEC /* Lateral Lunge.mp3 in Resources */,
 				5B30F83724B8EC2D0095D2ED /* Assets.xcassets in Resources */,
 				5BDD4607253B50C100AA64A0 /* 11.mp3 in Resources */,
 				5B3B60BD254712C000A2CCC9 /* Crucifixes.mp3 in Resources */,
@@ -845,6 +865,7 @@
 				5BDD461A253B50C100AA64A0 /* 4.mp3 in Resources */,
 				5BDD4629253B518B00AA64A0 /* secondes.mp3 in Resources */,
 				5BD34446252F4B51007BC7A2 /* 34.mp3 in Resources */,
+				5BA8952025BB2D2100D72CEC /* Curtsy Lunge.mp3 in Resources */,
 				5B0A7A0D24C0859200C669C9 /* BodyweightCrunchBicycle.mp3 in Resources */,
 				5B4C393D25331AA90082F52B /* Superman.mp3 in Resources */,
 				5BA4AF9425AE19ED007B50C6 /* Squat Hold Abduction.mp3 in Resources */,
@@ -856,6 +877,7 @@
 				5BDD4625253B517B00AA64A0 /* nowWeHave.mp3 in Resources */,
 				5BA4AF9925AE19ED007B50C6 /* Kneeling Squat.mp3 in Resources */,
 				5BDD4618253B50C100AA64A0 /* 24.mp3 in Resources */,
+				5BA8951F25BB2D2100D72CEC /* Bridge Walkout.mp3 in Resources */,
 				5BDD460A253B50C100AA64A0 /* 8.mp3 in Resources */,
 				5B3B60C1254712C000A2CCC9 /* Plank Core Up And Down.mp3 in Resources */,
 				5BA4AF9B25AE19ED007B50C6 /* Gluteus Kickback.mp3 in Resources */,
@@ -899,6 +921,7 @@
 			files = (
 				5BA4AF6B25AE1217007B50C6 /* CrabWalk.swift in Sources */,
 				5B3B61032548196F00A2CCC9 /* Abs Second Workout.swift in Sources */,
+				5BA8950925BB251F00D72CEC /* Bridge Walkout.swift in Sources */,
 				5B8DBBA1256447EF00D68C27 /* Pronated Curls.swift in Sources */,
 				5BF66E3E2530CE9300240674 /* Hottie.swift in Sources */,
 				5B30F84824B8ECA00095D2ED /* Session.swift in Sources */,
@@ -929,6 +952,7 @@
 				5BA4AF8725AE156C007B50C6 /* Lower Body Workout.swift in Sources */,
 				5B3B60EB2547444800A2CCC9 /* Seated In And Out.swift in Sources */,
 				5B988398256EBEBA00A8FBC2 /* Zottman Curls.swift in Sources */,
+				5BA8951125BB25FF00D72CEC /* Curtsy Lunge.swift in Sources */,
 				5B8DBB992564467B00D68C27 /* OverheadTricepsExtension.swift in Sources */,
 				5B30F85524B9CA2A0095D2ED /* Bodyweight Heel Touch.swift in Sources */,
 				5BF66E422530CEA200240674 /* UpperBody #1.swift in Sources */,
@@ -961,6 +985,7 @@
 				5B3B610725481B0400A2CCC9 /* Mountain Climber Rep.swift in Sources */,
 				5B3B60FF25474FA400A2CCC9 /* V Ups.swift in Sources */,
 				5B30F83024B8EC2B0095D2ED /* AppDelegate.swift in Sources */,
+				5BA8950D25BB25B800D72CEC /* Lateral Lunge.swift in Sources */,
 				5B30F85B24B9CF710095D2ED /* Workouts.swift in Sources */,
 				5B5D98082535B441006E4A17 /* ArmCircle.swift in Sources */,
 				5BDE07CC2532404E00CB9459 /* Side Plank Needle.swift in Sources */,
