@@ -21,16 +21,29 @@ class TrainingCalculator {
      
      This is basically how the recomendation work. There are a lots of little tweaks that were not explained here but it is still the main principle.
      */
-    
-    // SINGLETON
-    static let shared = TrainingCalculator()
-    private init() { }
+
     
     let armsGoal = 1
     let absGoal = 1
     /// Running is not mandatory.
     let possibleRun = 1
     let restGoal = 1
+    var persistence : Persistence
+
+    /// Text to display to the user depending on the workout being recomended.
+    static let textToDisplay : Dictionary<WorkoutType, String> = [
+        .abs : "Abs is what we recommend you today !",
+        .arms : "We recommend you to do your arm workout today !",
+        .rest : "You've been active for the past couple days so today take a break, relax yourself, rest !",
+        .alreadyWorkout : "Great ! You've already workout today, rest for tomorow !"
+    ]
+
+    init(persistence : Persistence) {
+        /// This init allows for testing with a custom database.
+        self.persistence = persistence
+
+    }
+
     /**
      Get the workouts under array form for the last x days.
      
@@ -41,7 +54,7 @@ class TrainingCalculator {
      - parameter x : The number of day.
      - parameter persistence : Used for unit testing to define a custom persistence class. No need to specify this argument for the production code.
      */
-    func getSportArrayForLastXDays(x : Int, persistence : Persistence = AppDelegate.app.persistence) -> (Array<WorkoutData>, Array<WorkoutData>, Array<WorkoutData>, Int){
+    func getSportArrayForLastXDays(x : Int) -> (Array<WorkoutData>, Array<WorkoutData>, Array<WorkoutData>, Int){
         
         if x >= 28 {
             fatalError("This situation will cause problems.")
@@ -123,7 +136,13 @@ class TrainingCalculator {
     /// Return recommended workout.
     ///
     /// If the run workout is not specified it means that there was no run in the past x days.
-    func getTodayRecommendedWorkout(armsWorkout : Int, absWorkout : Int, restWorkout : Int, persistence : Persistence = AppDelegate.app.persistence) -> WorkoutType {
+    /// Returns the workout type and the text associated with it to display.
+    func getTodayRecommendedWorkout() -> WorkoutType {
+
+        let workouts = getSportArrayForLastXDays(x: 2)
+        let armsWorkout = workouts.0.count
+        let absWorkout = workouts.1.count
+        let restWorkout = workouts.3
         if persistence.todayWorkout {
             return .alreadyWorkout
         }
@@ -148,6 +167,12 @@ class TrainingCalculator {
         }
         
         return .rest
+    }
+
+    /// Return the recomendend workout associated with the text displayed to the user to explain.
+    func getRecomendedAndText() -> (WorkoutType, String){
+        let workout = getTodayRecommendedWorkout()
+        return (workout, TrainingCalculator.textToDisplay[workout]!)
     }
     
     private func getDayComponent(date : Date) -> Int{

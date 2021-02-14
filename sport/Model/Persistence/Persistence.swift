@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class Persistence {
+class Persistence : ObservableObject{
     
     let persistentContainer : NSPersistentContainer!
     
@@ -24,15 +24,38 @@ class Persistence {
             return !workoutDataSince(date: Date().dateAtMidnight).isEmpty
         }
     }
-    
-    // Mainly for testing.
-    init(container : NSPersistentContainer) {
-        self.persistentContainer = container
-    }
-    
-    // Using the default initializer for production version.
-    convenience init() {
-        self.init(container: AppDelegate.persistentContainer)
+
+    // A test configuration for SwiftUI previews
+    static var preview: Persistence = {
+        let persistence = Persistence(inMemory: true)
+
+        let workout = WorkoutData(context: persistence.context)
+        workout.rawWorkoutType = "abs"
+        workout.date = Date()
+
+        return persistence
+    }()
+
+    // An initializer to load Core Data, optionally able
+    // to use an in-memory store. The optional container parameter is for testing to provide a container with existing data.
+    init(inMemory: Bool = false, container : NSPersistentContainer? = nil) {
+        // If you didn't name your model Main you'll need
+        // to change this name below.
+        if let container = container {
+            persistentContainer = container
+        } else {
+            persistentContainer = NSPersistentContainer(name: "Sport")
+        }
+
+        if inMemory {
+            persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        }
+
+        persistentContainer.loadPersistentStores { description, error in
+            if let error = error {
+                fatalError("Error: \(error.localizedDescription)")
+            }
+        }
     }
     
     ///Create and save a workout item into the database.

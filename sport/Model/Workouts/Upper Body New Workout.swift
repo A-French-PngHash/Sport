@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UpperBodyNewWorkout : WorkoutProtocol {
+struct UpperBodyNewWorkout : WorkoutProtocol {
     var sports: Array<SportProtocol> = [
         PushUps(numberOfSets: 1, timeOfTheExercise: 30),
         Plank(numberOfSets: 1, timeOfTheExercise: 60),

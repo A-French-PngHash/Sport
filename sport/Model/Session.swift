@@ -13,6 +13,7 @@ class SportSession {
     
     var workoutType : WorkoutType
     var sports : Array<SportProtocol>
+    var persistence : Persistence
     
     private var currentSportIndex : Int = 0
     var reps : Int
@@ -104,7 +105,8 @@ class SportSession {
         }
     }
     
-    init(workout : WorkoutProtocol) {
+    init(workout : WorkoutProtocol, persistence : Persistence) {
+        self.persistence = persistence
         self.sports = workout.sports.shuffled()
         self.sessionStartedAt = Date()
         reps = 0
@@ -266,7 +268,6 @@ class SportSession {
             let percentage = Double(secondsElapsed) / Double(totalSessionTime)
             // When the user did half of the workout we can consider he did it.
             if percentage >= 0.5 {
-                let persistence = AppDelegate.app.persistence
                 persistence.insertWorkoutItem(date: sessionStartedAt, workoutType: workoutType)
                 workoutHasBeenSaved = true
             }

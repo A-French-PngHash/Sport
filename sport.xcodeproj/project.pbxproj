@@ -189,6 +189,8 @@
 		5BDE07C62532402900CB9459 /* Reverse Fly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE07C52532402900CB9459 /* Reverse Fly.swift */; };
 		5BDE07C92532403700CB9459 /* Shoulder Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE07C82532403700CB9459 /* Shoulder Lift.swift */; };
 		5BDE07CC2532404E00CB9459 /* Side Plank Needle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE07CB2532404E00CB9459 /* Side Plank Needle.swift */; };
+		5BE21C5725D744F100A7C8D6 /* SportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE21C5625D744F100A7C8D6 /* SportApp.swift */; };
+		5BE21C5B25D7450B00A7C8D6 /* PickWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE21C5A25D7450B00A7C8D6 /* PickWorkoutView.swift */; };
 		5BE2D00A2562E8F800F17B1C /* Dead Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2D0092562E8F800F17B1C /* Dead Bug.swift */; };
 		5BE2D00E2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2D00D2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift */; };
 		5BE2D0122562E97E00F17B1C /* Side Bend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2D0112562E97E00F17B1C /* Side Bend.swift */; };
@@ -387,6 +389,8 @@
 		5BDE07C52532402900CB9459 /* Reverse Fly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reverse Fly.swift"; sourceTree = "<group>"; };
 		5BDE07C82532403700CB9459 /* Shoulder Lift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shoulder Lift.swift"; sourceTree = "<group>"; };
 		5BDE07CB2532404E00CB9459 /* Side Plank Needle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Side Plank Needle.swift"; sourceTree = "<group>"; };
+		5BE21C5625D744F100A7C8D6 /* SportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportApp.swift; sourceTree = "<group>"; };
+		5BE21C5A25D7450B00A7C8D6 /* PickWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickWorkoutView.swift; sourceTree = "<group>"; };
 		5BE2D0092562E8F800F17B1C /* Dead Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dead Bug.swift"; sourceTree = "<group>"; };
 		5BE2D00D2562E94800F17B1C /* Hollow Extension To Cannon Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hollow Extension To Cannon Ball.swift"; sourceTree = "<group>"; };
 		5BE2D0112562E97E00F17B1C /* Side Bend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Side Bend.swift"; sourceTree = "<group>"; };
@@ -519,6 +523,8 @@
 			children = (
 				5B30F83824B8EC2D0095D2ED /* LaunchScreen.storyboard */,
 				5B30F83324B8EC2B0095D2ED /* Main.storyboard */,
+				5BE21C5625D744F100A7C8D6 /* SportApp.swift */,
+				5BE21C5A25D7450B00A7C8D6 /* PickWorkoutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -759,7 +765,6 @@
 		5B30F82424B8EC2B0095D2ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = NO;
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Titouan Blossier";
@@ -938,6 +943,7 @@
 				5BDE07C92532403700CB9459 /* Shoulder Lift.swift in Sources */,
 				5B30F84F24B9C60C0095D2ED /* Bodyweight Crunch Bicycle.swift in Sources */,
 				5B9CA96D2531A28700101AA8 /* DateExtension.swift in Sources */,
+				5BE21C5725D744F100A7C8D6 /* SportApp.swift in Sources */,
 				5B9CA9702531AAA600101AA8 /* Push Ups.swift in Sources */,
 				5B8DBBA52564482A00D68C27 /* Rear Delt Flies.swift in Sources */,
 				5B9799862535D04B0020CABA /* workoutType.swift in Sources */,
@@ -959,6 +965,7 @@
 				5BA4AF7325AE12DA007B50C6 /* Kneeling Squat.swift in Sources */,
 				5B3B60E52547438E00A2CCC9 /* Plank Knees To Elbow.swift in Sources */,
 				5B99815E25321C7B0056197B /* Sport.xcdatamodeld in Sources */,
+				5BE21C5B25D7450B00A7C8D6 /* PickWorkoutView.swift in Sources */,
 				5B30F85924B9CA810095D2ED /* Bodyweight Plank Side.swift in Sources */,
 				5BA4AF6F25AE126E007B50C6 /* Gluteus Kickback.swift in Sources */,
 				5B30F85324B9C9B00095D2ED /* Bodyweight Butt ups.swift in Sources */,
@@ -1167,6 +1174,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9S68YAA779;
 				INFOPLIST_FILE = "$(SRCROOT)/sport/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1187,6 +1195,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9S68YAA779;
 				INFOPLIST_FILE = "$(SRCROOT)/sport/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

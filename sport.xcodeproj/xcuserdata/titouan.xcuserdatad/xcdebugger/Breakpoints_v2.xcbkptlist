@@ -26,8 +26,8 @@
             filePath = "sport/Model/Session.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "saveIfNeeded()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,8 +42,8 @@
             filePath = "sport/Model/Session.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "saveIfNeeded()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,8 +58,8 @@
             filePath = "sport/Model/Session.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "currentSport"
             landmarkType = "24">
          </BreakpointContent>
@@ -74,8 +74,8 @@
             filePath = "sport/Model/Session.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "currentSportType"
             landmarkType = "24">
          </BreakpointContent>
@@ -106,8 +106,8 @@
             filePath = "sport/Controller/ChooseWorkoutViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,9 +122,9 @@
             filePath = "sport/Model/TrainingCalculator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "getTodayRecommendedWorkout(armsWorkout:absWorkout:restWorkout:persistence:)"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "getTodayRecommendedWorkout()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,9 +138,9 @@
             filePath = "sport/Model/TrainingCalculator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "getTodayRecommendedWorkout(armsWorkout:absWorkout:restWorkout:persistence:)"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "getTodayRecommendedWorkout()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,9 +154,9 @@
             filePath = "sport/Model/TrainingCalculator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "getSportArrayForLastXDays(x:persistence:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "getSportArrayForLastXDays(x:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,9 +170,9 @@
             filePath = "sport/Model/TrainingCalculator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "getSportArrayForLastXDays(x:persistence:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "getSportArrayForLastXDays(x:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -188,8 +188,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "sports"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -220,22 +220,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "60A62012-3510-4728-86C8-20192E0347C1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "sport/Controller/ChooseWorkoutViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

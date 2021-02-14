@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UperBodyOne : WorkoutProtocol {
+struct UperBodyOne : WorkoutProtocol {
     var sports: Array<SportProtocol> = [
         HipHingeHighPlank(numberOfSets: 1, timeOfTheExercise: 60),
         PushUps(numberOfSets: 1, timeOfTheExercise: 30),

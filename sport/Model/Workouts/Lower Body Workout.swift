@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LowerBodyWorkout : WorkoutProtocol {
+struct LowerBodyWorkout : WorkoutProtocol {
     var sports: Array<SportProtocol> = [
         LegFlutters(numberOfReps: 30, numberOfSets: 1),
         Bridge(numberOfReps: 15, numberOfSets: 1),

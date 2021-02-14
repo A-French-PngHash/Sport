@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AbsSecondWorkout : WorkoutProtocol {
+struct AbsSecondWorkout : WorkoutProtocol {
     var sports: Array<SportProtocol> = [
         ChairSitUps(numberOfReps: 10, numberOfSets: 2),
         VUps(numberOfReps: 20, numberOfSets: 1),

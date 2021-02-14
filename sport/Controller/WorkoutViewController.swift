@@ -114,7 +114,7 @@ class WorkoutViewController: UIViewController {
         
         for i in Workouts.shared.allWorkouts {
             if i.name == workoutName {
-                self.session = SportSession(workout:i)
+                self.session = SportSession(workout:i, persistence: Persistence())
                 break
             }
         }
