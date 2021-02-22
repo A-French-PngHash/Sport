@@ -15,6 +15,8 @@
 		5B0A7A1224C0859200C669C9 /* BodyweightHeelTouch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A7A0724C0859200C669C9 /* BodyweightHeelTouch.mp3 */; };
 		5B0A7A1324C0859200C669C9 /* BodyweightCrunchCrossBody.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A7A0824C0859200C669C9 /* BodyweightCrunchCrossBody.mp3 */; };
 		5B2BE007253651BF00C89F81 /* fakeCoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2BE006253651BF00C89F81 /* fakeCoreDataUtils.swift */; };
+		5B2EA0FC25D9E3CE00A48624 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EA0FB25D9E3CE00A48624 /* WorkoutView.swift */; };
+		5B2EA10025D9E68300A48624 /* CurrentSportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EA0FF25D9E68300A48624 /* CurrentSportView.swift */; };
 		5B30F83024B8EC2B0095D2ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F82F24B8EC2B0095D2ED /* AppDelegate.swift */; };
 		5B30F83224B8EC2B0095D2ED /* ChooseWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30F83124B8EC2B0095D2ED /* ChooseWorkoutViewController.swift */; };
 		5B30F83524B8EC2B0095D2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B30F83324B8EC2B0095D2ED /* Main.storyboard */; };
@@ -129,6 +131,8 @@
 		5BA4AF9925AE19ED007B50C6 /* Kneeling Squat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4AF9125AE19ED007B50C6 /* Kneeling Squat.mp3 */; };
 		5BA4AF9A25AE19ED007B50C6 /* Single Leg Bridge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4AF9225AE19ED007B50C6 /* Single Leg Bridge.mp3 */; };
 		5BA4AF9B25AE19ED007B50C6 /* Gluteus Kickback.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BA4AF9325AE19ED007B50C6 /* Gluteus Kickback.mp3 */; };
+		5BA512C425DAF0F60065B273 /* Sessionv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA512C325DAF0F60065B273 /* Sessionv2.swift */; };
+		5BA512CC25DAFF220065B273 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA512CB25DAFF220065B273 /* SoundService.swift */; };
 		5BA8950925BB251F00D72CEC /* Bridge Walkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8950825BB251F00D72CEC /* Bridge Walkout.swift */; };
 		5BA8950D25BB25B800D72CEC /* Lateral Lunge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8950C25BB25B800D72CEC /* Lateral Lunge.swift */; };
 		5BA8951125BB25FF00D72CEC /* Curtsy Lunge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8951025BB25FF00D72CEC /* Curtsy Lunge.swift */; };
@@ -217,6 +221,8 @@
 		5B0A7A0724C0859200C669C9 /* BodyweightHeelTouch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BodyweightHeelTouch.mp3; sourceTree = "<group>"; };
 		5B0A7A0824C0859200C669C9 /* BodyweightCrunchCrossBody.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BodyweightCrunchCrossBody.mp3; sourceTree = "<group>"; };
 		5B2BE006253651BF00C89F81 /* fakeCoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fakeCoreDataUtils.swift; sourceTree = "<group>"; };
+		5B2EA0FB25D9E3CE00A48624 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		5B2EA0FF25D9E68300A48624 /* CurrentSportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSportView.swift; sourceTree = "<group>"; };
 		5B30F82C24B8EC2B0095D2ED /* sport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B30F82F24B8EC2B0095D2ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B30F83124B8EC2B0095D2ED /* ChooseWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWorkoutViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +335,8 @@
 		5BA4AF9125AE19ED007B50C6 /* Kneeling Squat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Kneeling Squat.mp3"; sourceTree = "<group>"; };
 		5BA4AF9225AE19ED007B50C6 /* Single Leg Bridge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Single Leg Bridge.mp3"; sourceTree = "<group>"; };
 		5BA4AF9325AE19ED007B50C6 /* Gluteus Kickback.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Gluteus Kickback.mp3"; sourceTree = "<group>"; };
+		5BA512C325DAF0F60065B273 /* Sessionv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessionv2.swift; sourceTree = "<group>"; };
+		5BA512CB25DAFF220065B273 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
 		5BA8950825BB251F00D72CEC /* Bridge Walkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bridge Walkout.swift"; sourceTree = "<group>"; };
 		5BA8950C25BB25B800D72CEC /* Lateral Lunge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lateral Lunge.swift"; sourceTree = "<group>"; };
 		5BA8951025BB25FF00D72CEC /* Curtsy Lunge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Curtsy Lunge.swift"; sourceTree = "<group>"; };
@@ -525,6 +533,8 @@
 				5B30F83324B8EC2B0095D2ED /* Main.storyboard */,
 				5BE21C5625D744F100A7C8D6 /* SportApp.swift */,
 				5BE21C5A25D7450B00A7C8D6 /* PickWorkoutView.swift */,
+				5B2EA0FB25D9E3CE00A48624 /* WorkoutView.swift */,
+				5B2EA0FF25D9E68300A48624 /* CurrentSportView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -564,6 +574,8 @@
 				5B30F85A24B9CF710095D2ED /* Workouts.swift */,
 				5B99815925321AC60056197B /* TrainingCalculator.swift */,
 				5B9799852535D04B0020CABA /* workoutType.swift */,
+				5BA512C325DAF0F60065B273 /* Sessionv2.swift */,
+				5BA512CB25DAFF220065B273 /* SoundService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -924,6 +936,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2EA0FC25D9E3CE00A48624 /* WorkoutView.swift in Sources */,
 				5BA4AF6B25AE1217007B50C6 /* CrabWalk.swift in Sources */,
 				5B3B61032548196F00A2CCC9 /* Abs Second Workout.swift in Sources */,
 				5BA8950925BB251F00D72CEC /* Bridge Walkout.swift in Sources */,
@@ -952,6 +965,7 @@
 				5BA4AF8325AE1417007B50C6 /* Squat Hold Abduction.swift in Sources */,
 				5BDE07C32532400600CB9459 /* Plank.swift in Sources */,
 				5BA4AF7B25AE1366007B50C6 /* Side Lying Abduction.swift in Sources */,
+				5B2EA10025D9E68300A48624 /* CurrentSportView.swift in Sources */,
 				5B5D48A02566F32100DB1D46 /* Supinated Biceps Curl.swift in Sources */,
 				5B3B60DD25473C8500A2CCC9 /* Laying Leg Raises.swift in Sources */,
 				5B98839E256EC44C00A8FBC2 /* Lunges.swift in Sources */,
@@ -971,6 +985,7 @@
 				5B30F85324B9C9B00095D2ED /* Bodyweight Butt ups.swift in Sources */,
 				5BE2D0122562E97E00F17B1C /* Side Bend.swift in Sources */,
 				5B30F85124B9C7090095D2ED /* BodyweightCrunchCrossBody.swift in Sources */,
+				5BA512C425DAF0F60065B273 /* Sessionv2.swift in Sources */,
 				5B3B60D925473C3C00A2CCC9 /* Laying Knee Raises.swift in Sources */,
 				5B8862CA24BF5B2900B057D5 /* workoutState.swift in Sources */,
 				5B4C39372532F6C60082F52B /* UpperBody #2.swift in Sources */,
@@ -992,6 +1007,7 @@
 				5B3B610725481B0400A2CCC9 /* Mountain Climber Rep.swift in Sources */,
 				5B3B60FF25474FA400A2CCC9 /* V Ups.swift in Sources */,
 				5B30F83024B8EC2B0095D2ED /* AppDelegate.swift in Sources */,
+				5BA512CC25DAFF220065B273 /* SoundService.swift in Sources */,
 				5BA8950D25BB25B800D72CEC /* Lateral Lunge.swift in Sources */,
 				5B30F85B24B9CF710095D2ED /* Workouts.swift in Sources */,
 				5B5D98082535B441006E4A17 /* ArmCircle.swift in Sources */,

@@ -11,6 +11,8 @@ import SwiftUI
 struct PickWorkoutView: View {
     @EnvironmentObject var persistenceController : Persistence
 
+    let workouts = Workouts.shared.allWorkouts
+
     @State private var calc_private : TrainingCalculator?
     var calculator : TrainingCalculator {
         if let calc = calc_private {
@@ -34,11 +36,30 @@ struct PickWorkoutView: View {
             Button(action: {
                 
             }, label: {
-                Text("I ran today")
+                Text("I Ran Today")
             })
-            Image(systemName: "heart")
+            Image(systemName: "heart.fill")
                 .foregroundColor(.green)
+                .font(.system(size: 50))
+                .padding()
             Text(recomendedText)
+                .padding()
+                .multilineTextAlignment(.center)
+
+            List(0..<workouts.count, id: \.self) { index in
+                HStack {
+                    Button(action: {
+                        //TODO: - Go to next view.
+                    }, label: {
+                        Text(workouts[index].name)
+                            .foregroundColor(.primary)
+                    })
+                    if workouts[index].type == recomendedWorkout {
+                        Image(systemName: "heart.circle.fill")
+                            .foregroundColor(Color(UIColor(red:0/255.0, green:145/255.0, blue:147/255.0, alpha:1.0)))
+                    }
+                }
+            }
 
         }
         .onAppear(perform: {

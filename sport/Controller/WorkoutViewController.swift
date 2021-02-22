@@ -265,7 +265,6 @@ class WorkoutViewController: UIViewController {
         let item1 = AVPlayerItem.init(url: Bundle.main.url(forResource: session.currentSport.nameOfSoundFile, withExtension: "mp3")!)
         let item2 = AVPlayerItem.init(url: Bundle.main.url(forResource: String(session.currentSport.numberOfSets), withExtension: "mp3")!)
         let item3 = AVPlayerItem.init(url: Bundle.main.url(forResource: "series", withExtension: "mp3")!)
-        
         /*
          Can either be the number of reps or the number of secondes
          */

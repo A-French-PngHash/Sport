@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 class SportSession {
@@ -51,16 +52,24 @@ class SportSession {
         }
     }
     
-    var canGoNextSport : Bool{
+    var canGoNextSport : Bool {
         get {
             return nextSport != nil
         }
+    }
+
+    var bindingCanGoNextSport : Binding<Bool> {
+        Binding { self.canGoNextSport } set: { _ in }
     }
     
     var canGoPreviousSport : Bool {
         get {
             return currentSportIndex != 0
         }
+    }
+
+    var bindingCanGoPreviousSport : Binding<Bool> {
+        Binding { self.canGoPreviousSport } set: { _ in }
     }
     
     /*
@@ -169,7 +178,7 @@ class SportSession {
     }
     
     func rep() {
-        //Called when we need to add one rep done
+        // Called when we need to add one rep done
         reps += 1
         if reps >= totalReps!{
             setCompleted()
@@ -211,7 +220,7 @@ class SportSession {
     }
     
     private func goNextSport(){
-        if sports.count != currentSportIndex{
+        if sports.count != currentSportIndex {
             currentState = .rest
             timeUntilEndOfPause = pauseBetweenSport
             

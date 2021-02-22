@@ -31,7 +31,7 @@ class Persistence : ObservableObject{
 
         let workout = WorkoutData(context: persistence.context)
         workout.rawWorkoutType = "abs"
-        workout.date = Date()
+        workout.date = Date.dateXDaysAgo(x: 2)
 
         return persistence
     }()
