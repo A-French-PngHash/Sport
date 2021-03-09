@@ -43,7 +43,7 @@ class ChooseWorkoutViewController: UIViewController {
         }
         if recommandation == .abs {
             recommandationLabel.text = absText
-        } else if recommandation == .arms {
+        } else if recommandation == .upperBody {
             recommandationLabel.text = armText
         } else if recommandation == .rest {
             recommandationLabel.text = restText
@@ -80,7 +80,7 @@ class ChooseWorkoutViewController: UIViewController {
     
     //MARK: - Test Function :
     private func testCoreData() {
-        //Persistence.shared.saveWorkout(date: Date().addingTimeInterval(TimeInterval(-3600 * 24 * 3)), workoutType: .arms)
+        //Persistence.shared.saveWorkout(date: Date().addingTimeInterval(TimeInterval(-3600 * 24 * 3)), workoutType: .upperBody)
         //TrainingCalculator.shared.getTodayRecommendedWorkout()
 
     }

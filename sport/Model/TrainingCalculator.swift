@@ -11,13 +11,13 @@ import Foundation
 class TrainingCalculator {
     /*
      For the moment this training calculator only works with 1 training programm. It works on 5 days :
-     1 : abs, 2 : arms, 3 : abs, 4 : arms, 5 : rest
+     1 : abs, 2 : upperBody, 3 : abs, 4 : upperBody, 5 : rest
     
-     If we sum up it means that on 5 days you should do 2 arms, 2 abs and 1 rep.
+     If we sum up it means that on 5 days you should do 2 upperBody, 2 abs and 1 rep.
      
      To recommend a workout, the programm will look at the past 5 days that will maybe give :
-     abs, arms, rest, abs
-     You need to do 2 arms per 5 days and the programm see that only one has been done so it recommend you to do arms today.
+     abs, upperBody, rest, abs
+     You need to do 2 upperBody per 5 days and the programm see that only one has been done so it recommend you to do upperBody today.
      
      This is basically how the recomendation work. There are a lots of little tweaks that were not explained here but it is still the main principle.
      */
@@ -80,7 +80,7 @@ class TrainingCalculator {
                 if canBeInserted {
                     absWorkouts.append(i)
                 }
-            } else if i.type == .arms {
+            } else if i.type == .upperBody {
                 var canBeInserted = true
                 for arm in armsWorkouts {
                     if i.date?.day == arm.date?.day {
@@ -138,13 +138,13 @@ class TrainingCalculator {
                 if absWorkout <= armsWorkout {
                     return .abs
                 } else {
-                    return .arms
+                    return .upperBody
                 }
             } else {
                 return .abs
             }
         } else if armsWorkout < armsGoal {
-            return .arms
+            return .upperBody
         }
         
         return .rest

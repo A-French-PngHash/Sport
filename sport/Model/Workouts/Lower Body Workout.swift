@@ -9,6 +9,9 @@
 import Foundation
 
 class LowerBodyWorkout : WorkoutProtocol {
+
+    var fixed: Dictionary<Int, SportProtocol> = [:]
+
     var sports: Array<SportProtocol> = [
         LegFlutters(numberOfReps: 30, numberOfSets: 1),
         Bridge(numberOfReps: 15, numberOfSets: 1),

@@ -106,6 +106,13 @@ class SportSession {
     
     init(workout : WorkoutProtocol) {
         self.sports = workout.sports.shuffled()
+
+        // Inserting fixed elements.
+        let indexesToInsertSPort = workout.fixed.keys.sorted()
+        for i in indexesToInsertSPort {
+            self.sports.insert(workout.fixed[i]!, at: i)
+        }
+
         self.sessionStartedAt = Date()
         reps = 0
         sets = 1

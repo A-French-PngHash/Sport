@@ -11,7 +11,7 @@ import Foundation
 class SupinatedBicepsCurls : SportWithReps {
     var numberOfReps: Int
     
-    var intervalBetweenReps: Float = 2
+    var intervalBetweenReps: Float = 5
     
     var isRecommended: Bool = true
     

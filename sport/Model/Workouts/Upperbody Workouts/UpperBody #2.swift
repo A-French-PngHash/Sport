@@ -9,6 +9,9 @@
 import Foundation
 
 class UpperBodyTwo : WorkoutProtocol {
+    
+    var fixed: Dictionary<Int, SportProtocol> = [:]
+
     var sports: Array<SportProtocol> = [
         Superman(numberOfSets: 1, timeOfTheExercise: 40),
         Burpee(numberOfSets: 1, timeOfTheExercise: 60),
@@ -20,6 +23,6 @@ class UpperBodyTwo : WorkoutProtocol {
     var name: String = "Upper Body #2"
     
     var pauseBetweenSports: Int = 5
-    var type : WorkoutType = .arms
+    var type : WorkoutType = .upperBody
     
 }

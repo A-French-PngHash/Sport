@@ -398,6 +398,7 @@ class WorkoutViewController: UIViewController {
         if session.currentSportType == "r" {
             if session.currentSportIsRecommended {
                 self.repsDoneLabel.text = String(session.totalReps!)
+                self.recommendedRepsLabel.text = "RECOMMENDED REPS : " +  String(session.totalReps!)
             } else {
                 
                 self.repsDoneLabel.text = "\(session.reps)/\(session.totalReps!)"

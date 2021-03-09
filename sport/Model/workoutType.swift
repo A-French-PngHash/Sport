@@ -13,6 +13,6 @@ import Foundation
  The same thing happen for the alreadyWorkout case which indicate a day where the user already workout
  */
 enum WorkoutType : String{
-    case arms, abs, lowerBody, run, rest, alreadyWorkout
+    case upperBody, abs, lowerBody, run, rest, alreadyWorkout
 }
 

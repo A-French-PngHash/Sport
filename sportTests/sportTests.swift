@@ -146,7 +146,7 @@ class sportTests: XCTestCase {
     }
 
     func testGivenOneArmsAndAbsWhenGettingRecommendedThenIsRest() {
-        // Given one arms and one abs
+        // Given one upperBody and one abs
         let rest = 0
         let arm = 1
         let abs = 1
@@ -189,7 +189,7 @@ class sportTests: XCTestCase {
 
     
     func testGivenTwoArmsOneAbsAndOneRestWhenGettingRecommendedThenIsAbs() {
-        // Given two arms and one abs and one rest
+        // Given two upperBody and one abs and one rest
         let rest = 1
         let arm = 2
         let abs = 1
