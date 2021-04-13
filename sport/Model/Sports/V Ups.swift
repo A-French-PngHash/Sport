@@ -9,11 +9,11 @@
 import Foundation
 
 class VUps : SportWithReps {
-    var isRecommended: Bool = false
+    var isRecommended: Bool = true
     
     var numberOfReps: Int
     
-    var intervalBetweenReps: Float = 2.3
+    var intervalBetweenReps: Float = 2.6
     
     var name: String = "V Ups"
     

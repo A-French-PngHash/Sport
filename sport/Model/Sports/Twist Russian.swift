@@ -9,11 +9,11 @@
 import Foundation
 
 class TwistRussian : SportWithReps {
-    var isRecommended: Bool = false
+    var isRecommended: Bool = true
     
     var specification: String = "Russian"
     var name: String = "Bodyweight Twist"
-    var intervalBetweenReps: Float = 1.75
+    var intervalBetweenReps: Float = 2
     var numberOfImage: Int = 3
     var nameOfSoundFile: String = "BodyweightTwistRussian"
     var numberOfReps: Int

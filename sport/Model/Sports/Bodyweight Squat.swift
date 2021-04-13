@@ -9,7 +9,7 @@
 import Foundation
 
 class BodyweightSquat : SportWithReps {
-    var isRecommended: Bool = false
+    var isRecommended: Bool = true
     
     var name: String = "Bodyweight Squat"
     

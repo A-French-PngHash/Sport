@@ -17,7 +17,7 @@ class ChooseWorkoutViewController: UIViewController {
     var workoutChosed : String!
     var recommandation : WorkoutType!
     
-    var restText : String = "You've been active for the past couple days so today take a break, relax yourself, rest !"
+    var restText : String = "V2 You've been active for the past couple days so today take a break, relax yourself, rest !"
     var armText : String = "We recommend you to do your arm workout today !"
     var absText : String = "Abs is what we recommend you today !"
     var alreadyWorkoutText : String = "Great ! You've already workout today, rest for tomorow !"

@@ -11,7 +11,7 @@ import Foundation
 class BridgeWalkout : SportWithReps {
     var numberOfReps: Int
 
-    var intervalBetweenReps: Float = 4
+    var intervalBetweenReps: Float = 8
 
     var isRecommended: Bool = true
 

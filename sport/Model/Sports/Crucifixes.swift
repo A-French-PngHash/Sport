@@ -9,11 +9,11 @@
 import Foundation
 
 class Crucifixes : SportWithReps {
-    var isRecommended: Bool = false
+    var isRecommended: Bool = true
     
     var numberOfReps: Int
     
-    var intervalBetweenReps: Float = 1.8
+    var intervalBetweenReps: Float = 2.1
     
     var name: String = "Crucifixes"
     

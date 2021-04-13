@@ -10,18 +10,16 @@ import Foundation
 
 class BicepsUpperBodyWorkout : WorkoutProtocol {
 
-    var fixed: Dictionary<Int, SportProtocol> = [
-        0 : PushUpsRecomended(numberOfReps: 20, numberOfSets: 2)
-    ]
+    var fixed: Dictionary<Int, SportProtocol> = [:]
 
     var sports: Array<SportProtocol> = [
         Plank(numberOfSets: 1, timeOfTheExercise: 60),
         BearCrawl(numberOfSets: 1, timeOfTheExercise: 40),
-        HammerCurls(numberOfReps: 2, numberOfSets: 10),
-        PronatedCurls(numberOfReps: 2, numberOfSets: 10),
-        RearDeltFlies(numberOfReps: 2, numberOfSets: 10),
-        SupinatedBicepsCurls(numberOfReps: 2, numberOfSets: 10),
-        ZottmanCurls(numberOfReps: 2, numberOfSets: 10)
+        HammerCurls(numberOfReps: 10, numberOfSets: 2),
+        PronatedCurls(numberOfReps: 10, numberOfSets: 2),
+        RearDeltFlies(numberOfReps: 10, numberOfSets: 2),
+        SupinatedBicepsCurls(numberOfReps: 10, numberOfSets: 2),
+        ZottmanCurls(numberOfReps: 10, numberOfSets: 2)
     ]
 
     var name: String = "Biceps Upper Body Workout"

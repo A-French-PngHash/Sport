@@ -13,6 +13,7 @@ class LowerBodyWorkout : WorkoutProtocol {
     var fixed: Dictionary<Int, SportProtocol> = [:]
 
     var sports: Array<SportProtocol> = [
+        BodyweightSquat(numberOfReps: 20, numberOfSets: 2),
         LegFlutters(numberOfReps: 30, numberOfSets: 1),
         Bridge(numberOfReps: 15, numberOfSets: 1),
         SingleLegBridge(numberOfReps: 10, numberOfSets: 2),
@@ -23,8 +24,6 @@ class LowerBodyWorkout : WorkoutProtocol {
         PulsingSquat(numberOfSets: 1, timeOfTheExercise: 60),
         SideLyingAbduction(numberOfSets: 2, timeOfTheExercise: 45),
         SquatHoldAbduction(numberOfSets: 1, timeOfTheExercise: 35),
-        CurtsyLunge(numberOfReps: 10, numberOfSets: 1),
-        LateralLunge(numberOfReps: 15, numberOfSets: 2),
         BridgeWalkout(numberOfReps: 15, numberOfSets: 1)
     ]
 
